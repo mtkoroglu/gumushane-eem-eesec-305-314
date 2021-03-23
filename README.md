@@ -1,10 +1,10 @@
 # EESEC 314
 ## 1. Hafta
 **Dinamik sistem** nedir? **Hafızalı sistem**.
-Resistör-Kapasitör devresinin (RC circuit) matematiksel modeline bakış. Burdaki örnekte kapasitörün üzerinden geçen akım değil de kapasitörün voltajı hafıza işlevi görüyor. Hafızaya **durum değişkeni** diyeceğiz.
+Resistör-Kapasitör devresinin (RC circuit) matematiksel modeline bakış. Burdaki örnekte kapasitörün üzerinden geçen akım değil de kapasitörün voltajı hafıza işlevi görüyor. Hafızaya **durum değişkeni** diyeceğiz.</br>
+**Durum değişkeni:** *Geçmişin geleceği etkileyen özü*.</br>
+Bu hafta baktığımız RC devresinin durum uzayı modelinde bir tane **durum değişkeni** var, dolayısıyla bir boyutlu bir sistem. Ayrıca *Vcc* olarak isimlendirdiğimiz gerilim kaynağı, sistemin **durum değişkeni** olan **kapasitör voltajına** bir **giriş değişkeni** (input variable) olarak etki ediyor. RC devresinde gerilim kaynağının voltajı *V<sub>cc</sub>*, resistör değeri *R* ve kapasitor değeri *C* sistem parametreleri olarak vazife yapıyor.
 
-**Durum değişkeni:** *Geçmişin geleceği etkileyen özü*.
-Bu hafta baktığımız RC devresinin durum uzayı modelinde bir tane durum değişkeni var, dolayısıyla bir boyutlu bir sistem. Ayrıca Vcc olarak isimlendirdiğimiz gerilim kaynağı, sistemin durum değişkeni olan kapasitör voltajına bir giriş değişkeni (input variable) olarak etki ediyor. 
 ## 2. Hafta 
 Pendulum dinamiklerine [1] durum uzayında (state space) bakış. *Şekil 1*'de görüldüğü üzere, kütlesi ihmal edilen *l* uzunluğundaki çubuğun ucundaki cismin kütlesi *m*, sürtünme katsayısı *b*, yer çekimi ivmesi *g*; sistemin aparametreleri denilen bu katsayılar sabit. Sistemin durum değişkenleri açı ve açısal hız. Çıkış değişkeni olarak da açıyı gözlemledik. Burda analiz ettiğimiz pendulum probleminde sistemimizin bir girişi yok. Gerçek hayatta çubuğun ucuna pervaneli bir motor takılıp çubuğu hareket ettirebilir veya cubuğun baş noktasında bir step veya servo motor yine pendulumu döndürebilir. Motorların dönmesiyle sisteme etki edecek olan kuvvet sistemimize bir giriş olarak etki edecektir.
 
