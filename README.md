@@ -7,14 +7,14 @@ Bu hafta baktığımız RC devresinin durum uzayı modelinde bir tane durum değ
 ## 2. Hafta 
 Pendulum dinamiklerine [1] durum uzayında (state space) bakış. *Şekil 1*'de görüldüğü üzere, kütlesi ihmal edilen *l* uzunluğundaki çubuğun ucundaki cismin kütlesi *m*, sürtünme katsayısı *b*, yer çekimi ivmesi *g*; sistemin aparametreleri denilen bu katsayılar sabit. Sistemin durum değişkenleri açı ve açısal hız. Çıkış değişkeni olarak da açıyı gözlemledik. Burda analiz ettiğimiz pendulum probleminde sistemimizin bir girişi yok. Gerçek hayatta çubuğun ucuna pervaneli bir motor takılıp çubuğu hareket ettirebilir veya cubuğun baş noktasında bir step veya servo motor yine pendulumu döndürebilir. Motorların dönmesiyle sisteme etki edecek olan kuvvet sistemimize bir giriş olarak etki edecektir.
 
-<img src="figure/pendulum.png" alt="Pendulum dinamikleri." height="240"/>
+<img src="şekil/pendulum.png" alt="Pendulum dinamikleri." height="240"/>
 
 *Şekil 1:* Pendulum problemi.
 
 ## 3. Hafta
 Bir araba için cruise control (otomatik hız kontrolü) dinamiklerine bakış. Durum uzayı gösterimi (state space representation). Bu hafta ayrıca PID denetleyici de tasarlayarak (deneme-yanılma yolu ile) arabamızın hız kontrolünü yaptık. İlgili video DBS'de.
 
-<img src="figure/cruise_control.png" alt="Pendulum dinamikleri." height="240"/>
+<img src="şekil/cruise_control.png" alt="Pendulum dinamikleri." height="240"/>
 
 *Şekil 2:* Araba hız kontrolü (cruise control) modeli.
 
