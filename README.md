@@ -26,7 +26,7 @@ T(s) = Y(s)/U(s) = C(sI-A)<sup>-1</sup>A + D
 
 Dersimizin sonunda her hafta yaptığımız gibi MATLAB/Simulink'de teoriklerine baktığımız modellerin simulasyonlarını yaptık. Durum uzayındaki çıkış değişkeni olan arabanın hızının, s-alanında Transfer fonksiyonu ile verilen bloğun çıkışı olan hız değişkeni ile tamamen aynı olduğunu gözlemledik. Dersimizi önümüzdeki hafta sistemin çıkışını hız değil de pozisyon (arabanın konumu) olarak seçip yeni bir transfer fonksiyonu elde edeceğiz diye sonlandırdık.
 ## Video
-Videoyu aşağıdaki resime tıklayarak izleyebilirsiniz.</br>
+Bu sayfaile bilgi edinmek için aşağıdaki resime tıklayarak videoyu izleyebilirsiniz.</br>
 [![IMAGE ALT TEXT HERE](şekil/thumbnail.png)](https://youtu.be/5p5_AzG9l2o)</br></br>
 
 
