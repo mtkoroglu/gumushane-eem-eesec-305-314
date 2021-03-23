@@ -10,14 +10,14 @@ Pendulum dinamiklerine [1] durum uzayında (state space) bakış. *Şekil 1*'de 
 
 <img src="şekil/pendulum.png" alt="Pendulum dinamikleri." height="240"/>
 
-*Şekil 1:* Pendulum problemi.
+*Şekil 1:* Pendulum modeli ([1]'in izni ile).
 
 ## 3. Hafta
 Bir araba için **cruise control** (otomatik hız kontrolü) dinamiklerine bakış. Durum uzayı gösterimi (state space representation). Bu hafta ayrıca PID denetleyici de tasarlayarak (deneme-yanılma yolu ile) arabamızın hız kontrolünü yaptık. İlgili video DBS'de.
 
 <img src="şekil/cruise_control.png" alt="Pendulum dinamikleri." height="240"/>
 
-*Şekil 2:* Araba hız kontrolü (cruise control) modeli.
+*Şekil 2:* Araba hız kontrolü (cruise control) modeli ([2]'nin izni ile).
 
 ## 4. Hafta
 Cruise control problemine bakmaya devam ettik. A matrisi sistem matrisimiz, B matrisi giriş matrisi, C matrisi çıkış matrisi olarak isimlendiriliyor. Eğer bir sistemin dinamikleri doğrusal (linear) ise o zaman sistemin modelini belirtilen matrisler ve giriş, durum ve çıkış değişkenleri cinsiden durum uzayı gösterimi (state space representation) ile tasvir edebiliriz. Bu hafta zaman alanından (time domain) frekans alanına (s domain) geçiş yaptık. Sistemimizin çıkışı (y(t)) olan hız değişkeni (v(t)) ile girişi (u(t)) olan arabayı çeken kuvvet arasındaki orana s alanında (s-domain) bakarsak transfer fonksiyonu T(s)'yi elde ediyoruz.
