@@ -1,26 +1,30 @@
 # EESEC 314
 ## 1. Hafta
 **Dinamik sistem** nedir? **Hafızalı sistem**.
-Resistör-Kapasitör devresinin (RC circuit) matematiksel modeline bakış. Burdaki örnekte kapasitörün üzerinden geçen akım değil de kapasitörün voltajı hafıza işlevi görüyor. Hafızaya **durum değişkeni** diyeceğiz.</br>
+Gerilim kaynağı bağlanmış bir resistör-kapasitör devresini (RC devresi - Şekil 1) analiz ettik.Burdaki örnekte kapasitörün üzerinden geçen akım değil de kapasitörün voltajı hafıza işlevi görüyor. Hafızaya **durum değişkeni** diyeceğiz.</br>
 **Durum değişkeni:** *Geçmişin geleceği etkileyen özü*.</br>
-Bu hafta baktığımız RC devresinin durum uzayı modelinde bir tane **durum değişkeni** var, dolayısıyla bir boyutlu bir sistem. Ayrıca *Vcc* olarak isimlendirdiğimiz gerilim kaynağı, sistemin **durum değişkeni** olan **kapasitör voltajına** bir **giriş değişkeni** (input variable) olarak etki ediyor. RC devresinde gerilim kaynağının voltajı *V<sub>cc</sub>*, resistör değeri *R* ve kapasitor değeri *C* sistem parametreleri olarak vazife yapıyor.
+Bu hafta baktığımız RC devresinin durum uzayı modelinde bir tane **durum değişkeni** var, dolayısıyla bir boyutlu bir sistem. Ayrıca *Vcc* olarak isimlendirdiğimiz gerilim kaynağı, sistemin **durum değişkeni** olan **kapasitör voltajına** bir **giriş değişkeni** (input variable) olarak etki ediyor. RC devresinde gerilim kaynağının voltajı *V<sub>cc</sub>*, resistör değeri *R* ve kapasitor değeri *C* sistem parametreleri olarak vazife yapıyor. Bu parametreler zamanla değişmediği zaman Sinyaller-Sistemler dersinden bildiğimiz gibi doğrusal zamanla değişmeyen (linear time-invariant - LTI) bir sistemimiz olmuş oluyor ve analiz etmek kolay bir hal alıyor. Sistem parametrelerimiz zamanla değişen bir yapıya sahipse daha kompleks matematiksel yaklaşımlarla analiz yapmak zorunda kalırız.
+
+<img src="şekil/RCdevresi.jpg" alt="RC devresi." height="240"/>
+
+*Şekil 1:* RC devresi.
 
 ## 2. Hafta 
-Pendulum dinamiklerine [1] durum uzayında (state space) bakış. *Şekil 1*'de görüldüğü üzere, kütlesi ihmal edilen *l* uzunluğundaki çubuğun ucundaki cismin kütlesi *m*, sürtünme katsayısı *b*, yer çekimi ivmesi *g*; sistemin aparametreleri denilen bu katsayılar sabit. Sistemin durum değişkenleri açı ve açısal hız. Çıkış değişkeni olarak da açıyı gözlemledik. Burda analiz ettiğimiz pendulum probleminde sistemimizin bir girişi yok. Gerçek hayatta çubuğun ucuna pervaneli bir motor takılıp çubuğu hareket ettirebilir veya cubuğun baş noktasında bir step veya servo motor yine pendulumu döndürebilir. Motorların dönmesiyle sisteme etki edecek olan kuvvet sistemimize bir giriş olarak etki edecektir.
+Pendulum dinamiklerine [1] durum uzayında (state space) bakış. *Şekil 2*'de görüldüğü üzere, kütlesi ihmal edilen *l* uzunluğundaki çubuğun ucundaki cismin kütlesi *m*, sürtünme katsayısı *b*, yer çekimi ivmesi *g*; sistemin aparametreleri denilen bu katsayılar sabit. Sistemin durum değişkenleri açı ve açısal hız. Çıkış değişkeni olarak da açıyı gözlemledik. Burda analiz ettiğimiz pendulum probleminde sistemimizin bir girişi yok. Gerçek hayatta çubuğun ucuna pervaneli bir motor takılıp çubuğu hareket ettirebilir veya cubuğun baş noktasında bir step veya servo motor yine pendulumu döndürebilir. Motorların dönmesiyle sisteme etki edecek olan kuvvet sistemimize bir giriş olarak etki edecektir.
 
 <img src="şekil/pendulum.png" alt="Pendulum dinamikleri." height="240"/>
 
-*Şekil 1:* Pendulum modeli ([1]'in izni ile).
+*Şekil 2:* Pendulum modeli ([1]'in izni ile).
 
 ## 3. Hafta
-Bir araba için **cruise control** (otomatik hız kontrolü) dinamiklerine bakış. Durum uzayı gösterimi (state space representation). Bu hafta ayrıca PID denetleyici de tasarlayarak (deneme-yanılma yolu ile) arabamızın hız kontrolünü yaptık. İlgili video DBS'de.
+Bir araba için **cruise control** (otomatik hız kontrolü) dinamiklerine bakış. Durum uzayı gösterimi (state space representation). Bu hafta ayrıca oransal-integral-türevsel (proportional-integral-derivative) denetleyici (PID controller) tasarlayarak (deneme-yanılma yolu ile) arabamızın hız kontrolünü yaptık. İlgili video DBS'de.
 
 <img src="şekil/cruise_control.png" alt="Pendulum dinamikleri." height="240"/>
 
-*Şekil 2:* Araba hız kontrolü (cruise control) modeli ([2]'nin izni ile).
+*Şekil 3:* Araba hız kontrolü (cruise control) modeli ([2]'nin izni ile).
 
 ## 4. Hafta
-Cruise control problemine bakmaya devam ettik. A matrisi sistem matrisimiz, B matrisi giriş matrisi, C matrisi çıkış matrisi olarak isimlendiriliyor. Eğer bir sistemin dinamikleri doğrusal (linear) ise o zaman sistemin modelini belirtilen matrisler ve giriş, durum ve çıkış değişkenleri cinsiden durum uzayı gösterimi (state space representation) ile tasvir edebiliriz. Bu hafta zaman alanından (time domain) frekans alanına (s domain) geçiş yaptık. Sistemimizin çıkışı (y(t)) olan hız değişkeni (v(t)) ile girişi (u(t)) olan arabayı çeken kuvvet arasındaki orana s alanında (s-domain) bakarsak transfer fonksiyonu T(s)'yi elde ediyoruz.
+Cruise control problemine bakmaya devam ettik. A matrisi sistem matrisimiz, B matrisi giriş matrisi, C matrisi çıkış matrisi olarak isimlendiriliyor. Eğer bir sistemin dinamikleri doğrusal (linear) ise o zaman sistemin zaman alanındaki (time-domain) modelini yukarıda bahsedilen matrisler ve giriş, durum ve çıkış değişkenleri cinsinden **durum uzayı gösterimi** (state space representation) ile tasvir edebiliriz. Bu hafta zaman alanından (time domain) frekans alanına (s domain) geçiş yaptık. Sistemimizin çıkışı (y(t)) olan arabamızın hızı (v(t)) ile girişi (u(t)) olan arabayı çeken kuvvet arasındaki orana s alanında (s-domain) bakarsak transfer fonksiyonu T(s)'yi elde ediyoruz.
 
 T(s) = Y(s)/U(s) = C(sI-A)<sup>-1</sup>A + D
 
