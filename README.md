@@ -5,7 +5,7 @@ Gerilim kaynağı bağlanmış bir resistör-kapasitör devresini (RC devresi - 
 **Durum değişkeni:** *Geçmişin geleceği etkileyen özü*.</br>
 Bu hafta baktığımız RC devresinin durum uzayı modelinde bir tane **durum değişkeni** var, dolayısıyla bir boyutlu bir sistem. Ayrıca *Vcc* olarak isimlendirdiğimiz gerilim kaynağı, sistemin **durum değişkeni** olan **kapasitör voltajına** bir **giriş değişkeni** (input variable) olarak etki ediyor. RC devresinde gerilim kaynağının voltajı *V<sub>cc</sub>*, resistör değeri *R* ve kapasitor değeri *C* sistem parametreleri olarak vazife yapıyor. Bu parametreler zamanla değişmediği zaman Sinyaller-Sistemler dersinden bildiğimiz gibi doğrusal zamanla değişmeyen (linear time-invariant - LTI) bir sistemimiz olmuş oluyor ve analiz etmek kolay bir hal alıyor. Sistem parametrelerimiz zamanla değişen bir yapıya sahipse daha kompleks matematiksel yaklaşımlarla analiz yapmak zorunda kalırız.
 
-<img src="şekil/RC_circuit.jpg" alt="RC devresi." height="240"/>
+<img src="şekil/RC_circuit.jpg" alt="RC devresi." height="360"/>
 
 *Şekil 1:* RC devresi.
 
