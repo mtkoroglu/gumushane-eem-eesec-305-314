@@ -10,7 +10,7 @@ B = [0; 1/m]; % giriş matrisi
 C = [0 1]; % çıkış matrisi
 D = 0; % ileri besleme matrisi
 %%
-Kp = 5000; % oransal kontrol kazancı
-Ki = 70; % integral kontrol kazancı
-Kd = 195; % türevsel kontrol kazancı
+Kp = 5000; % oransal kontrol kazancı - 5000
+Ki = 70; % integral kontrol kazancı - 70
+Kd = 195; % türevsel kontrol kazancı - 195
 sim('araba_hiz_kontrol.mdl');

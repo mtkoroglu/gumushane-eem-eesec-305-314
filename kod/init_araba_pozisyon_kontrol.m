@@ -10,7 +10,8 @@ B = [0; 1/m]; % giriş matrisi
 C = [1 0]; % çıkış matrisi
 D = 0; % ileri besleme matrisi
 %%
-Kp = 20; % oransal kontrol kazancı - 20
+k= 1;
+Kp = k*20; % oransal kontrol kazancı - 20
 Ki = 0; % integral kontrol kazancı - 0
-Kd = 375; % türevsel kontrol kazancı - 375
+Kd = k*375; % türevsel kontrol kazancı - 375
 sim('araba_pozisyon_kontrol.mdl');
