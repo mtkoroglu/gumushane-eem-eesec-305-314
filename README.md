@@ -9,11 +9,11 @@ Bu hafta baktığımız RC devresinin durum uzayı modelinde bir tane **durum de
 ## 2. Hafta 
 Pendulum (sarkaç) dinamiklerine durum uzayında (state space) bakış [1]. *Şekil 2*'de görüldüğü üzere, kütlesi ihmal edilen *l* uzunluğundaki çubuğun ucundaki cismin kütlesi *m*, sürtünme katsayısı *b*, yer çekimi ivmesi *g*; sistem parametreleri denilen bu katsayılar sabit (i.e., zamanla değişmiyor). Sistemin durum değişkenleri açı ve açısal hız. Çıkış değişkeni olarak açıyı gözlemliyoruz. Burda analiz ettiğimiz pendulum probleminde sistemimizin bir girişi yok. Gerçek hayatta çubuğun ucuna pervaneli bir motor takılıp çubuğu hareket ettirebilir veya çubuğun baş noktasında (yani döndüğü yerde olan eksen etrafında) bir adım (step) veya servo motor pendulumu döndürebilir. Motorların dönmesiyle sisteme etki edecek olan kuvvet sistemimize bir giriş olarak etki edecektir. Bu konuya altıncı haftada dönüp burada bahsettiğimiz sistem girişini oluşturacağız.</br>
 <img src="şekil/pendulum.png" alt="Pendulum dinamikleri." height="240"/></br>
-*Şekil 2:* Pendulum (sarkaç) modeli ([2]'in izni ile).
+*Şekil 2:* Pendulum (sarkaç) modeli ([2]'nin izni ile).
 ## 3. Hafta
 Bir araba için hız kontrolü (**cruise control**) dinamiklerine bakış. Durum uzayı gösterimi (state space representation). Bu hafta ayrıca oransal-integral-türevsel (proportional-integral-derivative) denetleyici (PID controller) tasarlayarak (deneme-yanılma yolu ile) arabamızın hız kontrolünü yaptık. İlgili video DBS'de.</br>
 <img src="şekil/cruise_control.png" alt="Pendulum dinamikleri." height="240"/></br>
-*Şekil 3:* Araba hız kontrolü (cruise control) modeli ([3]'nin izni ile).
+*Şekil 3:* Araba hız kontrolü (cruise control) modeli ([3]'ün izni ile).
 ## 4. Hafta
 Cruise control problemine bakmaya devam ettik. A matrisi sistem matrisimiz, B matrisi giriş matrisi, C matrisi çıkış matrisi olarak isimlendiriliyor. Eğer bir sistemin dinamikleri doğrusal (linear) ise o zaman sistemin zaman alanındaki (time-domain) modelini yukarıda bahsedilen matrisler ve giriş, durum ve çıkış değişkenleri cinsinden **durum uzayı gösterimi** (state space representation) ile tasvir edebiliriz. Bu hafta zaman alanından (time domain) frekans alanına (s domain) geçiş yaptık. Sistemimizin çıkışı (y(t)) olan arabamızın hızı (v(t)) ile girişi (u(t)) olan arabayı çeken kuvvet arasındaki orana s alanında (s-domain) bakarsak transfer fonksiyonu T(s)'yi elde ediyoruz.</br>
 T(s) = Y(s)/U(s) = C(sI-A)<sup>-1</sup>B + D</br>
