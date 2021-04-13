@@ -25,9 +25,11 @@ Cruise kontrol problemindeki arabanın dinamikleriyle (*Şekil 3*) devam ettik. 
 Derste yukarıda anlattığımız güncellemeyi sarkaç sistemine uygulayıp yine bir PID denetleyici tasarlayarak açıyı kontrol etmeyi başardık. Ara sınavımızda karşımıza çıkacak bir sistem. Unutmayın, şu ana kadar baktığımız RC devresi ve araba hız ve pozisyon kontrolü problemlerinde sistemler doğrusaldı. Bu yüzden transfer fonksiyonlarını elde edebiliyoruz bu sistemler için. Fakat sarkaç sisteminde açı durum değişkeninin durum uzayı gösteriminde yazdığımız birinci dereceden diferansiyel denklemlerde görünme şekli sinüs fonksiyonu üzerinden olduğu için sistemimiz doğrusal değil demiştik. Sonuç olarak da sarkaç sisteminin transfer fonksiyonu söz konusu değil. Önümüzdeki hafta ilk hafta işlediğimiz (DBS'de ders kaydı yok ilk haftanın) ve ikinci hafta derste sarkaç sistemi ile devam etmeden kısaca tekrar ettiğimiz RC devresinin durum uzayı gösterimine tekrar göz atıp bu elektronik devrenin/sistemin transfer fonksiyonunu elde edeceğiz. Ardından şu ana kadar tasarladığımız PID denetleyicilerden daha ilkel olan **aç/kapa denetleyici**<sup>1</sup> ile sistem çıkışımız olan kapasitör voltajı olan V<sub>C</sub>(t)'yi kontrol etmeye çalışacağız.   
 ## 7. Hafta
 Tahtada durum uzayı gösterimini tekrar yazacağımız RC devresinin transfer fonksiyonunu dördüncü haftada öğrendiğimiz</br>
-T(s) = Y(s)/U(s) = C(sI-A)<sup>-1</sup>B + D</br>
+T(s) = Y(s)/U(s) = C(sI-A)<sup>-1</sup>B + D
+
 <img src="eşitlik/durum_uzayı_transfer_fonksiyonu.JPG" alt="durum uzayı gösteriminden transfer fonksiyonu gösterimine geçiş." height="90"/></br>
-eşitliğini uygulayarak aşağıdaki gibi elde ettik (dersin tam sonuna denk geldi).</br>
+eşitliğini uygulayarak aşağıdaki gibi elde ettik (dersin tam sonuna denk geldi).
+
 <img src="eşitlik/RC devresi transfer fonksiyonu.JPG" alt="RC devresi transfer fonksiyonu." height="90"/></br>
 Transfer fonksiyonunun paydası **birinci** dereceden bir polinom şeklinde, bu da **bir** durum değişkenimiz olduğunu gösteriyor. Zaten bizim RC devresindeki durum değişkenimiz kapasitörün üzerindeki voltaj V<sub>C</sub>(t).
 ### Aç-Kapa Denetleyici
