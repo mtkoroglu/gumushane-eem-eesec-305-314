@@ -47,7 +47,7 @@ Ara sınav haftası.
 ## 9. Hafta
 Ara Sınav soruları çözümleri. Gelecek haftalarda hangi konuların işleneceğine bir bakış.
 ## Dipnotlar
-<sup>1</sup> Bu tanım [5] tarafından [6]'dan alınmıştır.
+<sup>1</sup> Bu tanım [5] tarafından [6]'dan alınmıştır.</br>
 <sup>2</sup> İng. **on-off controller**. Aynı zamanda **bang bang** kontrol olarak da bilinse de aralarında ufak bir fark vardır.
 ## Kaynaklar
 [1] RC, RL ve RLC devrelerinin analizi - https://github.com/taha-koroglu/RLC_devreleri</br>
