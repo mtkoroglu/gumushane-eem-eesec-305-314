@@ -45,16 +45,8 @@ Aç-kapa denetleyiciyi tasarlamadan önce araba hız kontrolü örneğine geri d
 ## 8. Hafta
 Ara sınav haftası.
 ## 9. Hafta
-Ara Sınav soruları çözümleri. Gelecek haftalarda hangi konuların işleneceğine bir bakış.
+Ara Sınav soruları çözümleri. Final sınavının daha zor olacağını vurguladık. Önümüzdeki hafta PID denetleyiciler ile devam edeceğiz.
 
-```
-import tensorflow as tf
-import matplotlib.pyplot as plt
-import numpy as np # numerical python kütüphanesi
-import pandas as pd
-import sys
-from numpy import random
-```
 ## Dipnotlar
 <sup>1</sup> Bu tanım [5] tarafından [6]'dan alınmıştır.</br>
 <sup>2</sup> İng. **on-off controller**. Aynı zamanda **bang bang** kontrol olarak da bilinse de aralarında ufak bir fark vardır.
