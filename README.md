@@ -20,7 +20,7 @@ Bu hafta baktığımız RC devresinin durum uzayı modelinde bir tane **durum de
 ## 3. Hafta
 Bir araba için hız kontrolü (**cruise control**) dinamiklerine baktık. **Durum uzayı gösterimi** (state space representation). Bu hafta ayrıca oransal-integral-türevsel (proportional-integral-derivative) denetleyici (PID controller) tasarlayarak (deneme-yanılma yolu ile) arabamızın hız kontrolünü yaptık. İlgili video DBS'de.
 
-<img src="şekil/cruise_control.png" alt="Pendulum dinamikleri." height="240"/></br>
+<img src="şekil/cruise_control.png" alt="Pendulum dinamikleri" height="240"/></br>
 *Şekil 3:* Araba hız kontrolü (cruise control) dinamikleri ([3]'ün izni ile). Burada sürtünme katsayısı b arabayı durdurucu etki yapıyor.
 ## 4. Hafta
 **Cruise control** problemine bakmaya devam ettik. A matrisi sistem matrisimiz, B matrisi giriş matrisi, C matrisi çıkış matrisi olarak isimlendiriliyor. Eğer bir sistemin dinamikleri doğrusal (linear) ise o zaman sistemin zaman alanındaki (time-domain) modelini yukarıda bahsedilen matrisler ve giriş, durum ve çıkış değişkenleri cinsinden **durum uzayı gösterimi** (state space representation) ile tasvir edebiliriz. Bu hafta zaman alanından (time domain) frekans alanına (s domain) geçiş yaptık. Sistemimizin çıkışı (y(t)) olan arabamızın hızı (v(t)) ile girişi (u(t)) olan arabayı çeken kuvvet arasındaki orana s alanında (s-domain) bakarsak transfer fonksiyonu T(s)'yi elde ediyoruz.</br>
@@ -49,9 +49,10 @@ Ara Sınav soruları çözümleri. Final sınavının **daha zor** olacağını 
 ## 10. Hafta
 Geribeslemeli bir kontrol sisteminin<sup>3</sup> blok diyagramına<sup>4</sup> *Şekil 4*'de görülen kendi-kendini dengeleyen robot üzerinden bir bakış. 
 
-<img src="şekil/kendi-kendini dengeleyen robot.jpg" alt="kendi-kendini dengeleyen robot" height="300"/></br>
+<img src="şekil/kendi-kendini dengeleyen robot.jpg" alt="kendi-kendini dengeleyen robot" height="500"/></br>
+*Şekil 4:* Kendi-kendini dengeleyen robot. 
 Derste PID kontrolörün girişi olan hata sinyali e(t) ile çıkışı olan kontrol sinyali u(t) arasındaki ifadeyi aşağıdaki gibi elde ettik.</br>
-<img src="eşitlik/pid kontrolör.JPG" alt="pid kontrolör" height="50"/></br>
+<img src="eşitlik/pid kontrolör.JPG" alt="pid kontrolör" height="70"/></br>
 ## Dipnotlar
 <sup>1</sup> Bu tanım [5] tarafından [6]'dan alınmıştır.</br>
 <sup>2</sup> İng. **on-off controller**. Aynı zamanda **bang bang** kontrol olarak da bilinse de aralarında ufak bir fark vardır.
