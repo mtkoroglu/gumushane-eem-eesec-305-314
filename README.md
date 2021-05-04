@@ -56,8 +56,8 @@ Derste PID kontrolörün girişi olan hata sinyali e(t) ile çıkışı olan kon
 <img src="eşitlik/pid kontrolör.JPG" alt="pid kontrolör" height="70"/></br>
 ## Dipnotlar
 <sup>1</sup> Bu tanım [5] tarafından [6]'dan alınmıştır.</br>
-<sup>2</sup> İng. **on-off controller**. Aynı zamanda **bang bang** kontrol olarak da bilinse de aralarında ufak bir fark vardır.
-<sup>3</sup> İng. **feedback control system**.
+<sup>2</sup> İng. **on-off controller**. Aynı zamanda **bang bang** kontrol olarak da bilinse de aralarında ufak bir fark vardır.</br>
+<sup>3</sup> İng. **feedback control system**.</br>
 <sup>4</sup> Blok diyagram yerine akış diyagramı (flow chart) tabiri de kullanılır.
 ## Kaynaklar
 [1] RC, RL ve RLC devrelerinin analizi - https://github.com/taha-koroglu/RLC_devreleri</br>
