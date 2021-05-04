@@ -49,11 +49,12 @@ Ara Sınav soruları çözümleri. Final sınavının **daha zor** olacağını 
 ## 10. Hafta
 Geribeslemeli bir kontrol sisteminin<sup>3</sup> blok diyagramına<sup>4</sup> *Şekil 4*'de görülen kendi-kendini dengeleyen robot üzerinden bir bakış. 
 
-<img src="şekil/kendi-kendini dengeleyen robot.jpg" alt="kendi-kendini dengeleyen robot" height="450"/> <img src="ders/hafta10/geribeslemeli kontrol sistemi.jpg" alt="geribeslemeli kontrol sistemi" height="450"/></br>
+<img src="şekil/kendi-kendini dengeleyen robot.jpg" alt="kendi-kendini dengeleyen robot" height="550"/> <img src="ders/hafta10/geribeslemeli kontrol sistemi.jpg" alt="geribeslemeli kontrol sistemi" height="550"/></br>
 *Şekil 4:* Kendi-kendini dengeleyen robot ve robottaki geribeslemeli kontrol sistemine bir bakış.
 
 Derste PID kontrolörün girişi olan hata sinyali e(t) ile çıkışı olan kontrol sinyali u(t) arasındaki ifadeyi aşağıdaki gibi elde ettik.</br>
 <img src="eşitlik/pid kontrolör.JPG" alt="pid kontrolör" height="70"/></br>
+Bu ifadeyi daha önceden MATLAB Simulink'de gerçeklemiş olduğumuz (sınavda da karşımıza çıkan) araba pozisyon kontrolü probleminde önceden gerçeklediğimiz sistem modellerine paralel olarak en altta gerçekledik. Dersin sonunda yaptığımız bu adımda istediğimiz sonucu elde edememiştik. Yukarıdaki sistem cevaplarının aynısını elde etmeyi beklemiştik. Aşağıda videolar bölümünde koyulan ikinci videodan çıkan sorunu nasıl düzelttiğimiz izleyebilirsiniz.
 ## Dipnotlar
 <sup>1</sup> Bu tanım [5] tarafından [6]'dan alınmıştır.</br>
 <sup>2</sup> İng. **on-off controller**. Aynı zamanda **bang bang** kontrol olarak da bilinse de aralarında ufak bir fark vardır.</br>
