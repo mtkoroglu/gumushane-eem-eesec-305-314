@@ -49,8 +49,9 @@ Ara Sınav soruları çözümleri. Final sınavının **daha zor** olacağını 
 ## 10. Hafta
 Geribeslemeli bir kontrol sisteminin<sup>3</sup> blok diyagramına<sup>4</sup> *Şekil 4*'de görülen kendi-kendini dengeleyen robot üzerinden bir bakış. 
 
-<img src="şekil/kendi-kendini dengeleyen robot.jpg" alt="kendi-kendini dengeleyen robot" height="500"/></br>
-*Şekil 4:* Kendi-kendini dengeleyen robot.
+<img src="şekil/kendi-kendini dengeleyen robot.jpg" alt="kendi-kendini dengeleyen robot" height="500"/>
+<img src="ders/geribeslemeli kontrol sistemi.jpg" alt="geribeslemeli kontrol sistemi" height="500"/></br>
+*Şekil 4:* Kendi-kendini dengeleyen robot ve robottaki geribeslemeli kontrol sistemine bir bakış.
 
 Derste PID kontrolörün girişi olan hata sinyali e(t) ile çıkışı olan kontrol sinyali u(t) arasındaki ifadeyi aşağıdaki gibi elde ettik.</br>
 <img src="eşitlik/pid kontrolör.JPG" alt="pid kontrolör" height="70"/></br>
