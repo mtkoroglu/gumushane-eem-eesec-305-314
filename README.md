@@ -60,7 +60,7 @@ Bayram Haftası.
 ## 12. Hafta
 PID kontrolörün (*Şekil 5*'de görüldüğü gibi kendi-kendini dengeleyen robot için) Arduino üzerinde ayrık zamanda (discrete time) nasıl gerçeklendiğine bakış.
 
-<img src="şekil/yabr lowest quality.gif" alt="your arduino balancing robot" height="350"/></br>
+<img src="şekil/yabr smallest.gif" alt="your arduino balancing robot" height="350"/></br>
 *Şekil 5:* Kendi-kendini dengeleyen robotun üzerinde yer alan Arduino üzerinde koşan PID kontrolör ile robotun yere düşmeden dengede kalarak ilerlemesi.
 ## Dipnotlar
 <sup>1</sup> Bu tanım [5] tarafından [6]'dan alınmıştır.</br>
