@@ -55,6 +55,11 @@ Geribeslemeli bir kontrol sisteminin<sup>3</sup> blok diyagramına<sup>4</sup> *
 Derste PID kontrolörün girişi olan hata sinyali e(t) ile çıkışı olan kontrol sinyali u(t) arasındaki ifadeyi aşağıdaki gibi elde ettik.</br>
 <img src="eşitlik/pid kontrolör.JPG" alt="pid kontrolör" height="70"/></br>
 Bu ifadeyi daha önceden MATLAB Simulink'de gerçeklemiş olduğumuz (sınavda da karşımıza çıkan) araba pozisyon kontrolü probleminde önceden gerçeklediğimiz sistem modellerine paralel olarak en altta gerçekledik. Dersin sonunda yaptığımız bu adımda istediğimiz sonucu elde edememiştik. Yukarıdaki sistem cevaplarının aynısını elde etmeyi beklemiştik. Aşağıda videolar bölümünde koyulan ikinci videodan çıkan sorunu nasıl düzelttiğimiz izleyebilirsiniz.
+## 11. Hafta
+Bayram Haftası.
+## 12. Hafta
+PID kontrolörün Arduino üzerinde ayrık zamanda (discrete time) nasıl gerçeklendiğine bakış.
+
 ## Dipnotlar
 <sup>1</sup> Bu tanım [5] tarafından [6]'dan alınmıştır.</br>
 <sup>2</sup> İng. **on-off controller**. Aynı zamanda **bang bang** kontrol olarak da bilinse de aralarında ufak bir fark vardır.</br>
