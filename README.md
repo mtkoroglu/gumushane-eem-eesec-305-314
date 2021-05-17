@@ -62,6 +62,12 @@ PID kontrolörün (*Şekil 5*'de görüldüğü gibi kendi-kendini dengeleyen ro
 
 <img src="şekil/yabr smallest.gif" alt="your arduino balancing robot" height="350"/></br>
 *Şekil 5:* Kendi-kendini dengeleyen robotun üzerinde yer alan Arduino üzerinde koşan PID kontrolör ile robotun yere düşmeden dengede kalarak ilerlemesi.
+
+<img src="şekil/backward euler integration.png" alt="backward euler integration" height="300"/></br>
+*Şekil 6:* Arduino üzerinde koşan PID kontrolörün integral kısmının ayrık zamanda *Backward Euler* tekniği ile gerçeklenmesi.
+
+<img src="şekil/discrete derivative.png" alt="dicrete derivative" height="300"/></br>
+*Şekil 7:* Arduino üzerinde koşan PID kontrolörün türev kısmının ayrık zamanda gerçeklenmesi.
 ## Dipnotlar
 <sup>1</sup> Bu tanım [5] tarafından [6]'dan alınmıştır.</br>
 <sup>2</sup> İng. **on-off controller**. Aynı zamanda **bang bang** kontrol olarak da bilinse de aralarında ufak bir fark vardır.</br>
