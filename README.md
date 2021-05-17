@@ -61,7 +61,7 @@ Bayram Haftası.
 PID kontrolörün (*Şekil 5*'de görüldüğü gibi kendi-kendini dengeleyen robot için) Arduino üzerinde ayrık zamanda (discrete time) nasıl gerçeklendiğine bakış.
 
 <img src="şekil/yabr lowest quality.gif" alt="your arduino balancing robot" height="350"/></br>
-*Şekil 5:* Kendi-kendini dengeleyen robot ve robottaki geribeslemeli kontrol sistemine bir bakış.
+*Şekil 5:* Kendi-kendini dengeleyen robotun üzerinde yer alan Arduino üzerinde koşan PID kontrolör ile robotun yere düşmeden dengede kalarak ilerlemesi.
 ## Dipnotlar
 <sup>1</sup> Bu tanım [5] tarafından [6]'dan alınmıştır.</br>
 <sup>2</sup> İng. **on-off controller**. Aynı zamanda **bang bang** kontrol olarak da bilinse de aralarında ufak bir fark vardır.</br>
