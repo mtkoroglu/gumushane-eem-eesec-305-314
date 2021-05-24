@@ -45,23 +45,23 @@ Aç-kapa denetleyiciyi tasarlamadan önce araba hız kontrolü örneğine geri d
 ## 8. Hafta
 Ara sınav haftası.
 ## 9. Hafta
-Ara Sınav soruları çözümleri. Final sınavının **daha zor** olacağını vurguladık. Lütfen arasınavaki notunuza güvenip de final sınavına çalışmamazlık etmeyin. Önümüzdeki hafta PID kontrolörün (denetleyici) matematiksel modeli ile devam edeceğiz.
+Ara Sınav soruları çözümlerine bakıldı. Final sınavının **daha zor** olacağını vurguladık. Lütfen arasınavdaki notunuza güvenip de final sınavına çalışmamazlık etmeyin. Önümüzdeki hafta PID kontrolörün<sup>3</sup> sürekli zamanda matematiksel modeli ile devam edeceğiz.
 ## 10. Hafta
-Geribeslemeli bir kontrol sisteminin<sup>3</sup> blok diyagramına<sup>4</sup> *Şekil 4*'de görülen kendi-kendini dengeleyen robot üzerinden bir bakış. 
+Geribeslemeli bir kontrol sisteminin<sup>4</sup> blok diyagramına<sup>5</sup> *Şekil 4*'de görülen kendi-kendini dengeleyen robot üzerinden bir bakış. 
 
 <img src="şekil/kendi-kendini dengeleyen robot.jpg" alt="kendi-kendini dengeleyen robot" height="550"/> <img src="ders/hafta10/geribeslemeli kontrol sistemi.jpg" alt="geribeslemeli kontrol sistemi" height="550"/></br>
-*Şekil 4:* Kendi-kendini dengeleyen robot ve robottaki geribeslemeli kontrol sistemine bir bakış.
+*Şekil 4:* Kendi-kendini dengeleyen robot ve üzerinde koşan geribeslemeli kontrol sistemine bir bakış.
 
 Derste PID kontrolörün girişi olan hata sinyali e(t) ile çıkışı olan kontrol sinyali u(t) arasındaki ifadeyi aşağıdaki gibi elde ettik.</br>
 <img src="eşitlik/pid kontrolör.JPG" alt="pid kontrolör" height="70"/></br>
-Bu ifadeyi daha önceden MATLAB Simulink'de gerçeklemiş olduğumuz (sınavda da karşımıza çıkan) araba pozisyon kontrolü probleminde önceden gerçeklediğimiz sistem modellerine paralel olarak en altta gerçekledik. Dersin sonunda yaptığımız bu adımda istediğimiz sonucu elde edemedik. Bunun sebebini 12. Hafta dersimizin başında açıklayıp PID kontrolörün ayrık zamanda Arduino üzerinde (kendi-kendini dengeleyen robot için) gerçeklenmesi ile devam edeceğiz.
+Bu ifadeyi daha önceden MATLAB Simulink'de gerçeklemiş olduğumuz (arasınavda da karşımıza çıkan) araba pozisyon kontrolü probleminde önceden gerçeklediğimiz sistem modellerine paralel olarak en altta gerçekledik. Dersin sonunda yaptığımız bu adımda istediğimiz sonucu elde edemedik. Bunun sebebini 12. Hafta dersimizin başında açıklayıp PID kontrolörün ayrık zamanda Arduino üzerinde (kendi-kendini dengeleyen robot için) gerçeklenmesi ile devam edeceğiz.
 ## 11. Hafta
 Bayram Haftası.
 ## 12. Hafta
 PID kontrolörün (*Şekil 5*'de görüldüğü gibi kendi-kendini dengeleyen robot için) Arduino üzerinde ayrık zamanda (discrete time) nasıl gerçeklendiğine bakış.
 
 <img src="şekil/yabr smallest.gif" alt="your arduino balancing robot" height="350"/></br>
-*Şekil 5:* Kendi-kendini dengeleyen robotun üzerinde yer alan Arduino üzerinde koşan PID kontrolör ile robotun yere düşmeden dengede kalarak ilerlemesi.
+*Şekil 5:* Kendi-kendini dengeleyen robotun, üzerinde yer alan Arduino'da koşan PID kontrolör ile yere düşmeden dengede kalarak ilerlemesi.
 
 <img src="şekil/backward euler integration.png" alt="backward euler integration" height="300"/></br>
 *Şekil 6:* Arduino üzerinde koşan PID kontrolörün integral kısmının ayrık zamanda *Backward Euler* tekniği ile gerçeklenmesi.
@@ -70,9 +70,10 @@ PID kontrolörün (*Şekil 5*'de görüldüğü gibi kendi-kendini dengeleyen ro
 *Şekil 7:* Arduino üzerinde koşan PID kontrolörün türev kısmının ayrık zamanda gerçeklenmesi.
 ## Dipnotlar
 <sup>1</sup> Bu tanım [5] tarafından [6]'dan alınmıştır.</br>
-<sup>2</sup> İng. **on-off controller**. Aynı zamanda **bang bang** kontrol olarak da bilinse de aralarında ufak bir fark vardır.</br>
-<sup>3</sup> İng. **feedback control system**.</br>
-<sup>4</sup> Blok diyagram yerine akış diyagramı (flow chart) tabiri de kullanılır.
+<sup>2</sup> İng. **On-off controller**. Aynı zamanda **bang bang** kontrol olarak da bilinse de aralarında ufak bir fark vardır.</br>
+<sup>3</sup> İng. **Controller**. Aynı zamanda denetleyici de denir.
+<sup>4</sup> İng. **Feedback control system**.</br>
+<sup>5</sup> Blok diyagram yerine akış diyagramı (flow chart) tabiri de kullanılır.
 ## Kaynaklar
 [1] RC, RL ve RLC devrelerinin analizi - https://github.com/taha-koroglu/RLC_devreleri</br>
 [2] Pendulum dinamiği - https://www.mathworks.com/help/ident/ug/classical-pendulum-some-algorithm-related-issues.html</br>
