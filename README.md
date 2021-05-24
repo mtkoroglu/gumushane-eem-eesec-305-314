@@ -67,7 +67,8 @@ PID kontrolörün (*Şekil 5*'de görüldüğü gibi kendi-kendini dengeleyen ro
 *Şekil 6:* Arduino üzerinde koşan PID kontrolörün integral kontrol kısmının ayrık zamanda *Backward Euler* tekniği ile gerçeklenmesi.
 ### Üçüncü dereceden zorlanmamış bir dinamik sistemin Simulink'de gerçeklenmesi
 Aşağıda durum uzayı denklemleri verilen sistemi Simulink'de kurduk.</br>
-<img src="şekil/üçüncü_derece_sistem.jpg" alt="üçüncü dereceden dinamik sistem durum uzayı denklemleri" height="70"/>
+<img src="eşitlik/üçüncü_derece_sistem.jpg" alt="üçüncü dereceden dinamik sistem durum uzayı denklemleri" height="70"/>
+
 Sistemin Simulink'de gerçeklenmiş hali *Şekil 7*'deki gibidir.
 
 <img src="şekil/üçüncü_derece_sistem_model.JPG" alt="üçüncü derece sistem Simulink model" height="240"/></br>
@@ -81,7 +82,7 @@ Sistemin Simulink'de gerçeklenmiş hali *Şekil 7*'deki gibidir.
 ## Dipnotlar
 <sup>1</sup> Bu tanım [5] tarafından [6]'dan alınmıştır.</br>
 <sup>2</sup> İng. **On-off controller**. Aynı zamanda **bang bang** kontrol olarak da bilinse de aralarında ufak bir fark vardır.</br>
-<sup>3</sup> İng. **Controller**. Aynı zamanda denetleyici de denir.
+<sup>3</sup> İng. **Controller**. Aynı zamanda denetleyici de denir.</br>
 <sup>4</sup> İng. **Feedback control system**.</br>
 <sup>5</sup> Blok diyagram yerine akış diyagramı (flow chart) tabiri de kullanılır.
 ## Kaynaklar
