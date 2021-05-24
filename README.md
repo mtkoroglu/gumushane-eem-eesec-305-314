@@ -66,9 +66,8 @@ PID kontrolörün (*Şekil 5*'de görüldüğü gibi kendi-kendini dengeleyen ro
 <img src="şekil/backward euler integration.png" alt="backward euler integration" height="300"/></br>
 *Şekil 6:* Arduino üzerinde koşan PID kontrolörün integral kontrol kısmının ayrık zamanda *Backward Euler* tekniği ile gerçeklenmesi.
 ### Üçüncü dereceden zorlanmamış bir dinamik sistemin Simulink'de gerçeklenmesi
-Aşağıda durum uzayı denklemleri verilen sistemi Simulink'de kurduk.</br>
-<img src="eşitlik/üçüncü_derece_sistem.JPG" alt="üçüncü dereceden dinamik sistem durum uzayı denklemleri" height="90"/>
-
+Aşağıda durum uzayı denklemleri verilen sistemi Simulink'de kurduk.
+<img src="eşitlik/üçüncü_derece_sistem.JPG" alt="üçüncü dereceden dinamik sistem durum uzayı denklemleri" height="90"/></br>
 Sistemin Simulink'de gerçeklenmiş hali *Şekil 7*'deki gibidir.
 
 <img src="şekil/üçüncü_derece_sistem_model.JPG" alt="üçüncü derece sistem Simulink model" height="200"/></br>
@@ -77,7 +76,7 @@ Sistemin Simulink'de gerçeklenmiş hali *Şekil 7*'deki gibidir.
 <img src="şekil/durum_değişkenleri_yörüngesi.png" alt="üçüncü derece sistemin durum değişkenleri yörüngesi" height="360"/></br>
 *Şekil 8:* Derste gerçeklediğimiz üçüncü dereceden dinamik sistemin durum değişkenlerinin yörüngesi.
 
-<img src="şekil/discrete derivative.png" alt="dicrete derivative" height="300"/></br>
+<img src="şekil/discrete derivative.png" alt="discrete derivative" height="300"/></br>
 *Şekil 9:* Arduino üzerinde koşan PID kontrolörün türev kısmının ayrık zamanda gerçeklenmesi.
 ## Dipnotlar
 <sup>1</sup> Bu tanım [5] tarafından [6]'dan alınmıştır.</br>
