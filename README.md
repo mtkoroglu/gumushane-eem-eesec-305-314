@@ -1,7 +1,7 @@
 # EESEC 314
 ## 1. Hafta
 **Dinamik sistem** nedir? **Hafızalı sistem**.
-Gerilim kaynağı bağlanmış bir resistör-kapasitör devresini (RC devresi - **Şekil 1**) analiz ettik. Burdaki örnekte kapasitörün üzerinden geçen akım i<sub>C</sub>(t) değil de kapasitörün üzerine düşen voltaj V<sub>C</sub>(t) hafıza işlevi görüyor. Hafızaya **durum değişkeni** diyeceğiz. Yani bu sistemdeki durum değişkenimiz i<sub>C</sub>(t) değil de V<sub>C</sub>(t). Analitik çözümü [1]'de türetilen *RC devresinin zorlanmış cevabına* bakıp sistemlice düşünerek niçin aımın değil de voltajın bir hafıza vazifesi gördüğünü anlamamız gerekiyor. Bu düşünce antrenmanını yedinci hafta bu konuya tekrar dönüp sistemin transfer fonksiyonunu elde etmeye çalışırken derste beraber yaptık. Ama unutmayın derste ne kadar anlatılırsa anlatılsın, eğer kendimiz düşünüp de kendi aklımızın anlayacağı bir biçimde öğrenmeye çalışmazsak maalesef öğrenemeyiz. Bu yüzden verilen referansta eşitlik olarak verilen kapasitörün akım ve voltaj eşitliklerine bakıp düşünelim.
+Gerilim kaynağı bağlanmış bir resistör-kapasitör devresini (RC devresi - **Şekil 1**) analiz ettik. Burdaki örnekte kapasitörün üzerinden geçen akım i<sub>C</sub>(t) değil de kapasitörün üzerine düşen voltaj V<sub>C</sub>(t) hafıza işlevi görüyor. Hafızaya **durum değişkeni** diyeceğiz. Yani bu sistemdeki durum değişkenimiz i<sub>C</sub>(t) değil de V<sub>C</sub>(t). Analitik çözümü [1]'de türetilen *RC devresinin zorlanmış cevabına* bakıp sistemlice düşünerek niçin akımın değil de voltajın bir **hafıza** vazifesi gördüğünü anlamamız gerekiyor. Bu düşünce antrenmanını yedinci hafta bu konuya tekrar dönüp sistemin transfer fonksiyonunu elde etmeye çalışırken derste beraber yaptık. Ama unutmayın derste ne kadar anlatılırsa anlatılsın, eğer kendimiz düşünüp de kendi aklımızın anlayacağı bir biçimde öğrenmeye çalışmazsak maalesef öğrenemeyiz. Bu yüzden verilen referansta eşitlik olarak verilen kapasitörün akım ve voltaj eşitliklerine bakıp düşünelim.
 
 <img src="eşitlik/kapasitör denklemi.JPG" alt="Kapasitörün matematiksel modeli" height="50"/></br>
 <img src="eşitlik/kapasitör denklemi çözümü.JPG" alt="RC devresinin analizi." height="55"/></br>
@@ -58,16 +58,26 @@ Bu ifadeyi daha önceden MATLAB Simulink'de gerçeklemiş olduğumuz (arasınavd
 ## 11. Hafta
 Bayram Haftası.
 ## 12. Hafta
-PID kontrolörün (*Şekil 5*'de görüldüğü gibi kendi-kendini dengeleyen robot için) Arduino üzerinde ayrık zamanda (discrete time) nasıl gerçeklendiğine bakış.
+PID kontrolörün (*Şekil 5*'de görüldüğü gibi kendi-kendini dengeleyen robot için) Arduino üzerinde ayrık zamanda (discrete time) nasıl gerçeklendiğini anlamaya nümerik integrale bakarak başlıyoruz.
 
 <img src="şekil/yabr smallest.gif" alt="your arduino balancing robot" height="350"/></br>
 *Şekil 5:* Kendi-kendini dengeleyen robotun, üzerinde yer alan Arduino'da koşan PID kontrolör ile yere düşmeden dengede kalarak ilerlemesi.
 
 <img src="şekil/backward euler integration.png" alt="backward euler integration" height="300"/></br>
-*Şekil 6:* Arduino üzerinde koşan PID kontrolörün integral kısmının ayrık zamanda *Backward Euler* tekniği ile gerçeklenmesi.
+*Şekil 6:* Arduino üzerinde koşan PID kontrolörün integral kontrol kısmının ayrık zamanda *Backward Euler* tekniği ile gerçeklenmesi.
+### Üçüncü dereceden zorlanmamış bir dinamik sistemin Simulink'de gerçeklenmesi
+Aşağıda durum uzayı denklemleri verilen sistemi Simulink'de kurduk.</br>
+<img src="şekil/üçüncü_derece_sistem.jpg" alt="üçüncü dereceden dinamik sistem durum uzayı denklemleri" height="70"/>
+Sistemin Simulink'de gerçeklenmiş hali *Şekil 7*'deki gibidir.
+
+<img src="şekil/üçüncü_derece_sistem_model.JPG" alt="üçüncü derece sistem Simulink model" height="240"/></br>
+*Şekil 7:* Derste gerçeklediğimiz üçüncü dereceden dinamik sistemin Simulink'deki görünümü.
+
+<img src="şekil/durum_değişkenleri_yörüngesi.png" alt="üçüncü derece sistemin durum değişkenleri yörüngesi" height="300"/></br>
+*Şekil 8:* Derste gerçeklediğimiz üçüncü dereceden dinamik sistemin durum değişkenlerinin yörüngesi.
 
 <img src="şekil/discrete derivative.png" alt="dicrete derivative" height="300"/></br>
-*Şekil 7:* Arduino üzerinde koşan PID kontrolörün türev kısmının ayrık zamanda gerçeklenmesi.
+*Şekil 9:* Arduino üzerinde koşan PID kontrolörün türev kısmının ayrık zamanda gerçeklenmesi.
 ## Dipnotlar
 <sup>1</sup> Bu tanım [5] tarafından [6]'dan alınmıştır.</br>
 <sup>2</sup> İng. **On-off controller**. Aynı zamanda **bang bang** kontrol olarak da bilinse de aralarında ufak bir fark vardır.</br>
