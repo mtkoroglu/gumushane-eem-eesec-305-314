@@ -1,0 +1,17 @@
+clear all; close all; clc;
+T = 1e-2; stopTime = 10;
+results = sim('hypothetical_dynamic_system.mdl');
+x1 = results.data(:,1);
+x2 = results.data(:,2);
+x3 = results.data(:,3);
+t = results.tout;
+figure(1); set(gcf, 'position', [589  223  417 373]);
+plot3(x1, x2, x3, 'k-', 'linewidth', 1.6);
+hold on;
+plot3(x1(1), x2(1), x3(1), 'ro');
+plot3(x1(end), x2(end), x3(end), 'go');
+grid on; set(gca, 'gridlinestyle', '--', 'position', [0.1266 0.0907 0.8311 0.9009]);
+xlabel('x_1'); ylabel('x_2'); zlabel('x_3');
+legend('durum değişkenlerinin yörüngesi', 'başlangıç', 'bitiş');
+set(legend, 'position', [0.2593 0.6841 0.5359 0.1419]);
+hold off;
