@@ -95,21 +95,36 @@ for i = 2:length(t)
     x3(i) = x3(i-1) - (6*x1(i-1) + 11*x2(i-1) + 6*x3(i-1))*T;
 end
 ```
-Yukarıda verilen kod<sup>6</sup> koşturulduğunda, bize *Şekil 6*'yı veren 
+Yukarıda verilen kod<sup>6</sup> koşturulduğunda, bize *Şekil 8*'i veren 
 ```
 plot3(x1,x2,x3)
 ```
 komutuna ek olarak
 ```
 plot(x1,t)
-plot(x1,t)
-plot(x1,t)
+plot(x2,t)
+plot(x3,t)
 ```
 komutlarıyla *Şekil 9*'da çizdirilen durum değişkenlerinin zamanla değişimini gösteren grafikleri elde ettik. Dikkat edin, *Şekil 6*'da zaman yokken *Şekil 8*'de zaman söz konusu. *Şekil 6*'ya faz portresi (phase portrait) deniyor.
 <img src="şekil/durum değişkenlerinin zamanla değişimi.png" alt="state trajectories with time" height="240"/></br>
 *Şekil 9:* Zorlanmamış sistemin durum değişkenlerinin zamanla değişimleri.
 ### Nümerik Türev Almak
-<img src="şekil/nümerik türev sonucu.png" alt="discrete derivative" height="300"/></br>
+Aşağıdaki kodu<sup>7</sup> oluştururken örnekleme frekansının (periyodunun) sinyalin üzerindeki etkisine şahit olduk. Örnekleme periyodu 10ms olduğunda görüntülediğimiz sinyalin sinüse benzer bir yanı yoktu. Örnekleme frekansının artırdığımız (yani örnekleme periyodunu düşürdüğümüzde) işte o zaman yavaş yavaş sinüse benzer şeyler elde ettik ve bir değerden sonra tamemn sinüs gibi gözüktü. Her ne kadar yüksek örnekleme frekansı ile çalışınca hiçbir bilgi kaybı yaşamasak da, işlemci gücümüz sınırlı olduğundan dolayı mümkün mertebe örmekleme frekansını düşük (yani örnekleme periyodunu büyük) tutmak isteriz ki mikroişlemci/mikrodenetleyici üzerindeki işlem yükümüz az olsun. 
+```
+T = 0.001; % örnekleme periyodu
+stopTime = 0.04; % 2 periyoda bakalım
+t = 0:T:stopTime;
+f = 50; % frekans - Hz
+A = 220;
+y = A*sin(2*pi*f*t);
+y_turev = A*cos(2*pi*f*t)*2*pi*f;
+y_numerik_turev = zeros(1,length(t));
+y_numerik_turev(1) = 70000;
+for i=2:length(t)
+    y_numerik_turev(i) = (y(i) - y(i-1)) / T;
+end
+```
+<img src="şekil/nümerik türev sonucu.png" alt="discrete derivative" height="240"/></br>
 *Şekil 10:* Arduino üzerinde koşan PID kontrolörün türev kısmının ayrık zamanda gerçeklenmesi.
 ## Hafta 16
 Bu hafta genel olarak geri-beslemeli kontrol sistemlerinde, özel olarak da Kendi-Kendini Dengeleyen Robot üzerinde sensör (algılayıcı) konuşacağız. Hareket sensörü olan MPU6050 ile ham ciroskop ve ivmemetre verisinden ilk önce tamamlayıcı süzgeç (complementary filter) algoritması ile ardında da özel bir Bayesian süzgeç olan Kalman Filtresi ile açının tahmin edilmesi (estimation) konularına bakacağız.
@@ -119,7 +134,8 @@ Bu hafta genel olarak geri-beslemeli kontrol sistemlerinde, özel olarak da Kend
 <sup>3</sup> İng. **Controller**. Aynı zamanda denetleyici de denir.</br>
 <sup>4</sup> İng. **Feedback control system**.</br>
 <sup>5</sup> Blok diyagram yerine akış diyagramı (flow chart) tabiri de kullanılır.</br>
-<sup>6</sup> Bu kod yukarıdaki **kod** dizininde **self_coded_hypothetical_dynamic_system.m** dosyasında verilmiştir.
+<sup>6</sup> Bu kod yukarıdaki **kod** dizininde **self_coded_hypothetical_dynamic_system.m** dosyasında verilmiştir.</br>
+<sup>7</sup> Bu kod yukarıdaki **kod** dizininde **numerical_derivative.m** dosyasında verilmiştir.
 ## Kaynaklar
 [1] RC, RL ve RLC devrelerinin analizi - https://github.com/taha-koroglu/RLC_devreleri</br>
 [2] Pendulum dinamiği - https://www.mathworks.com/help/ident/ug/classical-pendulum-some-algorithm-related-issues.html</br>
