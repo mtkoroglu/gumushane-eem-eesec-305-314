@@ -75,9 +75,8 @@ Sistemin Simulink'de gerçeklenmiş hali *Şekil 7*'deki gibidir.
 *Şekil 7:* Derste gerçeklediğimiz üçüncü dereceden dinamik sistemin Simulink'deki görünümü.
 ## Hafta 13, 14, 15
 <img src="şekil/durum_değişkenleri_yörüngesi.png" alt="üçüncü derece sistemin durum değişkenleri yörüngesi" height="360"/></br>
-*Şekil 8:* Derste gerçeklediğimiz üçüncü dereceden dinamik sistemin durum değişkenlerinin yörüngesi. Sistemin denge noktası (equilibrium point) sıfır olduğundan durum değişkenlerini nereden başlatırsak başlatalım sonuç her zaman
-
-<img src="eşitlik/doğrusal sistem denge noktası.JPG" alt="zaman sonsuza giderken doğrusal sistemlerin denge noktası olan sıfıra yakınsaması" height="40"/></br>
+*Şekil 8:* Derste gerçeklediğimiz üçüncü dereceden dinamik sistemin durum değişkenlerinin yörüngesi. Sistemin denge noktası (equilibrium point) sıfır olduğundan durum değişkenlerini nereden başlatırsak başlatalım sonuç her zaman 
+<img src="eşitlik/doğrusal sistem denge noktası.JPG" alt="zaman sonsuza giderken doğrusal sistemlerin denge noktası olan sıfıra yakınsaması" height="30"/> 
 olacaktır.
 ### Simulink'de kullandığımız integratörleri kullanmadan sistemin gerçeklenmesi
 *Şekil 6*'nın açıklamasında *Backward Euler* yani *geriye doğru Euler* tekniğinde integrali alınan sinyalin/değişkenin o andaki değerine sahip olunması şartından bahsetmiştik. Burada incelediğimiz zorlanmamış sistem simülasyonunda, herhangi bir durum değişkeninin o andaki değeri hesaplanırken öbür durum değişkenlerinden en az birisinin o andaki değerine ihtiyaç duyuluyor, bu yüzden de mecburen *Forward Euler* yani *ileri Euler* tekniğini kullanmak zorundayız.
