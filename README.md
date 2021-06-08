@@ -80,7 +80,8 @@ Sistemin Simulink'de gerçeklenmiş hali *Şekil 7*'deki gibidir.
 <img src="eşitlik/doğrusal sistem denge noktası.JPG" alt="zaman sonsuza giderken doğrusal sistemlerin denge noktası olan sıfıra yakınsaması" height="40"/></br>
 olacaktır.
 ### Simulink'de kullandığımız integratörleri kullanmadan sistemin gerçeklenmesi
-*Şekil 6*'nın açıklamasında *Backward Euler* yani geriye doğru Euler tekniğinde integrali alınan sinyalin/değişkenin o andaki değerine sahip olmas şartından bahsetmiştik. Burada inceledeğimiz zorlanmamış sistem simülasyonunda herhangi bir durum değişkeninin o andaki değeri hesaplanırken öbür durum değişkenlerinden en az birisinin o andaki değerine ihtiyaç duyuluyor, bu yüzden de mecburen *Forward Euler* yani ileri Euler yakınsamasını kullanmak zorundayız.
+*Şekil 6*'nın açıklamasında *Backward Euler* yani *geriye doğru Euler* tekniğinde integrali alınan sinyalin/değişkenin o andaki değerine sahip olunması şartından bahsetmiştik. Burada incelediğimiz zorlanmamış sistem simülasyonunda, herhangi bir durum değişkeninin o andaki değeri hesaplanırken öbür durum değişkenlerinden en az birisinin o andaki değerine ihtiyaç duyuluyor, bu yüzden de mecburen *Forward Euler* yani *ileri Euler* tekniğini kullanmak zorundayız.
+#### MATLAB'da Forward Euler tekniği ile nümerik integral alarak dinamik sistem simülasyonu yapmak
 ```
 T = 0.01; % örnekleme periyodu
 stopTime = 10; % son zaman
@@ -94,7 +95,7 @@ for i = 2:length(t)
     x3(i) = x3(i-1) - (6*x1(i-1) + 11*x2(i-1) + 6*x3(i-1))*T;
 end
 ```
-Yukarıda yazdığımız kodu koşturduğumuzda, 
+Yukarıda verilen kod<sup>6</sup> koşturulduğunda, bize *Şekil 6*'yı veren 
 ```
 plot3(x1,x2,x3)
 ```
@@ -104,10 +105,10 @@ plot(x1,t)
 plot(x1,t)
 plot(x1,t)
 ```
-komutlarıyla *Şekil 9*'da gördüğümüz durum değişkenlerinin zamanla değişimlerini gösteren grafikleri elde ettik. Dikkat edin, *Şekil 6*'da zaman yokken *Şekil 8*'de zaman söz konusu. *Şekil 6*'ya faz portresi (phase portrait) deniyor.
+komutlarıyla *Şekil 9*'da çizdirilen durum değişkenlerinin zamanla değişimini gösteren grafikleri elde ettik. Dikkat edin, *Şekil 6*'da zaman yokken *Şekil 8*'de zaman söz konusu. *Şekil 6*'ya faz portresi (phase portrait) deniyor.
 <img src="şekil/durum değişkenlerinin zamanla değişimi.png" alt="state trajectories with time" height="240"/></br>
 *Şekil 9:* Zorlanmamış sistemin durum değişkenlerinin zamanla değişimleri.
-
+### Nümerik Türev Almak
 <img src="şekil/discrete derivative.png" alt="discrete derivative" height="300"/></br>
 *Şekil 10:* Arduino üzerinde koşan PID kontrolörün türev kısmının ayrık zamanda gerçeklenmesi.
 ## Dipnotlar
@@ -115,7 +116,8 @@ komutlarıyla *Şekil 9*'da gördüğümüz durum değişkenlerinin zamanla değ
 <sup>2</sup> İng. **On-off controller**. Aynı zamanda **bang bang** kontrol olarak da bilinse de aralarında ufak bir fark vardır.</br>
 <sup>3</sup> İng. **Controller**. Aynı zamanda denetleyici de denir.</br>
 <sup>4</sup> İng. **Feedback control system**.</br>
-<sup>5</sup> Blok diyagram yerine akış diyagramı (flow chart) tabiri de kullanılır.
+<sup>5</sup> Blok diyagram yerine akış diyagramı (flow chart) tabiri de kullanılır.</br>
+<sup>6</sup> Bu kod yukarıdaki **kod** dizininde **self_coded_hypothetical_dynamic_system.m** dosyasında verilmiştir.
 ## Kaynaklar
 [1] RC, RL ve RLC devrelerinin analizi - https://github.com/taha-koroglu/RLC_devreleri</br>
 [2] Pendulum dinamiği - https://www.mathworks.com/help/ident/ug/classical-pendulum-some-algorithm-related-issues.html</br>
