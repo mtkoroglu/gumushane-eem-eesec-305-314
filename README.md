@@ -109,8 +109,10 @@ komutlarıyla *Şekil 9*'da çizdirilen durum değişkenlerinin zamanla değişi
 <img src="şekil/durum değişkenlerinin zamanla değişimi.png" alt="state trajectories with time" height="240"/></br>
 *Şekil 9:* Zorlanmamış sistemin durum değişkenlerinin zamanla değişimleri.
 ### Nümerik Türev Almak
-<img src="şekil/discrete derivative.png" alt="discrete derivative" height="300"/></br>
+<img src="şekil/nümerik türev sonucu.png" alt="discrete derivative" height="300"/></br>
 *Şekil 10:* Arduino üzerinde koşan PID kontrolörün türev kısmının ayrık zamanda gerçeklenmesi.
+## Hafta 16
+Bu hafta genel olarak geri-beslemeli kontrol sistemlerinde, özel olarak da Kendi-Kendini Dengeleyen Robot üzerinde sensör (algılayıcı) konuşacağız. Hareket sensörü olan MPU6050 ile ham ciroskop ve ivmemetre verisinden ilk önce tamamlayıcı süzgeç (complementary filter) algoritması ile ardında da özel bir Bayesian süzgeç olan Kalman Filtresi ile açının tahmin edilmesi (estimation) konularına bakacağız.
 ## Dipnotlar
 <sup>1</sup> Bu tanım [5] tarafından [6]'dan alınmıştır.</br>
 <sup>2</sup> İng. **On-off controller**. Aynı zamanda **bang bang** kontrol olarak da bilinse de aralarında ufak bir fark vardır.</br>
