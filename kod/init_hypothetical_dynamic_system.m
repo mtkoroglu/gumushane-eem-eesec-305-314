@@ -1,6 +1,8 @@
 clear all; close all; clc;
-T = 1e-2; stopTime = 10;
+T = 0.01; stopTime = 10;
+x0 = [13, 18, -12];
 results = sim('hypothetical_dynamic_system.mdl');
+%%
 x1 = results.data(:,1);
 x2 = results.data(:,2);
 x3 = results.data(:,3);
@@ -15,3 +17,13 @@ xlabel('x_1'); ylabel('x_2'); zlabel('x_3');
 legend('durum değişkenlerinin yörüngesi', 'başlangıç', 'bitiş');
 set(legend, 'position', [0.2593 0.6841 0.5359 0.1419]);
 hold off;
+figure(2);
+subplot(1,3,1);
+plot(t, x1, 'b-');
+grid on; xlabel('time (s)'); ylabel('x_1');
+subplot(1,3,2);
+plot(t, x2, 'r-');
+grid on; xlabel('time (s)'); ylabel('x_2');
+subplot(1,3,3);
+plot(t, x3, 'g-');
+grid on; xlabel('time (s)'); ylabel('x_3');
