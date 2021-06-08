@@ -73,12 +73,16 @@ Sistemin Simulink'de gerçeklenmiş hali *Şekil 7*'deki gibidir.
 
 <img src="şekil/üçüncü_derece_sistem_model.JPG" alt="üçüncü derece sistem Simulink model" height="200"/></br>
 *Şekil 7:* Derste gerçeklediğimiz üçüncü dereceden dinamik sistemin Simulink'deki görünümü.
-## Hafta 13, 14, 15
+## Hafta 13 ve 14
 <img src="şekil/durum_değişkenleri_yörüngesi.png" alt="üçüncü derece sistemin durum değişkenleri yörüngesi" height="360"/></br>
-*Şekil 8:* Derste gerçeklediğimiz üçüncü dereceden dinamik sistemin durum değişkenlerinin yörüngesi. Sistemin denge noktası (equilibrium point) sıfır olduğundan durum değişkenlerini nereden başlatırsak başlatalım sonuç her zaman 
-<img src="eşitlik/doğrusal sistem denge noktası.JPG" alt="zaman sonsuza giderken doğrusal sistemlerin denge noktası olan sıfıra yakınsaması" height="30"/> 
+*Şekil 8:* Derste gerçeklediğimiz üçüncü dereceden dinamik sistemin durum değişkenlerinin yörüngesi.
+
+Sistemin denge noktası (equilibrium point) sıfır olduğundan durum değişkenlerini nereden başlatırsak başlatalım sonuç her zaman
+
+<img src="eşitlik/doğrusal sistem denge noktası.JPG" alt="zaman sonsuza giderken doğrusal sistemlerin denge noktası olan sıfıra yakınsaması" height="35"/> 
+
 olacaktır.
-### Simulink'de kullandığımız integratörleri kullanmadan sistemin gerçeklenmesi
+### Simulink'de kullandığımız integratörleri kullanmadan sistemin benzetiminin yapılması
 *Şekil 6*'nın açıklamasında *Backward Euler* yani *geriye doğru Euler* tekniğinde integrali alınan sinyalin/değişkenin o andaki değerine sahip olunması şartından bahsetmiştik. Burada incelediğimiz zorlanmamış sistem simülasyonunda, herhangi bir durum değişkeninin o andaki değeri hesaplanırken öbür durum değişkenlerinden en az birisinin o andaki değerine ihtiyaç duyuluyor, bu yüzden de mecburen *Forward Euler* yani *ileri Euler* tekniğini kullanmak zorundayız.
 #### MATLAB'da Forward Euler tekniği ile nümerik integral alarak dinamik sistem simülasyonu yapmak
 ```
@@ -107,8 +111,9 @@ plot(x3,t)
 komutlarıyla *Şekil 9*'da çizdirilen durum değişkenlerinin zamanla değişimini gösteren grafikleri elde ettik. Dikkat edin, *Şekil 6*'da zaman yokken *Şekil 8*'de zaman söz konusu. *Şekil 6*'ya faz portresi (phase portrait) deniyor.
 <img src="şekil/durum değişkenlerinin zamanla değişimi.png" alt="state trajectories with time" height="240"/></br>
 *Şekil 9:* Zorlanmamış sistemin durum değişkenlerinin zamanla değişimleri.
-### Nümerik Türev Almak
-Aşağıdaki kodu<sup>7</sup> oluştururken örnekleme frekansının (periyodunun) sinyalin üzerindeki etkisine şahit olduk. Örnekleme periyodu 10ms olduğunda görüntülediğimiz sinyalin sinüse benzer bir yanı yoktu. Örnekleme frekansının artırdığımız (yani örnekleme periyodunu düşürdüğümüzde) işte o zaman yavaş yavaş sinüse benzer şeyler elde ettik ve bir değerden sonra tamemn sinüs gibi gözüktü. Her ne kadar yüksek örnekleme frekansı ile çalışınca hiçbir bilgi kaybı yaşamasak da, işlemci gücümüz sınırlı olduğundan dolayı mümkün mertebe örmekleme frekansını düşük (yani örnekleme periyodunu büyük) tutmak isteriz ki mikroişlemci/mikrodenetleyici üzerindeki işlem yükümüz az olsun. 
+## Hafta 15
+### Nümerik Türev
+Aşağıdaki kodu<sup>7</sup> oluştururken örnekleme frekansının (dolayısıyla da örnekleme periyodunun) sinyalin üzerindeki etkisine şahit olduk. Örnekleme periyodu 10ms olduğunda görüntülediğimiz sinyalin sinüse benzer bir yanı yoktu. Örnekleme frekansının artırdığımız (yani örnekleme periyodunu düşürdüğümüzde) işte o zaman yavaş yavaş sinüse benzer şeyler elde ettik ve bir değerden sonra tamamen sinüs gibi gözükmeye başladı. Her ne kadar yüksek örnekleme frekansı ile çalışınca hiçbir bilgi kaybı yaşamasak da, işlemci gücümüz sınırlı olduğundan dolayı mümkün mertebe örnekleme frekansını düşük (yani örnekleme periyodunu büyük) tutmak isteriz ki mikroişlemci/mikrodenetleyici üzerindeki işlem yükümüz az olsun. 
 ```
 T = 0.001; % örnekleme periyodu
 stopTime = 0.04; % 2 periyoda bakalım
@@ -126,7 +131,7 @@ end
 <img src="şekil/nümerik türev sonucu.png" alt="discrete derivative" height="240"/></br>
 *Şekil 10:* Priz sinyali Asin(2πft) formunda olup genlik 220V, frekansı ise 50Hz'dir. Kırmızı renkle gösterilen grafikte priz sinyalinin türevini matematiksel olarak 2πfAcos(2πft) formunda elde ettik ve çizdirdik. Mavi grafikte ise yukarıda kodda görüldüğü gibi sinyalin o andaki örneğinden bir önceki örnekteki değerinin farkını alıp geçen zaman olan örnekleme periyoduna böldük ve türev operatörünün nümerik halini gerçekledik. Başlangıç koşulunu uygun değere ayarladığımızda mavi ile kırmızı grafiklerinin bütün örnekler (for all samples) için aynı olduğunu görülebiliyor.
 ## Hafta 16
-Bu hafta genel olarak geri-beslemeli kontrol sistemlerinde, özel olarak da Kendi-Kendini Dengeleyen Robot üzerinde sensör (algılayıcı) konuşacağız. Hareket sensörü olan MPU6050 ile ham ciroskop ve ivmemetre verisinden ilk önce tamamlayıcı süzgeç (complementary filter) algoritması ile ardında da özel bir Bayesian süzgeç olan Kalman Filtresi ile açının tahmin edilmesi (estimation) konularına bakacağız.
+Bu hafta genel olarak geri-beslemeli kontrol sistemlerinde, özel olarak da Kendi-Kendini Dengeleyen Robot üzerinde sensörleri (algılayıcıları) konuşacağız. Hareket sensörü olan MPU6050 ile ham ciroskop ve ivmemetre verisinden ilk önce tamamlayıcı süzgeç (complementary filter) algoritması ile ardında da özel bir Bayesian süzgeç olan Kalman Filtresi ile açının tahmin edilmesi (estimation) konularına bakacağız.
 ## Dipnotlar
 <sup>1</sup> Bu tanım [5] tarafından [6]'dan alınmıştır.</br>
 <sup>2</sup> İng. **On-off controller**. Aynı zamanda **bang bang** kontrol olarak da bilinse de aralarında ufak bir fark vardır.</br>
