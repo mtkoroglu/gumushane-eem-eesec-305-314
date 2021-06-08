@@ -77,11 +77,39 @@ Sistemin Simulink'de gerçeklenmiş hali *Şekil 7*'deki gibidir.
 <img src="şekil/durum_değişkenleri_yörüngesi.png" alt="üçüncü derece sistemin durum değişkenleri yörüngesi" height="360"/></br>
 *Şekil 8:* Derste gerçeklediğimiz üçüncü dereceden dinamik sistemin durum değişkenlerinin yörüngesi. Sistemin denge noktası (equilibrium point) sıfır olduğundan durum değişkenlerini nereden başlatırsak başlatalım sonuç her zaman
 
-<img src="eşitlik/doğrusal sistem denge noktası.JPG" alt="zaman sonsuza giderken doğrusal sistemlerin denge noktası olan sıfıra yakınsaması" height="200"/></br>
+<img src="eşitlik/doğrusal sistem denge noktası.JPG" alt="zaman sonsuza giderken doğrusal sistemlerin denge noktası olan sıfıra yakınsaması" height="40"/></br>
 olacaktır.
+### Simulink'de kullandığımız integratörleri kullanmadan sistemin gerçeklenmesi
+*Şekil 6*'nın açıklamasında *Backward Euler* yani geriye doğru Euler tekniğinde integrali alınan sinyalin/değişkenin o andaki değerine sahip olmas şartından bahsetmiştik. Burada inceledeğimiz zorlanmamış sistem simülasyonunda herhangi bir durum değişkeninin o andaki değeri hesaplanırken öbür durum değişkenlerinden en az birisinin o andaki değerine ihtiyaç duyuluyor, bu yüzden de mecburen *Forward Euler* yani ileri Euler yakınsamasını kullanmak zorundayız.
+```
+T = 0.01; % örnekleme periyodu
+stopTime = 10; % son zaman
+t = 0:T:stopTime; % zamanı oluşturalım
+x0 = [13, 18, -12]; % başlangıç koşulları
+x1(1) = x0(1); x2(1) = x0(2); x3(1) = x0(3);
+% forward euler tekniği ile nümerik integral alarak dinamik sistemi koşturalım
+for i = 2:length(t)
+    x1(i) = x1(i-1) + x2(i-1)*T;
+    x2(i) = x2(i-1) + x3(i-1)*T;
+    x3(i) = x3(i-1) - (6*x1(i-1) + 11*x2(i-1) + 6*x3(i-1))*T;
+end
+```
+Yukarıda yazdığımız kodu koşturduğumuzda, 
+```
+plot3(x1,x2,x3)
+```
+komutuna ek olarak
+```
+plot(x1,t)
+plot(x1,t)
+plot(x1,t)
+```
+komutlarıyla *Şekil 9*'da gördüğümüz durum değişkenlerinin zamanla değişimlerini gösteren grafikleri elde ettik. Dikkat edin, *Şekil 6*'da zaman yokken *Şekil 8*'de zaman söz konusu. *Şekil 6*'ya faz portresi (phase portrait) deniyor.
+<img src="şekil/durum değişkenlerinin zamanla değişimleri.png" alt="state trajectories with time" height="300"/></br>
+*Şekil 9:* Zorlanmamış sistemin durum değişkenlerinin zamanla değişimleri.
 
 <img src="şekil/discrete derivative.png" alt="discrete derivative" height="300"/></br>
-*Şekil 9:* Arduino üzerinde koşan PID kontrolörün türev kısmının ayrık zamanda gerçeklenmesi.
+*Şekil 10:* Arduino üzerinde koşan PID kontrolörün türev kısmının ayrık zamanda gerçeklenmesi.
 ## Dipnotlar
 <sup>1</sup> Bu tanım [5] tarafından [6]'dan alınmıştır.</br>
 <sup>2</sup> İng. **On-off controller**. Aynı zamanda **bang bang** kontrol olarak da bilinse de aralarında ufak bir fark vardır.</br>
