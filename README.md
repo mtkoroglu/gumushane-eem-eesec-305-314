@@ -105,7 +105,7 @@ plot(x1,t)
 plot(x1,t)
 ```
 komutlarıyla *Şekil 9*'da gördüğümüz durum değişkenlerinin zamanla değişimlerini gösteren grafikleri elde ettik. Dikkat edin, *Şekil 6*'da zaman yokken *Şekil 8*'de zaman söz konusu. *Şekil 6*'ya faz portresi (phase portrait) deniyor.
-<img src="şekil/durum değişkenlerinin zamanla değişimleri.png" alt="state trajectories with time" height="300"/></br>
+<img src="şekil/durum değişkenlerinin zamanla değişimleri.png" alt="state trajectories with time" height="240"/></br>
 *Şekil 9:* Zorlanmamış sistemin durum değişkenlerinin zamanla değişimleri.
 
 <img src="şekil/discrete derivative.png" alt="discrete derivative" height="300"/></br>
