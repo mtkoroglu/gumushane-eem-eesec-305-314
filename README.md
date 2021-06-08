@@ -64,7 +64,7 @@ PID kontrolörün (*Şekil 5*'de görüldüğü gibi kendi-kendini dengeleyen ro
 *Şekil 5:* Kendi-kendini dengeleyen robotun, üzerinde yer alan Arduino'da koşan PID kontrolör ile yere düşmeden dengede kalarak ilerlemesi.
 
 <img src="şekil/backward euler integration.png" alt="backward euler integration" height="300"/></br>
-*Şekil 6:* Arduino üzerinde koşan PID kontrolörün integral kontrol kısmının ayrık zamanda *Backward Euler* tekniği ile gerçeklenmesi.
+*Şekil 6:* Arduino üzerinde koşan PID kontrolörün integral kontrol kısmının ayrık zamanda *Backward Euler* tekniği ile gerçeklenmesi. İntegrali alınacak sinyalin/değişkenin bulunduğumuz anda değeri mevcut ise (e.g., burada bulunduğumuz an t = 4T, integralini aldığımız sinyal e(t) dolayısıyla e(4T) değerinin bulunan anda mevcut olup olmadığına bakıyoruz) o zaman o değer ile örnekleme periodu (sampling period) çarpılarak en son dikdörtgenin alanı hesaplanır ve bir önceki anda hesaplanan değere (burada e(3T)) eklenir.
 ### Üçüncü dereceden zorlanmamış bir dinamik sistemin Simulink'de gerçeklenmesi
 Aşağıda durum uzayı denklemleri verilen sistemi Simulink'de kurduk.
 
