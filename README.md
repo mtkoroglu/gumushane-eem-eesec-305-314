@@ -12,16 +12,21 @@ Bu hafta baktığımız RC devresinin durum uzayı modelinde bir tane **durum de
 <img src="şekil/RC devresi basamak cevabı augmented.jpg" alt="RC devresinin analizi." height="560"/></br>
 *Şekil 1:* RC devresinin analizi. Burada incelenen cevaba RC devresinin *zorlanmış* cevap denmektedir [1]. 
 ## Hafta 2 
-**Pendulum** (sarkaç) dinamiklerine durum uzayında (state space) bakış [1]. *Şekil 2*'de görüldüğü üzere, kütlesi ihmal edilen *l* uzunluğundaki çubuğun ucundaki cismin kütlesi *m*, sürtünme katsayısı *b*, yer çekimi ivmesi *g*; sistem parametreleri denilen bu katsayılar sabit (i.e., zamanla değişmiyor). Sistemin durum değişkenleri açı ve açısal hız. Çıkış değişkeni olarak açıyı gözlemliyoruz. Burada analiz ettiğimiz pendulum probleminde sistemimizin bir girişi yok. Gerçek hayatta çubuğun ucuna pervaneli bir motor takılıp çubuğu hareket ettirebilir veya çubuğun baş noktasında (yani döndüğü yerde olan eksen etrafında) bir adım (step) veya servo motor pendulumu döndürebilir. Motorların dönmesiyle sisteme etki edecek olan kuvvet sistemimize bir giriş olarak etki edecektir. Bu konuya altıncı haftada dönüp burada bahsettiğimiz sistem giriş değişkenini (input variable) yani kontrol sinyalini bir denetleyici (e.g., PID) vasıtasıyla oluşturduk.
-**Not:** Ara sınavda sarkaç sisteminden soru vardı ama kontrol sinyali yoktu soruda. Final sınavında kontrol sinyali u(t)'nin de olduğu geri-beslemeli bir sistem karşımıza çıkabilir.
+**Pendulum** (sarkaç) dinamiklerine durum uzayında (state space) bakış [1]. *Şekil 2*'de görüldüğü üzere, kütlesi ihmal edilen *l* uzunluğundaki çubuğun ucundaki cismin kütlesi *m*, sürtünme katsayısı *b*, yer çekimi ivmesi *g*; sistem parametreleri denilen bu katsayılar sabit (i.e., zamanla değişmiyor). Sistemin durum değişkenleri açı ve açısal hız. Çıkış değişkeni olarak açıyı gözlemliyoruz.
 
 <img src="şekil/pendulum dynamics.png" alt="Pendulum dinamikleri." height="300"/></br>
 *Şekil 2:* Pendulum (sarkaç) modeli ([2]'nin izni ile).
+
+Burada analiz ettiğimiz pendulum probleminde sistemimizin bir girişi yok. Gerçek hayatta çubuğun ucuna pervaneli bir motor takılıp çubuğu hareket ettirebilir veya çubuğun baş noktasında (yani döndüğü yerde olan eksen etrafında) bir adım (step) veya servo motor pendulumu döndürebilir. Motorların dönmesiyle sisteme etki edecek olan kuvvet sistemimize bir giriş olarak etki edecektir. Bu konuya altıncı haftada dönüp burada bahsettiğimiz sistem giriş değişkenini (input variable) yani kontrol sinyalini bir denetleyici (e.g., PID) vasıtasıyla oluşturduk.
+**Not:** Ara sınavda sarkaç sisteminden soru vardı ama sorulan soruda kontrol sinyali yoktu. Final sınavında *Şekil 3*'de gösterildiği gibi kontrol sinyali u(t)'nin mevcut olduğu geri-beslemeli bir kontrol sistemi karşımıza çıkacaktır. Derste bu sistemin denklemlerini türetip MATLAB Simulink'de gerçekledik. Ama derste A, B ve C matrislerini ve de sistemin transfer fonksiyonunu türetmedik. Final sınavında bunlar ile ilgili sorular gelecektir.
+
+<img src="şekil/pendulum dinamikleri simulink.JPG" alt="Pendulum dinamikleri - MATLAB Simulink" height="300"/></br>
+*Şekil 3:* Pendulum (sarkaç) modelinin MATLAB Simulink'de gerçeklenmiş hali (Final sınavında karşımıza çıkacak).
 ## Hafta 3
 Bir araba için hız kontrolü (**cruise control**) dinamiklerine baktık. **Durum uzayı gösterimi** (state space representation). Bu hafta ayrıca oransal-integral-türevsel (proportional-integral-derivative) denetleyici (PID controller) tasarlayarak (deneme-yanılma yolu ile) arabamızın hız kontrolünü yaptık. İlgili video DBS'de.
 
 <img src="şekil/cruise_control.png" alt="Pendulum dinamikleri" height="240"/></br>
-*Şekil 3:* Araba hız kontrolü (cruise control) dinamikleri ([3]'ün izni ile). Burada sürtünme katsayısı b arabayı durdurucu etki yapıyor.
+*Şekil 4:* Araba hız kontrolü (cruise control) dinamikleri ([3]'ün izni ile). Burada sürtünme katsayısı b arabayı durdurucu etki yapıyor.
 ## Hafta 4
 **Cruise control** problemine bakmaya devam ettik. A matrisi sistem matrisimiz, B matrisi giriş matrisi, C matrisi çıkış matrisi olarak isimlendiriliyor. Eğer bir sistemin dinamikleri doğrusal (linear) ise o zaman sistemin zaman alanındaki (time-domain) modelini yukarıda bahsedilen matrisler ve giriş, durum ve çıkış değişkenleri cinsinden **durum uzayı gösterimi** (state space representation) ile tasvir edebiliriz. Bu hafta zaman alanından (time domain) frekans alanına (s domain) geçiş yaptık. Sistemimizin çıkışı (y(t)) olan arabamızın hızı (v(t)) ile girişi (u(t)) olan arabayı çeken kuvvet arasındaki orana s alanında (s-domain) bakarsak transfer fonksiyonu T(s)'yi elde ediyoruz.</br>
 T(s) = Y(s)/U(s) = C(sI-A)<sup>-1</sup>B + D</br>
@@ -47,10 +52,10 @@ Ara sınav haftası.
 ## Hafta 9
 Ara Sınav soruları çözümlerine bakıldı. Final sınavının **daha zor** olacağını vurguladık. Lütfen arasınavdaki notunuza güvenip de final sınavına çalışmamazlık etmeyin. Önümüzdeki hafta PID kontrolörün<sup>3</sup> sürekli zamanda matematiksel modeli ile devam edeceğiz.
 ## Hafta 10
-Geribeslemeli bir kontrol sisteminin<sup>4</sup> blok diyagramına<sup>5</sup> *Şekil 4*'de görülen kendi-kendini dengeleyen robot üzerinden bir bakış. 
+Geribeslemeli bir kontrol sisteminin<sup>4</sup> blok diyagramına<sup>5</sup> *Şekil 5*'de görülen kendi-kendini dengeleyen robot üzerinden bir bakış. 
 
 <img src="şekil/kendi-kendini dengeleyen robot.jpg" alt="kendi-kendini dengeleyen robot" height="550"/> <img src="ders/hafta10/geribeslemeli kontrol sistemi.jpg" alt="geribeslemeli kontrol sistemi" height="550"/></br>
-*Şekil 4:* Kendi-kendini dengeleyen robot ve üzerinde koşan geribeslemeli kontrol sistemine bir bakış.
+*Şekil 5:* Kendi-kendini dengeleyen robot ve üzerinde koşan geribeslemeli kontrol sistemine bir bakış.
 
 Derste PID kontrolörün girişi olan hata sinyali e(t) ile çıkışı olan kontrol sinyali u(t) arasındaki ifadeyi aşağıdaki gibi elde ettik.</br>
 <img src="eşitlik/pid kontrolör.JPG" alt="pid kontrolör" height="70"/></br>
@@ -61,10 +66,10 @@ Bayram Haftası.
 PID kontrolörün (*Şekil 5*'de görüldüğü gibi kendi-kendini dengeleyen robot için) Arduino üzerinde ayrık zamanda (discrete time) nasıl gerçeklendiğini anlamaya nümerik integrale bakarak başlıyoruz.
 
 <img src="şekil/yabr smallest.gif" alt="your arduino balancing robot" height="350"/></br>
-*Şekil 5:* Kendi-kendini dengeleyen robotun, üzerinde yer alan Arduino'da koşan PID kontrolör ile yere düşmeden dengede kalarak ilerlemesi.
+*Şekil 6:* Kendi-kendini dengeleyen robotun, üzerinde yer alan Arduino'da koşan PID kontrolör ile yere düşmeden dengede kalarak ilerlemesi.
 
 <img src="şekil/backward euler integration.png" alt="backward euler integration" height="300"/></br>
-*Şekil 6:* Arduino üzerinde koşan PID kontrolörün integral kontrol kısmının ayrık zamanda *Backward Euler* tekniği ile gerçeklenmesi. İntegrali alınacak sinyalin/değişkenin bulunduğumuz anda değeri mevcut ise (e.g., burada bulunduğumuz an t = 4T, integralini aldığımız sinyal e(t) dolayısıyla e(4T) değerinin bulunan anda mevcut olup olmadığına bakıyoruz) o zaman o değer ile örnekleme periodu (sampling period) çarpılarak en son dikdörtgenin alanı hesaplanır ve bir önceki anda hesaplanan değere (burada e(3T)) eklenir.
+*Şekil 7:* Arduino üzerinde koşan PID kontrolörün integral kontrol kısmının ayrık zamanda *Backward Euler* tekniği ile gerçeklenmesi. İntegrali alınacak sinyalin/değişkenin bulunduğumuz anda değeri mevcut ise (e.g., burada bulunduğumuz an t = 4T, integralini aldığımız sinyal e(t) dolayısıyla e(4T) değerinin bulunan anda mevcut olup olmadığına bakıyoruz) o zaman o değer ile örnekleme periodu (sampling period) çarpılarak en son dikdörtgenin alanı hesaplanır ve bir önceki anda hesaplanan değere (burada e(3T)) eklenir.
 ### Üçüncü dereceden zorlanmamış bir dinamik sistemin Simulink'de gerçeklenmesi
 Aşağıda durum uzayı denklemleri verilen sistemi Simulink'de kurduk.
 
@@ -72,10 +77,10 @@ Aşağıda durum uzayı denklemleri verilen sistemi Simulink'de kurduk.
 Sistemin Simulink'de gerçeklenmiş hali *Şekil 7*'deki gibidir.
 
 <img src="şekil/üçüncü_derece_sistem_model.JPG" alt="üçüncü derece sistem Simulink model" height="200"/></br>
-*Şekil 7:* Derste gerçeklediğimiz üçüncü dereceden dinamik sistemin Simulink'deki görünümü.
+*Şekil 8:* Derste gerçeklediğimiz üçüncü dereceden dinamik sistemin Simulink'deki görünümü.
 ## Hafta 13 ve 14
 <img src="şekil/durum_değişkenleri_yörüngesi.png" alt="üçüncü derece sistemin durum değişkenleri yörüngesi" height="360"/></br>
-*Şekil 8:* Derste gerçeklediğimiz üçüncü dereceden dinamik sistemin durum değişkenlerinin yörüngesi.
+*Şekil 9:* Derste gerçeklediğimiz üçüncü dereceden dinamik sistemin durum değişkenlerinin yörüngesi.
 
 Sistemin denge noktası (equilibrium point) sıfır olduğundan durum değişkenlerini nereden başlatırsak başlatalım sonuç her zaman
 
@@ -83,7 +88,7 @@ Sistemin denge noktası (equilibrium point) sıfır olduğundan durum değişken
 
 olacaktır.
 ### Simulink'de kullandığımız integratörleri kullanmadan sistemin benzetiminin yapılması
-*Şekil 6*'nın açıklamasında *Backward Euler* yani *geriye doğru Euler* tekniğinde integrali alınan sinyalin/değişkenin o andaki değerine sahip olunması şartından bahsetmiştik. Burada incelediğimiz zorlanmamış sistem simülasyonunda, herhangi bir durum değişkeninin o andaki değeri hesaplanırken öbür durum değişkenlerinden en az birisinin o andaki değerine ihtiyaç duyuluyor, bu yüzden de mecburen *Forward Euler* yani *ileri Euler* tekniğini kullanmak zorundayız.
+*Şekil 7*'nin açıklamasında *Backward Euler* yani *geriye doğru Euler* tekniğinde integrali alınan sinyalin/değişkenin o andaki değerine sahip olunması şartından bahsetmiştik. Burada incelediğimiz zorlanmamış sistem simülasyonunda, herhangi bir durum değişkeninin o andaki değeri hesaplanırken öbür durum değişkenlerinden en az birisinin o andaki değerine ihtiyaç duyuluyor, bu yüzden de mecburen *Forward Euler* yani *ileri Euler* tekniğini kullanmak zorundayız.
 #### MATLAB'da Forward Euler tekniği ile nümerik integral alarak dinamik sistem simülasyonu yapmak
 ```
 T = 0.01; % örnekleme periyodu
@@ -108,9 +113,9 @@ plot(x1,t)
 plot(x2,t)
 plot(x3,t)
 ```
-komutlarıyla *Şekil 9*'da çizdirilen durum değişkenlerinin zamanla değişimini gösteren grafikleri elde ettik. Dikkat edin, *Şekil 6*'da zaman yokken *Şekil 8*'de zaman söz konusu. *Şekil 6*'ya faz portresi (phase portrait) deniyor.
+komutlarıyla *Şekil 9*'da çizdirilen durum değişkenlerinin zamanla değişimini gösteren grafikleri elde ettik. Dikkat edin, *Şekil 7*'de zaman yokken *Şekil 9*'da zaman söz konusu. *Şekil 7*'ye faz portresi (phase portrait) deniyor.
 <img src="şekil/durum değişkenlerinin zamanla değişimi.png" alt="state trajectories with time" height="240"/></br>
-*Şekil 9:* Zorlanmamış sistemin durum değişkenlerinin zamanla değişimleri.
+*Şekil 10:* Zorlanmamış sistemin durum değişkenlerinin zamanla değişimleri.
 ## Hafta 15
 ### Nümerik Türev
 Aşağıdaki kodu<sup>7</sup> oluştururken örnekleme frekansının (dolayısıyla da örnekleme periyodunun) sinyalin üzerindeki etkisine şahit olduk. Örnekleme periyodu 10ms olduğunda görüntülediğimiz sinyalin sinüse benzer bir yanı yoktu. Örnekleme frekansının artırdığımız (yani örnekleme periyodunu düşürdüğümüzde) işte o zaman yavaş yavaş sinüse benzer şeyler elde ettik ve bir değerden sonra tamamen sinüs gibi gözükmeye başladı. Her ne kadar yüksek örnekleme frekansı ile çalışınca hiçbir bilgi kaybı yaşamasak da, işlemci gücümüz sınırlı olduğundan dolayı mümkün mertebe örnekleme frekansını düşük (yani örnekleme periyodunu büyük) tutmak isteriz ki mikroişlemci/mikrodenetleyici üzerindeki işlem yükümüz az olsun. 
@@ -129,7 +134,7 @@ for i=2:length(t)
 end
 ```
 <img src="şekil/nümerik türev sonucu.png" alt="discrete derivative" height="240"/></br>
-*Şekil 10:* Priz sinyali Asin(2πft) formunda olup genlik 220V, frekansı ise 50Hz'dir. Kırmızı renkle gösterilen grafikte priz sinyalinin türevini matematiksel olarak 2πfAcos(2πft) formunda elde ettik ve çizdirdik. Mavi grafikte ise yukarıda kodda görüldüğü gibi sinyalin o andaki örneğinden bir önceki örnekteki değerinin farkını alıp geçen zaman olan örnekleme periyoduna böldük ve türev operatörünün nümerik halini gerçekledik. Başlangıç koşulunu uygun değere ayarladığımızda mavi ile kırmızı grafiklerinin bütün örnekler (for all samples) için aynı olduğunu görülebiliyor.
+*Şekil 11:* Priz sinyali Asin(2πft) formunda olup genlik 220V, frekansı ise 50Hz'dir. Kırmızı renkle gösterilen grafikte priz sinyalinin türevini matematiksel olarak 2πfAcos(2πft) formunda elde ettik ve çizdirdik. Mavi grafikte ise yukarıda kodda görüldüğü gibi sinyalin o andaki örneğinden bir önceki örnekteki değerinin farkını alıp geçen zaman olan örnekleme periyoduna böldük ve türev operatörünün nümerik halini gerçekledik. Başlangıç koşulunu uygun değere ayarladığımızda mavi ile kırmızı grafiklerinin bütün örnekler (for all samples) için aynı olduğunu görülebiliyor.
 ## Hafta 16
 Bu hafta genel olarak geri-beslemeli kontrol sistemlerinde, özel olarak da Kendi-Kendini Dengeleyen Robot üzerinde sensörleri (algılayıcıları) konuşacağız. Hareket sensörü olan MPU6050 ile ham ciroskop ve ivmemetre verisinden ilk önce tamamlayıcı süzgeç (complementary filter) algoritması ile ardında da özel bir Bayesian süzgeç olan Kalman Filtresi ile açının tahmin edilmesi (estimation) konularına bakacağız.
 ## Dipnotlar
