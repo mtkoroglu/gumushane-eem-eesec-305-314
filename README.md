@@ -20,7 +20,7 @@ Bu hafta baktığımız RC devresinin durum uzayı modelinde bir tane **durum de
 Burada analiz ettiğimiz pendulum probleminde sistemimizin bir girişi yok. Gerçek hayatta çubuğun ucuna pervaneli bir motor takılıp çubuğu hareket ettirebilir veya çubuğun baş noktasında (yani döndüğü yerde olan eksen etrafında) bir adım (step) veya servo motor pendulumu döndürebilir. Motorların dönmesiyle sisteme etki edecek olan kuvvet sistemimize bir giriş olarak etki edecektir. Bu konuya altıncı haftada dönüp burada bahsettiğimiz sistem giriş değişkenini (input variable) yani kontrol sinyalini bir denetleyici (e.g., PID) vasıtasıyla oluşturduk.
 **Not:** Ara sınavda sarkaç sisteminden soru vardı ama sorulan soruda kontrol sinyali yoktu. Final sınavında *Şekil 3*'de gösterildiği gibi kontrol sinyali u(t)'nin mevcut olduğu geri-beslemeli bir kontrol sistemi karşımıza çıkacaktır. Derste bu sistemin denklemlerini türetip MATLAB Simulink'de gerçekledik. Ama derste A, B ve C matrislerini ve de sistemin transfer fonksiyonunu türetmedik. Final sınavında bunlar ile ilgili sorular gelecektir.
 
-<img src="şekil/pendulum dinamikleri simulink.JPG" alt="Pendulum dinamikleri - MATLAB Simulink" height="300"/></br>
+<img src="şekil/pendulum dinamikleri simulink.JPG" alt="Pendulum dinamikleri - MATLAB Simulink" height="200"/></br>
 *Şekil 3:* Pendulum (sarkaç) modelinin MATLAB Simulink'de gerçeklenmiş hali (Final sınavında karşımıza çıkacak).
 ## Hafta 3
 Bir araba için hız kontrolü (**cruise control**) dinamiklerine baktık. **Durum uzayı gösterimi** (state space representation). Bu hafta ayrıca oransal-integral-türevsel (proportional-integral-derivative) denetleyici (PID controller) tasarlayarak (deneme-yanılma yolu ile) arabamızın hız kontrolünü yaptık. İlgili video DBS'de.
@@ -133,7 +133,7 @@ for i=2:length(t)
     y_numerik_turev(i) = (y(i) - y(i-1)) / T;
 end
 ```
-<img src="şekil/nümerik türev sonucu.png" alt="discrete derivative" height="240"/></br>
+<img src="şekil/nümerik türev sonucu.png" alt="discrete derivative" height="200"/></br>
 *Şekil 11:* Priz sinyali Asin(2πft) formunda olup genlik 220V, frekansı ise 50Hz'dir. Kırmızı renkle gösterilen grafikte priz sinyalinin türevini matematiksel olarak 2πfAcos(2πft) formunda elde ettik ve çizdirdik. Mavi grafikte ise yukarıda kodda görüldüğü gibi sinyalin o andaki örneğinden bir önceki örnekteki değerinin farkını alıp geçen zaman olan örnekleme periyoduna böldük ve türev operatörünün nümerik halini gerçekledik. Başlangıç koşulunu uygun değere ayarladığımızda mavi ile kırmızı grafiklerinin bütün örnekler (for all samples) için aynı olduğunu görülebiliyor.
 ## Hafta 16
 Bu hafta genel olarak geri-beslemeli kontrol sistemlerinde, özel olarak da Kendi-Kendini Dengeleyen Robot üzerinde sensörleri (algılayıcıları) konuşacağız. Hareket sensörü olan MPU6050 ile ham ciroskop ve ivmemetre verisinden ilk önce tamamlayıcı süzgeç (complementary filter) algoritması ile ardında da özel bir Bayesian süzgeç olan Kalman Filtresi ile açının tahmin edilmesi (estimation) konularına bakacağız.
