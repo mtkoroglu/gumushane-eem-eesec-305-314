@@ -1,17 +1,16 @@
 # EESEC 314
-## Hafta 1
-**Dinamik sistem** nedir? **Hafızalı sistem**.
-Gerilim kaynağı bağlanmış bir resistör-kapasitör devresini (RC devresi - **Şekil 1**) analiz ettik. Burdaki örnekte kapasitörün üzerinden geçen akım i<sub>C</sub>(t) değil de kapasitörün üzerine düşen voltaj V<sub>C</sub>(t) hafıza işlevi görüyor. Hafızaya **durum değişkeni** diyeceğiz. Yani bu sistemdeki durum değişkenimiz i<sub>C</sub>(t) değil de V<sub>C</sub>(t). Analitik çözümü [1]'de türetilen *RC devresinin zorlanmış cevabına* bakıp sistemlice düşünerek niçin akımın değil de voltajın bir **hafıza** vazifesi gördüğünü anlamamız gerekiyor. Bu düşünce antrenmanını yedinci hafta bu konuya tekrar dönüp sistemin transfer fonksiyonunu elde etmeye çalışırken derste beraber yaptık. Ama unutmayın derste ne kadar anlatılırsa anlatılsın, eğer kendimiz düşünüp de kendi aklımızın anlayacağı bir biçimde öğrenmeye çalışmazsak maalesef öğrenemeyiz. Bu yüzden verilen referansta eşitlik olarak verilen kapasitörün akım ve voltaj eşitliklerine bakıp düşünelim.
+## DİNAMİK SİSTEM
+Gerilim kaynağı bağlanmış bir resistör-kapasitör devresini (RC devresi - **Şekil 1**) analiz ettik. Burdaki örnekte kapasitörün üzerinden geçen akım i<sub>C</sub>(t) değil de kapasitörün üzerine düşen voltaj V<sub>C</sub>(t) **durum değişkeni** olarak vazife görüyor. Analitik çözümü [1]'de türetilen *RC devresinin zorlanmış cevabına* bakıp sistemlice düşünerek niçin akımın değil de voltajın durum değişkeni seçildiğini anlamamız gerekiyor. Aşağıda verilen kapasitörün matematiksel modelin bakıp düşünelim.
 
 <img src="eşitlik/kapasitör denklemi.JPG" alt="Kapasitörün matematiksel modeli" height="50"/></br>
 <img src="eşitlik/kapasitör denklemi çözümü.JPG" alt="RC devresinin analizi." height="55"/></br>
-Burada bir ip ucu: Türev değil de integral operatörüne karışan/bulaşan değişken **durum değişkeni** olacaktır çünkü türev anlık bilgi verirken integral'de başlangıç koşulu vardır ve bu başlangıç koşuluna göre sonuç da farklı olmaktadır.</br>
+Burada bir ip ucu: Türev anlık bilgi verirken (geçmişe bir bağımlılığı yok) integral'de başlangıç koşulu söz konusudur ve bu başlangıç koşuluna göre sistemin girişi aynı olsa bile sonuç farklı olabilmektedir.</br>
 **Durum değişkeni:** *Geçmişin geleceği etkileyen özü*<sup>1</sup>.</br>
-Bu hafta baktığımız RC devresinin durum uzayı modelinde bir tane **durum değişkeni** var, dolayısıyla bir boyutlu bir sistem. Ayrıca *Vcc* olarak isimlendirdiğimiz gerilim kaynağı, sistemin **durum değişkeni** olan **kapasitör voltajına** bir **giriş değişkeni** (input variable) olarak etki ediyor. RC devresinde gerilim kaynağının voltajı *V<sub>cc</sub>*, resistör değeri *R* ve kapasitor değeri *C* sistem parametreleri olarak vazife yapıyor. Bu parametreler zamanla değişmediği zaman Sinyaller-Sistemler dersinden bildiğimiz gibi doğrusal zamanla değişmeyen (linear time-invariant - LTI) bir sistemimiz olmuş oluyor ve analiz etmek kolay bir hal alıyor. Sistem parametrelerimiz zamanla değişen bir yapıya sahipse daha kompleks matematiksel yaklaşımlarla analiz yapmak zorunda kalırız.
+Bu hafta baktığımız RC devresinin durum uzayı modelinde bir tane **durum değişkeni** var, dolayısıyla bir boyutlu bir sistem. Ayrıca *Vcc* olarak isimlendirdiğimiz güç kaynağının gerilimi (devreyi bir sistem olarak görürsek) sisteme bir **giriş değişkeni** (input) olarak etki ediyor. RC devresinde resistör değeri *R* ve kapasitor değeri *C* sistem parametreleri olarak vazife yapıyor. Bu parametreler zamanla değişmediği zaman Sinyaller-Sistemler dersinden bildiğimiz gibi doğrusal zamanla değişmeyen (linear time-invariant - LTI) bir sistemimiz olmuş oluyor ve sistemi analiz etmek kolay bir hal alıyor. Sistem parametrelerimiz zamanla değişen bir yapıya sahipse daha kompleks matematiksel yaklaşımlarla analiz yapmak zorunda kalırız (beyonf the scope of this class).
 
-<img src="şekil/RC devresi basamak cevabı augmented.jpg" alt="RC devresinin analizi." height="560"/></br>
+<img src="şekil/RC devresi basamak cevabı augmented.jpg" alt="RC devresinin analizi" height="560"/></br>
 *Şekil 1:* RC devresinin analizi. Burada incelenen cevaba RC devresinin *zorlanmış* cevap denmektedir [1]. 
-## Hafta 2 
+## Sarkaç (Pendulum) Sistemi
 **Pendulum** (sarkaç) dinamiklerine durum uzayında (state space) bakış [1]. *Şekil 2*'de görüldüğü üzere, kütlesi ihmal edilen *l* uzunluğundaki çubuğun ucundaki cismin kütlesi *m*, sürtünme katsayısı *b*, yer çekimi ivmesi *g*; sistem parametreleri denilen bu katsayılar sabit (i.e., zamanla değişmiyor). Sistemin durum değişkenleri açı ve açısal hız. Çıkış değişkeni olarak açıyı gözlemliyoruz.
 
 <img src="şekil/pendulum dynamics.png" alt="Pendulum dinamikleri." height="300"/></br>
