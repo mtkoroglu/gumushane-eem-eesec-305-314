@@ -21,21 +21,24 @@ Burada analiz ettiğimiz pendulum probleminde sistemimizin bir girişi yok. Ger�
 
 <img src="şekil/pendulum dinamikleri simulink.JPG" alt="Pendulum dinamikleri - MATLAB Simulink" height="200"/></br>
 *Şekil 3:* Pendulum (sarkaç) modelinin MATLAB Simulink'de gerçeklenmiş hali (Final sınavında karşımıza çıkacak).
-## Hafta 3
-Bir araba için hız kontrolü (**cruise control**) dinamiklerine baktık. **Durum uzayı gösterimi** (state space representation). Bu hafta ayrıca oransal-integral-türevsel (proportional-integral-derivative) denetleyici (PID controller) tasarlayarak (deneme-yanılma yolu ile) arabamızın hız kontrolünü yaptık. İlgili video DBS'de.
+## ARABA DİNAMİĞİ
+### Hız (Cruise) Kontrol
+Bir arabaya Newton'un F=ma kanununu uygulayarak elde edeceğimiz dinamik modeli inceleyelim. **Durum uzayı gösterimi** (state space representation). Ayrıca oransal-integral-türevsel (proportional-integral-derivative) denetleyici (PID controller) tasarlayarak (deneme-yanılma yolu ile) arabamızın hız kontrolünü yapmaya çalışalım.
 
 <img src="şekil/cruise_control.png" alt="Pendulum dinamikleri" height="240"/></br>
 *Şekil 4:* Araba hız kontrolü (cruise control) dinamikleri ([3]'ün izni ile). Burada sönümleme katsayısı b arabayı durdurucu etki yapıyor.
-## Hafta 4
-**Cruise control** problemine bakmaya devam ettik. A matrisi sistem matrisimiz, B matrisi giriş matrisi, C matrisi çıkış matrisi olarak isimlendiriliyor. Eğer bir sistemin dinamikleri doğrusal (linear) ise o zaman sistemin zaman alanındaki (time-domain) modelini yukarıda bahsedilen matrisler ve giriş, durum ve çıkış değişkenleri cinsinden **durum uzayı gösterimi** (state space representation) ile tasvir edebiliriz. Bu hafta zaman alanından (time domain) frekans alanına (s domain) geçiş yaptık. Sistemimizin çıkışı (y(t)) olan arabamızın hızı (v(t)) ile girişi (u(t)) olan arabayı çeken kuvvet arasındaki orana s alanında (s-domain) bakarsak transfer fonksiyonu T(s)'yi elde ediyoruz.</br>
-T(s) = Y(s)/U(s) = C(sI-A)<sup>-1</sup>B + D</br>
-Dersimizin sonunda her hafta yaptığımız gibi MATLAB/Simulink'de teoriklerine baktığımız modellerin simulasyonlarını yaptık. Durum uzayındaki çıkış değişkeni olan arabanın hızının, s-alanında Transfer fonksiyonu ile verilen bloğun çıkışı olan hız değişkeni ile tamamen aynı olduğunu gözlemledik. Dersimizi önümüzdeki hafta sistemin çıkışını hız değil de pozisyon (arabanın konumu) olarak seçip yeni bir transfer fonksiyonu elde edeceğiz diye sonlandırdık.
-## Hafta 5
+
+A matrisi sistem matrisimiz, B matrisi giriş matrisi, C matrisi çıkış matrisi olarak isimlendiriliyor. Eğer bir sistemin dinamikleri doğrusal (linear) ise o zaman sistemin zaman alanındaki (time-domain) modelini yukarıda geçen matrisler ve giriş, durum ve çıkış değişkenleri cinsinden **durum uzayı gösterimi** (state space representation) ile tasvir edebiliriz. Bu hafta zaman alanından (time domain) frekans alanına (s domain) geçiş yaptık. Sistemimizin çıkışı (y(t)) olan arabamızın hızı (v(t)) ile girişi (u(t)) olan arabayı çeken kuvvet arasındaki orana s alanında (s-domain) bakarsak transfer fonksiyonu T(s)'yi elde ediyoruz.
+
+T(s) = Y(s)/U(s) = C(sI-A)<sup>-1</sup>B + D
+
+Dersimizin sonunda her hafta yaptığımız gibi incelediğimiz modellerin MATLAB/Simulink'de simulasyonlarını yaptık. Durum uzayındaki çıkış değişkeni olan arabanın hızının, s-alanında Transfer fonksiyonu ile verilen bloğun çıkışı olan hız değişkeni ile tamamen aynı olduğunu gözlemledik. Dersimizi önümüzdeki hafta sistemin çıkışını hız değil de pozisyon (arabanın konumu) olarak seçip yeni bir transfer fonksiyonu elde edeceğiz diye sonlandırdık.
+### Pozisyon Kontrol
 Cruise kontrol problemindeki arabanın dinamikleriyle (*Şekil 3*) devam ettik. Çıkış olarak hızı değil de pozisyonu seçerek konum bilgisinden geri-besleme aldık. Böylece sistemimizin transfer fonksiyonu da değişmiş oldu. Hatırlayacak olursak **transfer fonksiyonu** s-uzayında (yani frekans uzayı/alanı) çıkışın girişe oranı olarak tanımlanmıştı, dolayısıyla çıkışın başka bir durum değişkeni seçilmesi otomatik olarak transfer fonksiyonunun ifadesinin de etkiledi. Yeni elde ettiğimiz transfer fonksiyonuna dikkat edilecek olursa, paydadaki ifadenin maksimum derecesi iki, yani ikinci dereceden bir polinom. Bu da yeni elde edilen transfer fonksiyonunda iki tane kökün olduğunu gösteriyor. Bu iki kök, iki durum değişkenine (i.e., hız ve pozisyon) tekabül ediyor. Ayrıca PID denetleyicimizin kazançları da yeniden ayarlanmak zorunda kaldı, çünkü artık üretilen kontrol sinyali hız kontrol probleminde olduğu gibi arabayı sabit bir hıza sabitlemeye çalışmıyor fakat arabanın konumunu (pozisyonunu) tek boyutlu kabul ettiğimiz yolda belirli bir referans noktasına/çizgisine götürmeye çalışıyor.
-## Hafta 6
+## Pendulum (Sarkaç) - devam
 İkinci haftada dinamiklerine göz atıp matematiksel modelini birinci dereceden adi diferansiyel denklemler kullanarak elde ettiğimiz pendulum (sarkaç) problemine geri dönüyoruz. Bu sefer sisteme durum uzayı gösteriminde giriş değişkeni işlevi görecek harici bir kuvveti bir eyleyici (actuator) vasıtasıyla uygulayacağız. Mesela sistemin moment noktası olan ekseni, bir servo veya adım (step) motorun miline geçirebiliriz ve böylece bu eksene uygulayacağımız Tork (Newton x metre) [4] veya *l* uzunluğundaki kütlesi ihmal edilen çubuğun ucundaki *m* kütleli yükün olduğu noktaya bir motor-pervane ikilisi takıp, motor-pervane eyleyicisinin *m* kütlesinin olduğu noktada oluşturacağımız itki kuvveti ile sisteme etki edebiliriz.</br>
 Derste yukarıda anlattığımız güncellemeyi sarkaç sistemine uygulayıp yine bir PID denetleyici tasarlayarak açıyı kontrol etmeyi başardık. Ara sınavımızda karşımıza çıkacak bir sistem. Unutmayın, şu ana kadar baktığımız RC devresi ve araba hız ve pozisyon kontrolü problemlerinde sistemler doğrusaldı. Bu yüzden transfer fonksiyonlarını elde edebiliyoruz bu sistemler için. Fakat sarkaç sisteminde açı durum değişkeninin durum uzayı gösteriminde yazdığımız birinci dereceden diferansiyel denklemlerde görünme şekli sinüs fonksiyonu üzerinden olduğu için sistemimiz doğrusal değil demiştik. Sonuç olarak da sarkaç sisteminin transfer fonksiyonu söz konusu değil. Önümüzdeki hafta ilk hafta işlediğimiz (DBS'de ders kaydı yok ilk haftanın) ve ikinci hafta derste sarkaç sistemi ile devam etmeden kısaca tekrar ettiğimiz RC devresinin durum uzayı gösterimine tekrar göz atıp bu elektronik devrenin/sistemin transfer fonksiyonunu elde edeceğiz. Ardından şu ana kadar tasarladığımız PID denetleyicilerden daha ilkel olan **aç/kapa denetleyici**<sup>2</sup> ile sistem çıkışımız olan kapasitör voltajı olan V<sub>C</sub>(t)'yi kontrol etmeye çalışacağız.   
-## Hafta 7
+## RC Devresi - devam
 Tahtada durum uzayı gösterimini tekrar yazacağımız RC devresinin transfer fonksiyonunu dördüncü haftada öğrendiğimiz</br>
 T(s) = Y(s)/U(s) = C(sI-A)<sup>-1</sup>B + D
 
@@ -46,22 +49,20 @@ eşitliğini uygulayarak aşağıdaki gibi elde ettik (dersin tam sonuna denk ge
 Transfer fonksiyonunun paydası **birinci** dereceden bir polinom şeklinde, bu da **bir** durum değişkenimiz olduğunu gösteriyor. Zaten bizim RC devresindeki durum değişkenimiz kapasitörün üzerindeki voltaj V<sub>C</sub>(t).
 ### Aç-Kapa Denetleyici
 Aç-kapa denetleyiciyi tasarlamadan önce araba hız kontrolü örneğine geri dönelim ve orada PID denetleyici yerine ilkel bir denetleyici olan aç-kapa denetleyici koyalım. Bakalım hız ve pozisyon kontrolü problemlerinde sistemimizin çıkışı olan hız ve pozisyonu kontrol edebilecek miyiz yoksa edemeyecek miyiz. Farz edelim kontrol ettik; çıkış istediğimiz davranışı gösteriyor mu yoksa göstermiyor mu, ona da bakalım. Unutmayalım, aç-kapa kontrolün çıkışını simüle ederken gerçek hayatta bu sinyalin uygulanabilirliğini göz önünde bulundurmamız gerekecek. Derste **bang-bang** kontrole de bakıp pratik bir araba kontrolü ile ilgili örnek videolar izleyeceğiz. Aç-kapa kontrol de kapalı halde sistemimize bir kontrol sinyali uygulamazken, bang bang kontrolde açıkken uygulanan sinyalin tam tersi uygulanıyor.
-## Hafta 8
-Ara sınav haftası.
-## Hafta 9
-Ara Sınav soruları çözümlerine bakıldı. Final sınavının **daha zor** olacağını vurguladık. Lütfen arasınavdaki notunuza güvenip de final sınavına çalışmamazlık etmeyin. Önümüzdeki hafta PID kontrolörün<sup>3</sup> sürekli zamanda matematiksel modeli ile devam edeceğiz.
 ## Hafta 10
-Geribeslemeli bir kontrol sisteminin<sup>4</sup> blok diyagramına<sup>5</sup> *Şekil 5*'de görülen kendi-kendini dengeleyen robot üzerinden bir bakış. 
+Geribeslemeli bir kontrol sisteminin<sup>4</sup> blok diyagramına<sup>5</sup> *Şekil 5*'de görülen kendi-kendini dengeleyen robot üzerinden bir bakış.
 
-<img src="şekil/kendi-kendini dengeleyen robot.jpg" alt="kendi-kendini dengeleyen robot" height="550"/> <img src="ders/hafta10/geribeslemeli kontrol sistemi.jpg" alt="geribeslemeli kontrol sistemi" height="550"/></br>
+<img src="şekil/kendi-kendini dengeleyen robot.jpg" alt="kendi-kendini dengeleyen robot" height="550"/> <img src="ders/hafta10/geribeslemeli kontrol sistemi.jpg" alt="geribeslemeli kontrol sistemi" height="550"/>
+
 *Şekil 5:* Kendi-kendini dengeleyen robot ve üzerinde koşan geribeslemeli kontrol sistemine bir bakış.
 
-Derste PID kontrolörün girişi olan hata sinyali e(t) ile çıkışı olan kontrol sinyali u(t) arasındaki ifadeyi aşağıdaki gibi elde ettik.</br>
-<img src="eşitlik/pid kontrolör.JPG" alt="pid kontrolör" height="70"/></br>
+Derste PID kontrolörün girişi olan hata sinyali e(t) ile çıkışı olan kontrol sinyali u(t) arasındaki ifadeyi aşağıdaki gibi elde ettik.
+
+<img src="eşitlik/pid kontrolör.JPG" alt="pid kontrolör" height="70"/>
+
 Bu ifadeyi daha önceden MATLAB Simulink'de gerçeklemiş olduğumuz (arasınavda da karşımıza çıkan) araba pozisyon kontrolü probleminde önceden gerçeklediğimiz sistem modellerine paralel olarak en altta gerçekledik. Dersin sonunda yaptığımız bu adımda istediğimiz sonucu elde edemedik. Bunun sebebini 12. Hafta dersimizin başında açıklayıp PID kontrolörün ayrık zamanda Arduino üzerinde (kendi-kendini dengeleyen robot için) gerçeklenmesi ile devam edeceğiz.
-## Hafta 11
-Bayram Haftası.
-## Hafta 12
+
+## Ayrık Zamanda PID Kontrolör
 PID kontrolörün (*Şekil 5*'de görüldüğü gibi kendi-kendini dengeleyen robot için) Arduino üzerinde ayrık zamanda (discrete time) nasıl gerçeklendiğini anlamaya nümerik integrale bakarak başlıyoruz.
 
 <img src="şekil/yabr smallest.gif" alt="your arduino balancing robot" height="350"/></br>
@@ -77,7 +78,7 @@ Sistemin Simulink'de gerçeklenmiş hali *Şekil 7*'deki gibidir.
 
 <img src="şekil/üçüncü_derece_sistem_model.JPG" alt="üçüncü derece sistem Simulink model" height="200"/></br>
 *Şekil 8:* Derste gerçeklediğimiz üçüncü dereceden dinamik sistemin Simulink'deki görünümü.
-## Hafta 13 ve 14
+
 <img src="şekil/durum_değişkenleri_yörüngesi.png" alt="üçüncü derece sistemin durum değişkenleri yörüngesi" height="360"/></br>
 *Şekil 9:* Derste gerçeklediğimiz üçüncü dereceden dinamik sistemin durum değişkenlerinin yörüngesi.
 
@@ -115,7 +116,7 @@ plot(x3,t)
 komutlarıyla *Şekil 9*'da çizdirilen durum değişkenlerinin zamanla değişimini gösteren grafikleri elde ettik. Dikkat edin, *Şekil 7*'de zaman yokken *Şekil 9*'da zaman söz konusu. *Şekil 7*'ye faz portresi (phase portrait) deniyor.
 <img src="şekil/durum değişkenlerinin zamanla değişimi.png" alt="state trajectories with time" height="240"/></br>
 *Şekil 10:* Zorlanmamış sistemin durum değişkenlerinin zamanla değişimleri.
-## Hafta 15
+
 ### Nümerik Türev
 Aşağıdaki kodu<sup>7</sup> oluştururken örnekleme frekansının (dolayısıyla da örnekleme periyodunun) sinyalin üzerindeki etkisine şahit olduk. Örnekleme periyodu 10ms olduğunda görüntülediğimiz sinyalin sinüse benzer bir yanı yoktu. Örnekleme frekansının artırdığımız (yani örnekleme periyodunu düşürdüğümüzde) işte o zaman yavaş yavaş sinüse benzer şeyler elde ettik ve bir değerden sonra tamamen sinüs gibi gözükmeye başladı. Her ne kadar yüksek örnekleme frekansı ile çalışınca hiçbir bilgi kaybı yaşamasak da, işlemci gücümüz sınırlı olduğundan dolayı mümkün mertebe örnekleme frekansını düşük (yani örnekleme periyodunu büyük) tutmak isteriz ki mikroişlemci/mikrodenetleyici üzerindeki işlem yükümüz az olsun. 
 ```
@@ -134,7 +135,7 @@ end
 ```
 <img src="şekil/nümerik türev sonucu.png" alt="discrete derivative" height="200"/></br>
 *Şekil 11:* Priz sinyali Asin(2πft) formunda olup genlik 220V, frekansı ise 50Hz'dir. Kırmızı renkle gösterilen grafikte priz sinyalinin türevini matematiksel olarak 2πfAcos(2πft) formunda elde ettik ve çizdirdik. Mavi grafikte ise yukarıda kodda görüldüğü gibi sinyalin o andaki örneğinden bir önceki örnekteki değerinin farkını alıp geçen zaman olan örnekleme periyoduna böldük ve türev operatörünün nümerik halini gerçekledik. Başlangıç koşulunu uygun değere ayarladığımızda mavi ile kırmızı grafiklerinin bütün örnekler (for all samples) için aynı olduğunu görülebiliyor.
-## Hafta 16
+## Hareket Sensöründen Açının Hesaplanması
 Bu hafta genel olarak geri-beslemeli kontrol sistemlerinde, özel olarak da Kendi-Kendini Dengeleyen Robot üzerinde sensörleri (algılayıcıları) konuşacağız. Hareket sensörü olan MPU6050 ile ham ciroskop ve ivmemetre verisinden ilk önce tamamlayıcı süzgeç (complementary filter) algoritması ile ardında da özel bir Bayesian süzgeç olan Kalman Filtresi ile açının tahmin edilmesi (estimation) konularına bakacağız.
 ## Dipnotlar
 <sup>1</sup> Bu tanım [5] tarafından [6]'dan alınmıştır.</br>
