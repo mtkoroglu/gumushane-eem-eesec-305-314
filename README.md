@@ -49,6 +49,7 @@ eşitliğini uygulayarak aşağıdaki gibi elde ettik (dersin tam sonuna denk ge
 Transfer fonksiyonunun paydası **birinci** dereceden bir polinom şeklinde, bu da **bir** durum değişkenimiz olduğunu gösteriyor. Zaten bizim RC devresindeki durum değişkenimiz kapasitörün üzerindeki voltaj V<sub>C</sub>(t).
 ### Aç-Kapa Denetleyici
 Aç-kapa denetleyiciyi tasarlamadan önce araba hız kontrolü örneğine geri dönelim ve orada PID denetleyici yerine ilkel bir denetleyici olan aç-kapa denetleyici koyalım. Bakalım hız ve pozisyon kontrolü problemlerinde sistemimizin çıkışı olan hız ve pozisyonu kontrol edebilecek miyiz yoksa edemeyecek miyiz. Farz edelim kontrol ettik; çıkış istediğimiz davranışı gösteriyor mu yoksa göstermiyor mu, ona da bakalım. Unutmayalım, aç-kapa kontrolün çıkışını simüle ederken gerçek hayatta bu sinyalin uygulanabilirliğini göz önünde bulundurmamız gerekecek. Derste **bang-bang** kontrole de bakıp pratik bir araba kontrolü ile ilgili örnek videolar izleyeceğiz. Aç-kapa kontrol de kapalı halde sistemimize bir kontrol sinyali uygulamazken, bang bang kontrolde açıkken uygulanan sinyalin tam tersi uygulanıyor.
+
 ## Geri-besemeli Kontrol Sistemi Blok Diyagram ve PID Kontrolör
 Geribeslemeli bir kontrol sisteminin<sup>4</sup> blok diyagramına<sup>5</sup> *Şekil 5*'de görülen kendi-kendini dengeleyen robot üzerinden bir bakış.
 
@@ -56,11 +57,9 @@ Geribeslemeli bir kontrol sisteminin<sup>4</sup> blok diyagramına<sup>5</sup> *
 
 *Şekil 5:* Kendi-kendini dengeleyen robot ve üzerinde koşan geribeslemeli kontrol sistemine bir bakış.
 
-Derste PID kontrolörün girişi olan hata sinyali e(t) ile çıkışı olan kontrol sinyali u(t) arasındaki ifadeyi aşağıdaki gibi elde ettik.
+Derste PID kontrolörün girişi olan hata sinyali e(t) ile çıkışı olan kontrol sinyali u(t) arasındaki ifadeyi sürekli zaman için aşağıdaki gibi elde ettik.
 
-<img src="eşitlik/pid kontrolör.JPG" alt="pid kontrolör" height="70"/>
-
-Bu ifadeyi daha önceden MATLAB Simulink'de gerçeklemiş olduğumuz (arasınavda da karşımıza çıkan) araba pozisyon kontrolü probleminde önceden gerçeklediğimiz sistem modellerine paralel olarak en altta gerçekledik. Dersin sonunda yaptığımız bu adımda istediğimiz sonucu elde edemedik. Bunun sebebini 12. Hafta dersimizin başında açıklayıp PID kontrolörün ayrık zamanda Arduino üzerinde (kendi-kendini dengeleyen robot için) gerçeklenmesi ile devam edeceğiz.
+<img src="eşitlik/pid kontrolör.JPG" alt="pid kontrolör" height="55"/>
 
 ## Ayrık Zamanda PID Kontrolör
 PID kontrolörün (*Şekil 5*'de görüldüğü gibi kendi-kendini dengeleyen robot için) Arduino üzerinde ayrık zamanda (discrete time) nasıl gerçeklendiğini anlamaya nümerik integrale bakarak başlıyoruz.
