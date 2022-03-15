@@ -13,7 +13,7 @@ Bu hafta baktığımız RC devresinin durum uzayı modelinde bir tane **durum de
 ## Sarkaç (Pendulum) Sistemi
 **Pendulum** (sarkaç) dinamiklerine durum uzayında (state space) bakış [1]. *Şekil 2*'de görüldüğü üzere, kütlesi ihmal edilen *l* uzunluğundaki çubuğun ucundaki cismin kütlesi *m*, sürtünme katsayısı *b*, yer çekimi ivmesi *g*; sistem parametreleri denilen bu katsayılar sabit (i.e., zamanla değişmiyor). Sistemin durum değişkenleri açı ve açısal hız. Çıkış değişkeni olarak açıyı gözlemliyoruz.
 
-<img src="şekil/pendulum dynamics.png" alt="Pendulum dinamikleri." height="300"/></br>
+<img src="şekil/pendulum dynamics.png" alt="Pendulum dinamikleri." height="240"/></br>
 *Şekil 2:* Pendulum (sarkaç) modeli ([2]'nin izni ile).
 
 Burada analiz ettiğimiz pendulum probleminde sistemimizin bir girişi yok. Gerçek hayatta çubuğun ucuna pervaneli bir motor takılıp çubuğu hareket ettirebilir veya çubuğun baş noktasında (yani döndüğü yerde olan eksen etrafında) bir adım (step) veya servo motor pendulumu döndürebilir. Motorların dönmesiyle sisteme etki edecek olan kuvvet sistemimize bir giriş olarak etki edecektir. Bu konuya altıncı haftada dönüp burada bahsettiğimiz sistem giriş değişkenini (input variable) yani kontrol sinyalini bir denetleyici (e.g., PID) vasıtasıyla oluşturduk.
@@ -25,7 +25,7 @@ Burada analiz ettiğimiz pendulum probleminde sistemimizin bir girişi yok. Ger�
 ### Hız (Cruise) Kontrol
 Bir arabaya Newton'un F=ma kanununu uygulayarak elde edeceğimiz dinamik modeli inceleyelim. **Durum uzayı gösterimi** (state space representation). Ayrıca oransal-integral-türevsel (proportional-integral-derivative) denetleyici (PID controller) tasarlayarak (deneme-yanılma yolu ile) arabamızın hız kontrolünü yapmaya çalışalım.
 
-<img src="şekil/cruise_control.png" alt="Pendulum dinamikleri" height="240"/></br>
+<img src="şekil/cruise_control.png" alt="Pendulum dinamikleri" height="200"/></br>
 *Şekil 4:* Araba hız kontrolü (cruise control) dinamikleri ([3]'ün izni ile). Burada sönümleme katsayısı b arabayı durdurucu etki yapıyor.
 
 A matrisi sistem matrisimiz, B matrisi giriş matrisi, C matrisi çıkış matrisi olarak isimlendiriliyor. Eğer bir sistemin dinamikleri doğrusal (linear) ise o zaman sistemin zaman alanındaki (time-domain) modelini yukarıda geçen matrisler ve giriş, durum ve çıkış değişkenleri cinsinden **durum uzayı gösterimi** (state space representation) ile tasvir edebiliriz. Bu hafta zaman alanından (time domain) frekans alanına (s domain) geçiş yaptık. Sistemimizin çıkışı (y(t)) olan arabamızın hızı (v(t)) ile girişi (u(t)) olan arabayı çeken kuvvet arasındaki orana s alanında (s-domain) bakarsak transfer fonksiyonu T(s)'yi elde ediyoruz.
@@ -50,7 +50,7 @@ Transfer fonksiyonunun paydası **birinci** dereceden bir polinom şeklinde, bu 
 ### Aç-Kapa Denetleyici
 Aç-kapa denetleyiciyi tasarlamadan önce araba hız kontrolü örneğine geri dönelim ve orada PID denetleyici yerine ilkel bir denetleyici olan aç-kapa denetleyici koyalım. Bakalım hız ve pozisyon kontrolü problemlerinde sistemimizin çıkışı olan hız ve pozisyonu kontrol edebilecek miyiz yoksa edemeyecek miyiz. Farz edelim kontrol ettik; çıkış istediğimiz davranışı gösteriyor mu yoksa göstermiyor mu, ona da bakalım. Unutmayalım, aç-kapa kontrolün çıkışını simüle ederken gerçek hayatta bu sinyalin uygulanabilirliğini göz önünde bulundurmamız gerekecek. Derste **bang-bang** kontrole de bakıp pratik bir araba kontrolü ile ilgili örnek videolar izleyeceğiz. Aç-kapa kontrol de kapalı halde sistemimize bir kontrol sinyali uygulamazken, bang bang kontrolde açıkken uygulanan sinyalin tam tersi uygulanıyor.
 
-## Geri-besemeli Kontrol Sistemi Blok Diyagram ve PID Kontrolör
+## Geri-beslemeli Kontrol Sistemi Blok Diyagram ve PID Kontrolör
 Geribeslemeli bir kontrol sisteminin<sup>4</sup> blok diyagramına<sup>5</sup> *Şekil 5*'de görülen kendi-kendini dengeleyen robot üzerinden bir bakış.
 
 <img src="şekil/kendi-kendini dengeleyen robot.jpg" alt="kendi-kendini dengeleyen robot" height="550"/> <img src="ders/hafta10/geribeslemeli kontrol sistemi.jpg" alt="geribeslemeli kontrol sistemi" height="550"/>
@@ -64,10 +64,10 @@ Derste PID kontrolörün girişi olan hata sinyali e(t) ile çıkışı olan kon
 ## Ayrık Zamanda PID Kontrolör
 PID kontrolörün (*Şekil 5*'de görüldüğü gibi kendi-kendini dengeleyen robot için) Arduino üzerinde ayrık zamanda (discrete time) nasıl gerçeklendiğini anlamaya nümerik integrale bakarak başlıyoruz.
 
-<img src="şekil/yabr smallest.gif" alt="your arduino balancing robot" height="350"/></br>
+<img src="şekil/yabr smallest.gif" alt="your arduino balancing robot" height="300"/></br>
 *Şekil 6:* Kendi-kendini dengeleyen robotun, üzerinde yer alan Arduino'da koşan PID kontrolör ile yere düşmeden dengede kalarak ilerlemesi.
 
-<img src="şekil/backward euler integration.png" alt="backward euler integration" height="300"/></br>
+<img src="şekil/backward euler integration.png" alt="backward euler integration" height="240"/></br>
 *Şekil 7:* Arduino üzerinde koşan PID kontrolörün integral kontrol kısmının ayrık zamanda *Backward Euler* tekniği ile gerçeklenmesi. İntegrali alınacak sinyalin/değişkenin bulunduğumuz anda değeri mevcut ise (e.g., burada bulunduğumuz an t = 4T, integralini aldığımız sinyal e(t) dolayısıyla e(4T) değerinin bulunan anda mevcut olup olmadığına bakıyoruz) o zaman o değer ile örnekleme periodu (sampling period) çarpılarak en son dikdörtgenin alanı hesaplanır ve bir önceki anda hesaplanan değere (burada e(3T)) eklenir.
 ### Üçüncü dereceden zorlanmamış bir dinamik sistemin Simulink'de gerçeklenmesi
 Aşağıda durum uzayı denklemleri verilen sistemi Simulink'de kurduk.
