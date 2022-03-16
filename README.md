@@ -50,7 +50,7 @@ Transfer fonksiyonunun paydası **birinci** dereceden bir polinom şeklinde, bu 
 ## Root Locus (Kök Yer Eğrisi)
 Önceki dönemlerdeki **EESEC 305 Kontrol Sistemleri I** ve **EESEC 314 Kontrol Sistemleri II** derslerinde geri-beslemeli bir kontrol sisteminin blok diyagramına göz atmıştık. Burada hatırlamak gerekirse, kontrol edilmek istenen sistem doğrusal ise o zaman *Şekil 5*'deki gibi bir akış diyagramına sahip oluruz. 
 
-<img src="şekil/rlocus_feedback_control_system.jpg" alt="geri beslemeli kontrol doğrusal sistem" height="150"/>
+<img src="şekil/rlocus_feedback_control_system.jpg" alt="geri beslemeli kontrol doğrusal sistem" height="120"/>
 
 *Şekil 5:* Doğrusal bir sistem üzerinde geri-beslemeli kontrol.
 
