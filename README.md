@@ -50,9 +50,19 @@ Transfer fonksiyonunun paydası **birinci** dereceden bir polinom şeklinde, bu 
 ## Root Locus
 Önceki dönemlerdeki **EESEC 305 Kontrol Sistemleri I** ve **EESEC 314 Kontrol Sistemleri II** derslerinde geri-beslemeli bir kontrol sisteminin blok diyagramına göz atmıştık. Burada hatırlamak gerekirse, kontrol edilmek istenen sistem doğrusal ise o zaman *Şekil 5*'deki gibi bir akış diyagramına sahip oluruz. 
 
-<img src="şekil/geri-beslemeli-kontrol-doğrusal.jpg" alt="geri beslemeli kontrol doğrusal sistem" height="500"/>
+<img src="şekil/rlocus_feedback_control_system.jpg.jpg" alt="geri beslemeli kontrol doğrusal sistem" height="200"/>
 
-*Şekil 7:* Doğrusal bir sistem üzerinde geri-beslemeli kontrol.
+*Şekil 5:* Doğrusal bir sistem üzerinde geri-beslemeli kontrol.
+
+Burada durum uzayı modelimizin matrisleri 
+
+<img src="eşitlik/matrisler.png" alt="durum uzayı matrisleri" height="80"/>
+
+olarak verilirse o zaman sistemin transfer fonksiyonu
+
+<img src="eşitlik/transfer_fonksiyonu.png" alt="transfer fonksiyonu" height="50"/>
+
+olarak hesaplanabilir. Burada 3x3'lük matrisin tersini alma işlemi ve diğer matris çarpma işlemlerini derste MATLAB'da hem hazır hem de kendi yazdığımız komutlarla gerçekledik.
 
 ### Aç-Kapa Denetleyici
 Aç-kapa denetleyiciyi tasarlamadan önce araba hız kontrolü örneğine geri dönelim ve orada PID denetleyici yerine ilkel bir denetleyici olan aç-kapa denetleyici koyalım. Bakalım hız ve pozisyon kontrolü problemlerinde sistemimizin çıkışı olan hız ve pozisyonu kontrol edebilecek miyiz yoksa edemeyecek miyiz. Farz edelim kontrol ettik; çıkış istediğimiz davranışı gösteriyor mu yoksa göstermiyor mu, ona da bakalım. Unutmayalım, aç-kapa kontrolün çıkışını simüle ederken gerçek hayatta bu sinyalin uygulanabilirliğini göz önünde bulundurmamız gerekecek. Derste **bang-bang** kontrole de bakıp pratik bir araba kontrolü ile ilgili örnek videolar izleyeceğiz. Aç-kapa kontrol de kapalı halde sistemimize bir kontrol sinyali uygulamazken, bang bang kontrolde açıkken uygulanan sinyalin tam tersi uygulanıyor.
