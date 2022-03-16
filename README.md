@@ -47,16 +47,16 @@ eşitliğini uygulayarak aşağıdaki gibi elde ettik (dersin tam sonuna denk ge
 
 <img src="eşitlik/RC devresi transfer fonksiyonu.JPG" alt="RC devresi transfer fonksiyonu" height="90"/></br>
 Transfer fonksiyonunun paydası **birinci** dereceden bir polinom şeklinde, bu da **bir** durum değişkenimiz olduğunu gösteriyor. Zaten bizim RC devresindeki durum değişkenimiz kapasitörün üzerindeki voltaj V<sub>C</sub>(t).
-## Root Locus
+## Root Locus (Kök Yer Eğrisi)
 Önceki dönemlerdeki **EESEC 305 Kontrol Sistemleri I** ve **EESEC 314 Kontrol Sistemleri II** derslerinde geri-beslemeli bir kontrol sisteminin blok diyagramına göz atmıştık. Burada hatırlamak gerekirse, kontrol edilmek istenen sistem doğrusal ise o zaman *Şekil 5*'deki gibi bir akış diyagramına sahip oluruz. 
 
-<img src="şekil/rlocus_feedback_control_system.jpg" alt="geri beslemeli kontrol doğrusal sistem" height="200"/>
+<img src="şekil/rlocus_feedback_control_system.jpg" alt="geri beslemeli kontrol doğrusal sistem" height="150"/>
 
 *Şekil 5:* Doğrusal bir sistem üzerinde geri-beslemeli kontrol.
 
 Burada durum uzayı modelimizin matrisleri 
 
-<img src="eşitlik/matrisler.png" alt="durum uzayı matrisleri" height="200"/>
+<img src="eşitlik/matrisler.png" alt="durum uzayı matrisleri" height="160"/>
 
 olarak verilirse o zaman sistemin transfer fonksiyonu
 
