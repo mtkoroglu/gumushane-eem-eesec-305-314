@@ -96,7 +96,7 @@ elde ederiz. Buradan da
 
 R(s)/Y(s) = K / s(s+1)(s+2)+K 
 
-olarak buluruz ki görüldüğü gibi bu transfer fonksiyonun kutupları (paydasının kökleri) kazan K değiştikçe değişmektedir. İşte Kök Yer Eğrisi grafiği K kazancı değiştikçe kutupları aldığı konumların çizimidir.
+olarak buluruz. Görüldüğü gibi bu transfer fonksiyonunun kutupları (paydanın kökleri) kazanç K değiştikçe değişmektedir. İşte **Root Locus** grafiği K kazancı değiştikçe kutupların aldığı konumların çizimidir.
 
 ### Aç-Kapa Denetleyici
 Aç-kapa denetleyiciyi tasarlamadan önce araba hız kontrolü örneğine geri dönelim ve orada PID denetleyici yerine ilkel bir denetleyici olan aç-kapa denetleyici koyalım. Bakalım hız ve pozisyon kontrolü problemlerinde sistemimizin çıkışı olan hız ve pozisyonu kontrol edebilecek miyiz yoksa edemeyecek miyiz. Farz edelim kontrol ettik; çıkış istediğimiz davranışı gösteriyor mu yoksa göstermiyor mu, ona da bakalım. Unutmayalım, aç-kapa kontrolün çıkışını simüle ederken gerçek hayatta bu sinyalin uygulanabilirliğini göz önünde bulundurmamız gerekecek. Derste **bang-bang** kontrole de bakıp pratik bir araba kontrolü ile ilgili örnek videolar izleyeceğiz. Aç-kapa kontrol de kapalı halde sistemimize bir kontrol sinyali uygulamazken, bang bang kontrolde açıkken uygulanan sinyalin tam tersi uygulanıyor.
