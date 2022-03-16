@@ -62,7 +62,41 @@ olarak verilirse o zaman sistemin transfer fonksiyonu
 
 <img src="eşitlik/transfer_fonksiyonu.png" alt="transfer fonksiyonu" height="50"/>
 
-olarak hesaplanabilir. Burada 3x3'lük matrisin tersini alma işlemi ve diğer matris çarpma işlemlerini derste MATLAB'da hem hazır hem de kendi yazdığımız komutlarla gerçekledik.
+olarak hesaplanabilir. Burada 3x3'lük matrisin tersini alma işlemi ve diğer matris çarpma işlemlerini derste MATLAB'da hem hazır hem de kendi yazdığımız komutlarla gerçekledik. Daha önce her zaman incelediğimiz sistemlerin transfer fonksiyonarını elde ettik. Burada **Kök Yer Eğrisi** konusunda kontrol etmek istediğimiz dinamik sistemin değil de geri-beslemeli kontrol sisteminin tamamının transfer fonksiyonu ile ilgileniyoruz. Başka bir deyişle, çıkış sinyalimiz Y(s)'nin referans sinyalimiz R(s)'ye oranını bulup K kazancındaki değişimin transfer fonksiyonuna etkilerini (yani sistemin cevabındaki değişimi) gözlemlemek istiyoruz. Sistemin çıkışının girişe oranı olan Y(s)/U(s) ifadesini bulduk. Kontrol sinyali U(s) ile hata sinyali E(s) arasında 
+
+U(s) = KE(s) 
+
+şeklinde bir ilişkinin olduğunu *Şekil 5*'den de faydalanarak görebiliriz. Böylece 
+
+U(s)/E(s) = K 
+
+buluruz. Blok diyagramdan 
+
+E(s) = R(s) - Y(s) 
+
+olduğunu da görebiliriz. Sonuç olarak R(s) ile Y(s) arasında matematiksel bir ifade bulmak istediğimizden ilk önce U(s)/E(s) = K ifadesinde E(s) yerine R(s) - Y(s) ifadesini koyalım ve 
+
+U(s) / (R(s)-Y(s)) = K 
+
+elde edelim. Başka bir ifadeyle 
+
+U(s) = K(R(s) - Y(s))
+
+olur. Bu ifadeyi de Y(s)/U(s) ifadesinde yerine koyarsak 
+
+Y(s) / K(R(s) - Y(s)) = 1/s(s+1)(s+1) 
+
+olur. İçler dışlar çarpımıyla devam edersek 
+
+Y(s)s(s+1)(s+2) = KR(s) - KY(s) 
+
+elde ederiz. Buradan da 
+
+*Şekil 5*'de görülen geri beslemeli kontrol sisteminin tamamının transfer fonksiyonu olan R(s)/Y(s) ifadesini 
+
+R(s)/Y(s) = K / s(s+1)(s+2)+K 
+
+olarak buluruz ki görüldüğü gibi bu transfer fonksiyonun kutupları (paydasının kökleri) kazan K değiştikçe değişmektedir. İşte Kök Yer Eğrisi grafiği K kazancı değiştikçe kutupları aldığı konumların çizimidir.
 
 ### Aç-Kapa Denetleyici
 Aç-kapa denetleyiciyi tasarlamadan önce araba hız kontrolü örneğine geri dönelim ve orada PID denetleyici yerine ilkel bir denetleyici olan aç-kapa denetleyici koyalım. Bakalım hız ve pozisyon kontrolü problemlerinde sistemimizin çıkışı olan hız ve pozisyonu kontrol edebilecek miyiz yoksa edemeyecek miyiz. Farz edelim kontrol ettik; çıkış istediğimiz davranışı gösteriyor mu yoksa göstermiyor mu, ona da bakalım. Unutmayalım, aç-kapa kontrolün çıkışını simüle ederken gerçek hayatta bu sinyalin uygulanabilirliğini göz önünde bulundurmamız gerekecek. Derste **bang-bang** kontrole de bakıp pratik bir araba kontrolü ile ilgili örnek videolar izleyeceğiz. Aç-kapa kontrol de kapalı halde sistemimize bir kontrol sinyali uygulamazken, bang bang kontrolde açıkken uygulanan sinyalin tam tersi uygulanıyor.
