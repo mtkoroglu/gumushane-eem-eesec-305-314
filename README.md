@@ -54,25 +54,29 @@ Aç-kapa denetleyiciyi tasarlamadan önce araba hız kontrolü örneğine geri d
 ## Root Locus (Kök Yer Eğrisi)
 Önceki dönemlerdeki **EESEC 305 Kontrol Sistemleri I** ve **EESEC 314 Kontrol Sistemleri II** derslerinde geri-beslemeli bir kontrol sisteminin genel blok diyagramına göz atmıştık. Burada hatırlamak gerekirse, kontrol edilmek istenen sistem doğrusal ise o zaman *Şekil 5*'deki gibi bir blok diyagrama sahip oluruz. 
 
-<img src="https://drive.google.com/uc?id=1xs9K98mUPmY1uflo0o4nUcfAVcmKzFv8" alt="geri beslemeli kontrol doğrusal sistem" height="160"/>
+<img src="https://drive.google.com/uc?id=1xs9K98mUPmY1uflo0o4nUcfAVcmKzFv8" alt="geri beslemeli kontrol doğrusal sistem" height="140"/>
 
 *Şekil 5:* Doğrusal bir sistem üzerinde geri-beslemeli kontrol.
 
 Burada durum uzayı modelimizin matrisleri 
 
-<img src="eşitlik/matrisler.png" alt="durum uzayı matrisleri" height="160"/>
+<img src="eşitlik/matrisler.png" alt="durum uzayı matrisleri" height="180"/>
 
-olarak verilirse o zaman sistemin transfer fonksiyonu
+olarak verilirse o zaman sistemin transfer fonksiyonu 
 
-<img src="eşitlik/transfer_fonksiyonu.png" alt="transfer fonksiyonu" height="50"/>
+C(sI-a)<sup>-1</sup>B
 
-olarak hesaplanabilir. Burada 3x3'lük matrisin tersini alma işlemi ve diğer matris çarpma işlemlerini derste MATLAB'da hem hazır hem de kendi yazdığımız komutlarla gerçekledik. Daha önce her zaman incelediğimiz sistemlerin transfer fonksiyonlarını elde ettik. Burada **Kök Yer Eğrisi** konusunda kontrol etmek istediğimiz dinamik sistemin değil de geri-beslemeli kontrol sisteminin tamamının transfer fonksiyonu ile ilgileniyoruz. Başka bir deyişle, çıkış sinyalimiz Y(s)'nin referans sinyalimiz R(s)'ye oranını bulup K kazancındaki değişimin transfer fonksiyonuna etkilerini (yani sistemin cevabındaki değişimi) gözlemlemek istiyoruz. Sistemin çıkışının girişe oranı olan Y(s)/U(s) ifadesini bulduk. Kontrol sinyali U(s) ile hata sinyali E(s) arasında 
+formülü kullanılarak 
+
+<img src="eşitlik/transfer fonksiyonu.png" alt="transfer fonksiyonu" height="80"/>
+
+olarak hesaplanabilir. Burada 3x3'lük matrisin tersini alma işlemi ve diğer matris çarpma işlemlerini derste MATLAB'da hem hazır hem de kendi yazdığımız komutlarla gerçekledik. Daha önce her zaman incelediğimiz sistemlerin transfer fonksiyonlarını elde ettik. Burada Kök Yer Eğrisi konusunda kontrol etmek istediğimiz dinamik sistemin değil de geri-beslemeli kontrol sisteminin tamamının transfer fonksiyonu ile ilgileniyoruz. Başka bir deyişle, çıkış sinyalimiz Y(s)'nin referans sinyalimiz R(s)'ye oranını bulup K kazancındaki değişimin transfer fonksiyonuna etkilerini (yani sistemin cevabındaki değişimi) gözlemlemek istiyoruz. Sistemin çıkışının girişe oranı olan Y(s)/U(s) ifadesini bulduk. Kontrol sinyali U(s) ile hata sinyali E(s) arasında  
 
 U(s) = KE(s) 
 
 şeklinde bir ilişkinin olduğunu *Şekil 5*'den faydalanarak görebiliriz. Böylece 
 
-U(s)/E(s) = K 
+<img src="eşitlik/denetleyici transfer fonksiyonu.png" alt="denetleyici transfer fonksiyonu" height="60"/>
 
 buluruz. Yine blok diyagramdan 
 
