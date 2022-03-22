@@ -96,7 +96,7 @@ U(s) = K(R(s) - Y(s))
 
 olur. Bu ifadeyi de Y(s)/U(s) ifadesinde yerine koyarsak 
 
-<img src="eşitlik/ara transfer fonksiyonu 2.png" alt="ara transfer fonksiyonu 2" height="70"/>
+<img src="eşitlik/ara transfer fonksiyonu 2.png" alt="ara transfer fonksiyonu 2" height="55"/>
 
 olur. İçler dışlar çarpımıyla devam edersek 
 
@@ -104,7 +104,7 @@ Y(s)s(s+1)(s+2) = KR(s) - KY(s)
 
 elde ederiz. Buradan da *Şekil 5*'de görülen geri beslemeli kontrol sisteminin tamamının transfer fonksiyonu olan R(s)/Y(s) ifadesini 
 
-<img src="eşitlik/geri beslemeli sistem transfer fonksiyonu.png" alt="geri beslemeli sistem transfer fonksiyonu" height="70"/>
+<img src="eşitlik/geri beslemeli sistem transfer fonksiyonu.png" alt="geri beslemeli sistem transfer fonksiyonu" height="55"/>
 
 olarak buluruz. Görüldüğü gibi bu transfer fonksiyonunun kutupları (i.e., paydanın kökleri) K değiştikçe farklı değerler almaktadır. Kazanç K değiştikçe kutupların aldığı konumların çizimini (i.e., kök yer eğrisi - root locus) *Şekil 6*'da görebilirsiniz. Her bir kutubun aldığı değerler farklı renkle çizdirilmiştir. Unutmayın; belirli bir K değeri için mavi, yeşil ve kırmızı grafikler üzerinde belirli bir kutup değeri vardır. Kazanç değiştikçe kökler beraber hareket ederler.
 
