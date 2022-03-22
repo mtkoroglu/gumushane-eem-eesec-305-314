@@ -54,7 +54,7 @@ Aç-kapa denetleyiciyi tasarlamadan önce araba hız kontrolü örneğine geri d
 ## Root Locus (Kök Yer Eğrisi)
 Önceki dönemlerdeki **EESEC 305 Kontrol Sistemleri I** ve **EESEC 314 Kontrol Sistemleri II** derslerinde geri-beslemeli bir kontrol sisteminin genel blok diyagramına göz atmıştık. Burada hatırlamak gerekirse, kontrol edilmek istenen sistem doğrusal ise o zaman *Şekil 5*'deki gibi bir blok diyagrama sahip oluruz. 
 
-<img src="şekil/rlocus_feedback_control_system.jpg" alt="geri beslemeli kontrol doğrusal sistem" height="120"/>
+<img src="https://drive.google.com/uc?id=1xs9K98mUPmY1uflo0o4nUcfAVcmKzFv8" alt="geri beslemeli kontrol doğrusal sistem" height="160"/>
 
 *Şekil 5:* Doğrusal bir sistem üzerinde geri-beslemeli kontrol.
 
