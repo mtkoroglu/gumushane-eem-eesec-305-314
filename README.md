@@ -100,7 +100,7 @@ R(s)/Y(s) = K / s(s+1)(s+2)+K
 
 olarak buluruz. Görüldüğü gibi bu transfer fonksiyonunun kutupları (i.e., paydanın kökleri) K değiştikçe farklı değerler almaktadır. Kazanç K değiştikçe kutupların aldığı konumların çizimini (i.e., kök yer eğrisi - root locus) *Şekil 6*'da görebilirsiniz. Her bir kutubun aldığı değerler farklı renkle çizdirilmiştir. Unutmayın; belirli bir K değeri için mavi, yeşil ve kırmızı grafikler üzerinde belirli bir kutup değeri vardır. Kazanç değiştikçe kökler beraber hareket ederler.
 
-<img src="şekil/rlocus graph.jpg" alt="root locus grafiği" height="400"/>
+<img src="şekil/rlocus graph.png" alt="root locus grafiği" height="400"/>
 
 *Şekil 6:* Kök yer eğrisi (root locus).
 
