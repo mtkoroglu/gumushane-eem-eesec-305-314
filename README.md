@@ -42,10 +42,10 @@ Derste yukarıda anlattığımız güncellemeyi sarkaç sistemine uygulayıp yin
 Tahtada durum uzayı gösterimini tekrar yazacağımız RC devresinin transfer fonksiyonunu dördüncü haftada öğrendiğimiz</br>
 T(s) = Y(s)/U(s) = C(sI-A)<sup>-1</sup>B + D
 
-<img src="eşitlik/durum_uzayı_transfer_fonksiyonu.JPG" alt="durum uzayı gösteriminden transfer fonksiyonu gösterimine geçiş" height="90"/></br>
+<img src="eşitlik/durum_uzayı_transfer_fonksiyonu.JPG" alt="durum uzayı gösteriminden transfer fonksiyonu gösterimine geçiş" height="70"/></br>
 eşitliğini uygulayarak aşağıdaki gibi elde ettik (dersin tam sonuna denk geldi).
 
-<img src="eşitlik/RC devresi transfer fonksiyonu.JPG" alt="RC devresi transfer fonksiyonu" height="90"/></br>
+<img src="eşitlik/RC devresi transfer fonksiyonu.JPG" alt="RC devresi transfer fonksiyonu" height="70"/></br>
 Transfer fonksiyonunun paydası **birinci** dereceden bir polinom şeklinde, bu da **bir** durum değişkenimiz olduğunu gösteriyor. Zaten bizim RC devresindeki durum değişkenimiz kapasitörün üzerindeki voltaj V<sub>C</sub>(t).
 
 ### Aç-Kapa Denetleyici
