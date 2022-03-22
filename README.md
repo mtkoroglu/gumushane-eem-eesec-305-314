@@ -54,13 +54,13 @@ Aç-kapa denetleyiciyi tasarlamadan önce araba hız kontrolü örneğine geri d
 ## Root Locus (Kök Yer Eğrisi)
 Önceki dönemlerdeki **EESEC 305 Kontrol Sistemleri I** ve **EESEC 314 Kontrol Sistemleri II** derslerinde geri-beslemeli bir kontrol sisteminin genel blok diyagramına göz atmıştık. Burada hatırlamak gerekirse, kontrol edilmek istenen sistem doğrusal ise o zaman *Şekil 5*'deki gibi bir blok diyagrama sahip oluruz. 
 
-<img src="https://drive.google.com/uc?id=1xs9K98mUPmY1uflo0o4nUcfAVcmKzFv8" alt="geri beslemeli kontrol doğrusal sistem" height="140"/>
+<img src="https://drive.google.com/uc?id=1xs9K98mUPmY1uflo0o4nUcfAVcmKzFv8" alt="geri beslemeli kontrol doğrusal sistem" height="120"/>
 
 *Şekil 5:* Doğrusal bir sistem üzerinde geri-beslemeli kontrol.
 
 Burada durum uzayı modelimizin matrisleri 
 
-<img src="eşitlik/matrisler.png" alt="durum uzayı matrisleri" height="180"/>
+<img src="eşitlik/matrisler.png" alt="durum uzayı matrisleri" height="200"/>
 
 olarak verilirse o zaman sistemin transfer fonksiyonu 
 
@@ -68,7 +68,7 @@ C(sI-a)<sup>-1</sup>B
 
 formülü kullanılarak 
 
-<img src="eşitlik/transfer fonksiyonu.png" alt="transfer fonksiyonu" height="80"/>
+<img src="eşitlik/transfer fonksiyonu.png" alt="transfer fonksiyonu" height="50"/>
 
 olarak hesaplanabilir. Burada 3x3'lük matrisin tersini alma işlemi ve diğer matris çarpma işlemlerini derste MATLAB'da hem hazır hem de kendi yazdığımız komutlarla gerçekledik. Daha önce her zaman incelediğimiz sistemlerin transfer fonksiyonlarını elde ettik. Burada Kök Yer Eğrisi konusunda kontrol etmek istediğimiz dinamik sistemin değil de geri-beslemeli kontrol sisteminin tamamının transfer fonksiyonu ile ilgileniyoruz. Başka bir deyişle, çıkış sinyalimiz Y(s)'nin referans sinyalimiz R(s)'ye oranını bulup K kazancındaki değişimin transfer fonksiyonuna etkilerini (yani sistemin cevabındaki değişimi) gözlemlemek istiyoruz. Sistemin çıkışının girişe oranı olan Y(s)/U(s) ifadesini bulduk. Kontrol sinyali U(s) ile hata sinyali E(s) arasında  
 
@@ -76,15 +76,19 @@ U(s) = KE(s)
 
 şeklinde bir ilişkinin olduğunu *Şekil 5*'den faydalanarak görebiliriz. Böylece 
 
-<img src="eşitlik/denetleyici transfer fonksiyonu.png" alt="denetleyici transfer fonksiyonu" height="60"/>
+<img src="eşitlik/denetleyici transfer fonksiyonu.png" alt="denetleyici transfer fonksiyonu" height="50"/>
 
 buluruz. Yine blok diyagramdan 
 
-E(s) = R(s) - Y(s) 
+E(s)=R(s)-Y(s) 
 
-olduğunu da görebiliriz. Sonuç olarak R(s) ile Y(s) arasında matematiksel bir ifade bulmak istediğimizden ilk önce U(s)/E(s) = K ifadesinde E(s) yerine R(s) - Y(s) ifadesini koyalım ve 
+olduğunu da görebiliriz. Sonuç olarak R(s) ile Y(s) arasında matematiksel bir ifade bulmak istediğimizden ilk önce 
 
-U(s) / (R(s)-Y(s)) = K 
+<img src="eşitlik/denetleyici transfer fonksiyonu.png" alt="denetleyici transfer fonksiyonu" height="50"/>
+
+ifadesinde E(s) yerine R(s) - Y(s) ifadesini koyalım ve 
+
+<img src="eşitlik/ara transfer fonksiyonu 1.png" alt="ara transfer fonksiyonu 1" height="50"/>
 
 elde edelim. Başka bir ifadeyle 
 
@@ -92,7 +96,7 @@ U(s) = K(R(s) - Y(s))
 
 olur. Bu ifadeyi de Y(s)/U(s) ifadesinde yerine koyarsak 
 
-Y(s) / K(R(s) - Y(s)) = 1/s(s+1)(s+1) 
+<img src="eşitlik/ara transfer fonksiyonu 2.png" alt="ara transfer fonksiyonu 2" height="90"/>
 
 olur. İçler dışlar çarpımıyla devam edersek 
 
@@ -100,7 +104,7 @@ Y(s)s(s+1)(s+2) = KR(s) - KY(s)
 
 elde ederiz. Buradan da *Şekil 5*'de görülen geri beslemeli kontrol sisteminin tamamının transfer fonksiyonu olan R(s)/Y(s) ifadesini 
 
-R(s)/Y(s) = K / s(s+1)(s+2)+K 
+<img src="eşitlik/geri beslemeli sistem transfer fonksiyonu.png" alt="geri beslemeli sistem transfer fonksiyonu" height="90"/>
 
 olarak buluruz. Görüldüğü gibi bu transfer fonksiyonunun kutupları (i.e., paydanın kökleri) K değiştikçe farklı değerler almaktadır. Kazanç K değiştikçe kutupların aldığı konumların çizimini (i.e., kök yer eğrisi - root locus) *Şekil 6*'da görebilirsiniz. Her bir kutubun aldığı değerler farklı renkle çizdirilmiştir. Unutmayın; belirli bir K değeri için mavi, yeşil ve kırmızı grafikler üzerinde belirli bir kutup değeri vardır. Kazanç değiştikçe kökler beraber hareket ederler.
 
