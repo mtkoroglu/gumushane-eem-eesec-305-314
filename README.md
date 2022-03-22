@@ -47,8 +47,12 @@ eşitliğini uygulayarak aşağıdaki gibi elde ettik (dersin tam sonuna denk ge
 
 <img src="eşitlik/RC devresi transfer fonksiyonu.JPG" alt="RC devresi transfer fonksiyonu" height="90"/></br>
 Transfer fonksiyonunun paydası **birinci** dereceden bir polinom şeklinde, bu da **bir** durum değişkenimiz olduğunu gösteriyor. Zaten bizim RC devresindeki durum değişkenimiz kapasitörün üzerindeki voltaj V<sub>C</sub>(t).
+
+### Aç-Kapa Denetleyici
+Aç-kapa denetleyiciyi tasarlamadan önce araba hız kontrolü örneğine geri dönelim ve orada PID denetleyici yerine ilkel bir denetleyici olan aç-kapa denetleyici koyalım. Bakalım hız ve pozisyon kontrolü problemlerinde sistemimizin çıkışı olan hız ve pozisyonu kontrol edebilecek miyiz yoksa edemeyecek miyiz. Farz edelim kontrol ettik; çıkış istediğimiz davranışı gösteriyor mu yoksa göstermiyor mu, ona da bakalım. Unutmayalım, aç-kapa kontrolün çıkışını simüle ederken gerçek hayatta bu sinyalin uygulanabilirliğini göz önünde bulundurmamız gerekecek. Derste **bang-bang** kontrole de bakıp pratik bir araba kontrolü ile ilgili örnek videolar izleyeceğiz. Aç-kapa kontrol de kapalı halde sistemimize bir kontrol sinyali uygulamazken, bang bang kontrolde açıkken uygulanan sinyalin tam tersi uygulanıyor.
+
 ## Root Locus (Kök Yer Eğrisi)
-Önceki dönemlerdeki **EESEC 305 Kontrol Sistemleri I** ve **EESEC 314 Kontrol Sistemleri II** derslerinde geri-beslemeli bir kontrol sisteminin blok diyagramına göz atmıştık. Burada hatırlamak gerekirse, kontrol edilmek istenen sistem doğrusal ise o zaman *Şekil 5*'deki gibi bir akış diyagramına sahip oluruz. 
+Önceki dönemlerdeki **EESEC 305 Kontrol Sistemleri I** ve **EESEC 314 Kontrol Sistemleri II** derslerinde geri-beslemeli bir kontrol sisteminin genel blok diyagramına göz atmıştık. Burada hatırlamak gerekirse, kontrol edilmek istenen sistem doğrusal ise o zaman *Şekil 5*'deki gibi bir blok diyagrama sahip oluruz. 
 
 <img src="şekil/rlocus_feedback_control_system.jpg" alt="geri beslemeli kontrol doğrusal sistem" height="120"/>
 
@@ -62,15 +66,15 @@ olarak verilirse o zaman sistemin transfer fonksiyonu
 
 <img src="eşitlik/transfer_fonksiyonu.png" alt="transfer fonksiyonu" height="50"/>
 
-olarak hesaplanabilir. Burada 3x3'lük matrisin tersini alma işlemi ve diğer matris çarpma işlemlerini derste MATLAB'da hem hazır hem de kendi yazdığımız komutlarla gerçekledik. Daha önce her zaman incelediğimiz sistemlerin transfer fonksiyonarını elde ettik. Burada **Kök Yer Eğrisi** konusunda kontrol etmek istediğimiz dinamik sistemin değil de geri-beslemeli kontrol sisteminin tamamının transfer fonksiyonu ile ilgileniyoruz. Başka bir deyişle, çıkış sinyalimiz Y(s)'nin referans sinyalimiz R(s)'ye oranını bulup K kazancındaki değişimin transfer fonksiyonuna etkilerini (yani sistemin cevabındaki değişimi) gözlemlemek istiyoruz. Sistemin çıkışının girişe oranı olan Y(s)/U(s) ifadesini bulduk. Kontrol sinyali U(s) ile hata sinyali E(s) arasında 
+olarak hesaplanabilir. Burada 3x3'lük matrisin tersini alma işlemi ve diğer matris çarpma işlemlerini derste MATLAB'da hem hazır hem de kendi yazdığımız komutlarla gerçekledik. Daha önce her zaman incelediğimiz sistemlerin transfer fonksiyonlarını elde ettik. Burada **Kök Yer Eğrisi** konusunda kontrol etmek istediğimiz dinamik sistemin değil de geri-beslemeli kontrol sisteminin tamamının transfer fonksiyonu ile ilgileniyoruz. Başka bir deyişle, çıkış sinyalimiz Y(s)'nin referans sinyalimiz R(s)'ye oranını bulup K kazancındaki değişimin transfer fonksiyonuna etkilerini (yani sistemin cevabındaki değişimi) gözlemlemek istiyoruz. Sistemin çıkışının girişe oranı olan Y(s)/U(s) ifadesini bulduk. Kontrol sinyali U(s) ile hata sinyali E(s) arasında 
 
 U(s) = KE(s) 
 
-şeklinde bir ilişkinin olduğunu *Şekil 5*'den de faydalanarak görebiliriz. Böylece 
+şeklinde bir ilişkinin olduğunu *Şekil 5*'den faydalanarak görebiliriz. Böylece 
 
 U(s)/E(s) = K 
 
-buluruz. Blok diyagramdan 
+buluruz. Yine blok diyagramdan 
 
 E(s) = R(s) - Y(s) 
 
@@ -90,23 +94,26 @@ olur. İçler dışlar çarpımıyla devam edersek
 
 Y(s)s(s+1)(s+2) = KR(s) - KY(s) 
 
-elde ederiz. Buradan da 
-
-*Şekil 5*'de görülen geri beslemeli kontrol sisteminin tamamının transfer fonksiyonu olan R(s)/Y(s) ifadesini 
+elde ederiz. Buradan da *Şekil 5*'de görülen geri beslemeli kontrol sisteminin tamamının transfer fonksiyonu olan R(s)/Y(s) ifadesini 
 
 R(s)/Y(s) = K / s(s+1)(s+2)+K 
 
-olarak buluruz. Görüldüğü gibi bu transfer fonksiyonunun kutupları (paydanın kökleri) kazanç K değiştikçe değişmektedir. İşte **Root Locus** grafiği K kazancı değiştikçe kutupların aldığı konumların çizimidir.
+olarak buluruz. Görüldüğü gibi bu transfer fonksiyonunun kutupları (i.e., paydanın kökleri) K değiştikçe farklı değerler almaktadır. Kazanç K değiştikçe kutupların aldığı konumların çizimini (i.e., kök yer eğrisi - root locus) *Şekil 6*'da görebilirsiniz. Her bir kutubun aldığı değerler farklı renkle çizdirilmiştir. Unutmayın; belirli bir K değeri için mavi, yeşil ve kırmızı grafikler üzerinde belirli bir kutup değeri vardır. Kazanç değiştikçe kökler beraber hareket ederler.
 
-### Aç-Kapa Denetleyici
-Aç-kapa denetleyiciyi tasarlamadan önce araba hız kontrolü örneğine geri dönelim ve orada PID denetleyici yerine ilkel bir denetleyici olan aç-kapa denetleyici koyalım. Bakalım hız ve pozisyon kontrolü problemlerinde sistemimizin çıkışı olan hız ve pozisyonu kontrol edebilecek miyiz yoksa edemeyecek miyiz. Farz edelim kontrol ettik; çıkış istediğimiz davranışı gösteriyor mu yoksa göstermiyor mu, ona da bakalım. Unutmayalım, aç-kapa kontrolün çıkışını simüle ederken gerçek hayatta bu sinyalin uygulanabilirliğini göz önünde bulundurmamız gerekecek. Derste **bang-bang** kontrole de bakıp pratik bir araba kontrolü ile ilgili örnek videolar izleyeceğiz. Aç-kapa kontrol de kapalı halde sistemimize bir kontrol sinyali uygulamazken, bang bang kontrolde açıkken uygulanan sinyalin tam tersi uygulanıyor.
+<img src="şekil/rlocus graph.jpg" alt="root locus grafiği" height="400"/>
+
+*Şekil 6:* Kök yer eğrisi (root locus).
+
+### Kararlılık (Stability)
+
+
 
 ## Kendi-Kendini Dengeleyen Robot ve PID Kontrolör
-Geribeslemeli bir kontrol sisteminin<sup>4</sup> blok diyagramına<sup>5</sup> *Şekil 6*'de görülen kendi-kendini dengeleyen robot üzerinden bir bakış.
+Geribeslemeli bir kontrol sisteminin<sup>4</sup> blok diyagramına<sup>5</sup> *Şekil 7*'de görülen kendi-kendini dengeleyen robot üzerinden bir bakış.
 
 <img src="şekil/kendi-kendini dengeleyen robot.jpg" alt="kendi-kendini dengeleyen robot" height="500"/> <img src="ders/hafta10/geribeslemeli kontrol sistemi.jpg" alt="geribeslemeli kontrol sistemi" height="500"/>
 
-*Şekil 6:* Kendi-kendini dengeleyen robot ve üzerinde koşan geri-beslemeli kontrol sistemine bir bakış.
+*Şekil 7:* Kendi-kendini dengeleyen robot ve üzerinde koşan geri-beslemeli kontrol sistemine bir bakış.
 
 Derste PID kontrolörün girişi olan hata sinyali e(t) ile çıkışı olan kontrol sinyali u(t) arasındaki ifadeyi sürekli zaman için aşağıdaki gibi elde ettik.
 
