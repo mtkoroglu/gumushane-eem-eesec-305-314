@@ -122,7 +122,7 @@ olarak buluruz. Görüldüğü gibi bu transfer fonksiyonunun kutupları (i.e., 
 ### Kararlılık (Stability)
 Aşağıda *Şekil 7*'de verilen Simulink modelini K=0'dan K=8'e kadar artan kazanç değerleri için koşturduğumuzda, sistemin basamak cevabını *Şekil 8*'de görüldüğü gibi elde ediyoruz.
 
-<img src="şekil/root locus simulink model.jpg" alt="root locus blok diyagramı" height="160"/>
+<img src="şekil/root locus simulink model.jpg" alt="root locus blok diyagramı" height="200"/>
 
 *Şekil 7:* Kök yer eğrisi için incelediğimiz sistemin Simulink modeli.
 
