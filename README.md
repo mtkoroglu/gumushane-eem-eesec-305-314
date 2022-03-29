@@ -121,7 +121,7 @@ olarak buluruz. Görüldüğü gibi bu transfer fonksiyonunun kutupları (i.e., 
 
 ### Kararlılık (Stability)
 
-
+<img src="şekil/root locus simulink model.jpg" alt="root locus blok diyagramı" height="300"/>
 
 ## Kendi-Kendini Dengeleyen Robot ve PID Kontrolör
 Geribeslemeli bir kontrol sisteminin<sup>4</sup> blok diyagramına<sup>5</sup> *Şekil 7*'de görülen kendi-kendini dengeleyen robot üzerinden bir bakış.
