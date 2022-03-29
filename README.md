@@ -122,29 +122,29 @@ olarak buluruz. Görüldüğü gibi bu transfer fonksiyonunun kutupları (i.e., 
 ### Kararlılık (Stability)
 Aşağıda *Şekil 7*'de verilen Simulink modelini K=0'dan K=8'e kadar artan kazanç değerleri için koşturduğumuzda, sistemin basamak cevabını *Şekil 8*'de görüldüğü gibi elde ediyoruz.
 
-<img src="şekil/root locus simulink model.jpg" alt="root locus blok diyagramı" height="200"/>
+<img src="şekil/root locus simulink model.jpg" alt="root locus blok diyagramı" height="160"/>
 
 *Şekil 7:* Kök yer eğrisi için incelediğimiz sistemin Simulink modeli.
 
-<img src="gif/rlocus basamak cevabı animasyonu.gif" alt="root locus blok diyagramı" height="480"/>
+<img src="gif/rlocus basamak cevabı animasyonu.gif" alt="root locus blok diyagramı" height="600"/>
 
 *Şekil 8:* Geri-beslemeli kontrol sisteminin basamak girişine verdiği cevabın değişen kutup değerleriyle görülmesi.
 
 Yukarıda görüldüğü gibi yaklaşık olarak K>6 için sistem cevabında oluşan osilasyonlar artık sönümlenemiyor ve sistem kararsız hale geliyor. Bunun sebebi kök yer eğrisi grafiğinde iki kutubun reel kısımlarının artık s-alanının sağ tarafında geçmesi (yani başka bir deyişle pozitif değerler alması).
 
 ## Kendi-Kendini Dengeleyen Robot ve PID Kontrolör
-Geribeslemeli bir kontrol sisteminin<sup>4</sup> blok diyagramına<sup>5</sup> *Şekil 7*'de görülen kendi-kendini dengeleyen robot üzerinden bir bakış.
+Geribeslemeli bir kontrol sisteminin<sup>4</sup> blok diyagramına<sup>5</sup> *Şekil 9*'de görülen kendi-kendini dengeleyen robot üzerinden bir bakış.
 
 <img src="şekil/kendi-kendini dengeleyen robot.jpg" alt="kendi-kendini dengeleyen robot" height="500"/> <img src="ders/hafta10/geribeslemeli kontrol sistemi.jpg" alt="geribeslemeli kontrol sistemi" height="500"/>
 
-*Şekil 9:* Kendi-kendini dengeleyen robot ve üzerinde koşan geri-beslemeli kontrol sistemine bir bakış.
+*Şekil 9:* Kendi-kendini dengeleyen robot ve üzerinde koşmakta olan geri-beslemeli kontrol sistemi blok diyagramı.
 
 Derste PID kontrolörün girişi olan hata sinyali e(t) ile çıkışı olan kontrol sinyali u(t) arasındaki ifadeyi sürekli zaman için aşağıdaki gibi elde ettik.
 
 <img src="eşitlik/pid kontrolör.JPG" alt="pid kontrolör" height="55"/>
 
 ## Ayrık Zamanda PID Kontrolör
-PID kontrolörün (*Şekil 6*'de görüldüğü gibi kendi-kendini dengeleyen robot için) Arduino üzerinde ayrık zamanda (discrete time) nasıl gerçeklendiğini anlamaya nümerik integrale bakarak başlıyoruz.
+PID kontrolörün (*Şekil 9*'de görüldüğü gibi kendi-kendini dengeleyen robot için) Arduino üzerinde ayrık zamanda (discrete time) nasıl gerçeklendiğini anlamaya nümerik integrale bakarak başlıyoruz.
 
 <img src="şekil/yabr smallest.gif" alt="your arduino balancing robot" height="300"/></br>
 *Şekil 10:* Kendi-kendini dengeleyen robotun, üzerinde yer alan Arduino'da koşan PID kontrolör ile yere düşmeden dengede kalarak ilerlemesi.
@@ -155,7 +155,7 @@ PID kontrolörün (*Şekil 6*'de görüldüğü gibi kendi-kendini dengeleyen ro
 Aşağıda durum uzayı denklemleri verilen sistemi Simulink'de kurduk.
 
 <img src="eşitlik/üçüncü_derece_sistem.JPG" alt="üçüncü dereceden dinamik sistem durum uzayı denklemleri" height="90"/></br>
-Sistemin Simulink'de gerçeklenmiş hali *Şekil 9*'deki gibidir.
+Sistemin Simulink'de gerçeklenmiş hali *Şekil 12*'deki gibidir.
 
 <img src="şekil/üçüncü_derece_sistem_model.JPG" alt="üçüncü derece sistem Simulink model" height="200"/></br>
 *Şekil 12:* Derste gerçeklediğimiz üçüncü dereceden dinamik sistemin Simulink'deki görünümü.
@@ -169,7 +169,7 @@ Sistemin denge noktası (equilibrium point) sıfır olduğundan durum değişken
 
 olacaktır.
 ### Simulink'de kullandığımız integratörleri kullanmadan sistemin benzetiminin yapılması
-*Şekil 8*'nin açıklamasında *Backward Euler* yani *geriye doğru Euler* tekniğinde integrali alınan sinyalin/değişkenin o andaki değerine sahip olunması şartından bahsetmiştik. Burada incelediğimiz zorlanmamış sistem simülasyonunda, herhangi bir durum değişkeninin o andaki değeri hesaplanırken öbür durum değişkenlerinden en az birisinin o andaki değerine ihtiyaç duyuluyor, bu yüzden de mecburen *Forward Euler* yani *ileri Euler* tekniğini kullanmak zorundayız.
+*Şekil 11*'in açıklamasında *Backward Euler* yani *geriye doğru Euler* tekniğinde integrali alınan sinyalin/değişkenin o andaki değerine sahip olunması şartından bahsetmiştik. Burada incelediğimiz zorlanmamış sistem simülasyonunda, herhangi bir durum değişkeninin o andaki değeri hesaplanırken öbür durum değişkenlerinden en az birisinin o andaki değerine ihtiyaç duyuluyor, bu yüzden de mecburen *Forward Euler* yani *ileri Euler* tekniğini kullanmak zorundayız.
 #### MATLAB'da Forward Euler tekniği ile nümerik integral alarak dinamik sistem simülasyonu yapmak
 ```
 T = 0.01; % örnekleme periyodu
