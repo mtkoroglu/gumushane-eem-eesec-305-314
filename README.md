@@ -1,11 +1,15 @@
-# EESEC 314
+# EESEC 305
 ## DİNAMİK SİSTEM
-Gerilim kaynağı bağlanmış bir resistör-kapasitör devresini (RC devresi - **Şekil 1**) analiz ettik. Burdaki örnekte kapasitörün üzerinden geçen akım i<sub>C</sub>(t) değil de kapasitörün üzerine düşen voltaj V<sub>C</sub>(t) **durum değişkeni** olarak vazife görüyor. Analitik çözümü [1]'de türetilen *RC devresinin zorlanmış cevabına* bakıp sistemlice düşünerek niçin akımın değil de voltajın durum değişkeni seçildiğini anlamamız gerekiyor. Aşağıda verilen kapasitörün matematiksel modelin bakıp düşünelim.
+Gerilim kaynağı bağlanmış bir resistör-kapasitör devresini (RC devresi - **Şekil 1**) analiz ettik. Bu örnekte kapasitörün üzerinden geçen akım i<sub>C</sub>(t) değil de kapasitörün üzerine düşen voltaj V<sub>C</sub>(t) **durum değişkeni** (İng. **state variable**) vazifesi görüyor. Analitik çözümü [1]'de türetilen **RC devresinin zorlanmış cevabına** bakıp düşünürsek niçin akımın değil de voltajın durum değişkeni seçildiğini anlayabiliriz. Aşağıda verilen kapasitörün matematiksel modelini anlamaya çalışalım.
 
-<img src="eşitlik/kapasitör denklemi.JPG" alt="Kapasitörün matematiksel modeli" height="50"/></br>
-<img src="eşitlik/kapasitör denklemi çözümü.JPG" alt="RC devresinin analizi." height="55"/></br>
-Burada bir ip ucu: Türev anlık bilgi verirken (geçmişe bir bağımlılığı yok) integral'de başlangıç koşulu söz konusudur ve bu başlangıç koşuluna göre sistemin girişi aynı olsa bile sonuç farklı olabilmektedir.</br>
-**Durum değişkeni:** *Geçmişin geleceği etkileyen özü*<sup>1</sup>.</br>
+<img src="eşitlik/kapasitör denklemi.JPG" alt="Kapasitörün matematiksel modeli" height="50"/>
+
+<img src="eşitlik/kapasitör denklemi çözümü.JPG" alt="kapasitörün matematiksel modeli çözümü" height="55"/>
+
+Türev anlık olarak değer alan (geçmişe bir bağımlılığı yok) bir operatörken integral'de başlangıç koşulu söz konusudur ve bu başlangıç koşuluna göre sistemin girişi aynı olsa bile çıkış farklı olabilmektedir.
+
+**Durum değişkeni:** *Geçmişin geleceği etkileyen özü*<sup>1</sup>.
+
 Bu hafta baktığımız RC devresinin durum uzayı modelinde bir tane **durum değişkeni** var, dolayısıyla bir boyutlu bir sistem. Ayrıca *Vcc* olarak isimlendirdiğimiz güç kaynağının gerilimi (devreyi bir sistem olarak görürsek) sisteme bir **giriş değişkeni** (input) olarak etki ediyor. RC devresinde resistör değeri *R* ve kapasitor değeri *C* sistem parametreleri olarak vazife yapıyor. Bu parametreler zamanla değişmediği zaman Sinyaller-Sistemler dersinden bildiğimiz gibi doğrusal zamanla değişmeyen (linear time-invariant - LTI) bir sistemimiz olmuş oluyor ve sistemi analiz etmek kolay bir hal alıyor. Sistem parametrelerimiz zamanla değişen bir yapıya sahipse daha kompleks matematiksel yaklaşımlarla analiz yapmak zorunda kalırız (bu derste bu yaklaşımları öğrenmeyeceğiz).
 
 <img src="şekil/RC devresi basamak cevabı augmented.jpg" alt="RC devresinin analizi" height="560"/></br>
@@ -51,8 +55,9 @@ Transfer fonksiyonunun paydası **birinci** dereceden bir polinom şeklinde, bu 
 ### Aç-Kapa Denetleyici
 Aç-kapa denetleyiciyi tasarlamadan önce araba hız kontrolü örneğine geri dönelim ve orada PID denetleyici yerine ilkel bir denetleyici olan aç-kapa denetleyici koyalım. Bakalım hız ve pozisyon kontrolü problemlerinde sistemimizin çıkışı olan hız ve pozisyonu kontrol edebilecek miyiz yoksa edemeyecek miyiz. Farz edelim kontrol ettik; çıkış istediğimiz davranışı gösteriyor mu yoksa göstermiyor mu, ona da bakalım. Unutmayalım, aç-kapa kontrolün çıkışını simüle ederken gerçek hayatta bu sinyalin uygulanabilirliğini göz önünde bulundurmamız gerekecek. Derste **bang-bang** kontrole de bakıp pratik bir araba kontrolü ile ilgili örnek videolar izleyeceğiz. Aç-kapa kontrol de kapalı halde sistemimize bir kontrol sinyali uygulamazken, bang bang kontrolde açıkken uygulanan sinyalin tam tersi uygulanıyor.
 
+# EESEC 314
 ## Root Locus (Kök Yer Eğrisi)
-Önceki dönemlerdeki **EESEC 305 Kontrol Sistemleri I** ve **EESEC 314 Kontrol Sistemleri II** derslerinde geri-beslemeli bir kontrol sisteminin genel blok diyagramına göz atmıştık. Burada hatırlamak gerekirse, kontrol edilmek istenen sistem doğrusal ise o zaman *Şekil 5*'deki gibi bir blok diyagrama sahip oluruz. 
+Önceki derslerimizde geri-beslemeli bir kontrol sisteminin genel blok diyagramına göz atmıştık. Burada hatırlamak gerekirse, kontrol edilmek istenen dinamik sistem doğrusal ise o zaman *Şekil 5*'deki gibi bir blok diyagrama sahip oluruz. 
 
 <img src="https://drive.google.com/uc?id=1xs9K98mUPmY1uflo0o4nUcfAVcmKzFv8" alt="geri beslemeli kontrol doğrusal sistem" height="120"/>
 
@@ -70,7 +75,9 @@ formülü kullanılarak
 
 <img src="eşitlik/transfer fonksiyonu.png" alt="transfer fonksiyonu" height="50"/>
 
-olarak hesaplanabilir. Burada 3x3'lük matrisin tersini alma işlemi ve diğer matris çarpma işlemlerini derste MATLAB'da hem hazır hem de kendi yazdığımız komutlarla gerçekledik. Daha önce her zaman incelediğimiz sistemlerin transfer fonksiyonlarını elde ettik. Burada Kök Yer Eğrisi konusunda kontrol etmek istediğimiz dinamik sistemin değil de geri-beslemeli kontrol sisteminin tamamının transfer fonksiyonu ile ilgileniyoruz. Başka bir deyişle, çıkış sinyalimiz Y(s)'nin referans sinyalimiz R(s)'ye oranını bulup K kazancındaki değişimin transfer fonksiyonuna etkilerini (yani sistemin cevabındaki değişimi) gözlemlemek istiyoruz. Sistemin çıkışının girişe oranı olan Y(s)/U(s) ifadesini bulduk. Kontrol sinyali U(s) ile hata sinyali E(s) arasında  
+olarak hesaplanabilir. Burada 3x3'lük matrisin tersini alma işlemi ve diğer matris çarpma işlemlerini derste **MATLAB**'da hem hazır hem de kendi yazdığımız komutlarla gerçekledik ve sonuç olarak tekabül eden transfer fonksiyonunu elde ettik. 
+
+Burada **Kök Yer Eğrisi** konusunda kontrol etmek istediğimiz dinamik sistemin değil de geri-beslemeli kontrol sisteminin tamamının transfer fonksiyonu ile ilgileniyoruz. Başka bir deyişle, çıkış sinyalimiz Y(s)'nin referans sinyalimiz R(s)'ye oranını bulup K kazancındaki değişimin transfer fonksiyonuna etkilerini (yani sistemin cevabındaki değişimi) gözlemlemek istiyoruz. Sistemin çıkışının girişe oranı olan Y(s)/U(s) ifadesini bulduk. Kontrol sinyali U(s) ile hata sinyali E(s) arasında  
 
 U(s) = KE(s) 
 
@@ -131,10 +138,10 @@ Derste PID kontrolörün girişi olan hata sinyali e(t) ile çıkışı olan kon
 PID kontrolörün (*Şekil 6*'de görüldüğü gibi kendi-kendini dengeleyen robot için) Arduino üzerinde ayrık zamanda (discrete time) nasıl gerçeklendiğini anlamaya nümerik integrale bakarak başlıyoruz.
 
 <img src="şekil/yabr smallest.gif" alt="your arduino balancing robot" height="300"/></br>
-*Şekil 7:* Kendi-kendini dengeleyen robotun, üzerinde yer alan Arduino'da koşan PID kontrolör ile yere düşmeden dengede kalarak ilerlemesi.
+*Şekil 8:* Kendi-kendini dengeleyen robotun, üzerinde yer alan Arduino'da koşan PID kontrolör ile yere düşmeden dengede kalarak ilerlemesi.
 
 <img src="şekil/backward euler integration.png" alt="backward euler integration" height="240"/></br>
-*Şekil 8:* Arduino üzerinde koşan PID kontrolörün integral kontrol kısmının ayrık zamanda *Backward Euler* tekniği ile gerçeklenmesi. İntegrali alınacak sinyalin/değişkenin bulunduğumuz anda değeri mevcut ise (e.g., burada bulunduğumuz an t = 4T, integralini aldığımız sinyal e(t) dolayısıyla e(4T) değerinin bulunan anda mevcut olup olmadığına bakıyoruz) o zaman o değer ile örnekleme periodu (sampling period) çarpılarak en son dikdörtgenin alanı hesaplanır ve bir önceki anda hesaplanan değere (burada e(3T)) eklenir.
+*Şekil 9:* Arduino üzerinde koşan PID kontrolörün integral kontrol kısmının ayrık zamanda *Backward Euler* tekniği ile gerçeklenmesi. İntegrali alınacak sinyalin/değişkenin bulunduğumuz anda değeri mevcut ise (e.g., burada bulunduğumuz an t = 4T, integralini aldığımız sinyal e(t) dolayısıyla e(4T) değerinin bulunan anda mevcut olup olmadığına bakıyoruz) o zaman o değer ile örnekleme periodu (sampling period) çarpılarak en son dikdörtgenin alanı hesaplanır ve bir önceki anda hesaplanan değere (burada e(3T)) eklenir.
 ### Üçüncü dereceden zorlanmamış bir dinamik sistemin Simulink'de gerçeklenmesi
 Aşağıda durum uzayı denklemleri verilen sistemi Simulink'de kurduk.
 
@@ -142,10 +149,10 @@ Aşağıda durum uzayı denklemleri verilen sistemi Simulink'de kurduk.
 Sistemin Simulink'de gerçeklenmiş hali *Şekil 9*'deki gibidir.
 
 <img src="şekil/üçüncü_derece_sistem_model.JPG" alt="üçüncü derece sistem Simulink model" height="200"/></br>
-*Şekil 9:* Derste gerçeklediğimiz üçüncü dereceden dinamik sistemin Simulink'deki görünümü.
+*Şekil 10:* Derste gerçeklediğimiz üçüncü dereceden dinamik sistemin Simulink'deki görünümü.
 
 <img src="şekil/durum_değişkenleri_yörüngesi.png" alt="üçüncü derece sistemin durum değişkenleri yörüngesi" height="360"/></br>
-*Şekil 10:* Derste gerçeklediğimiz üçüncü dereceden dinamik sistemde durum değişkenlerinin yörüngesi.
+*Şekil 11:* Derste gerçeklediğimiz üçüncü dereceden dinamik sistemde durum değişkenlerinin yörüngesi.
 
 Sistemin denge noktası (equilibrium point) sıfır olduğundan durum değişkenlerini nereden başlatırsak başlatalım sonuç her zaman
 
@@ -178,9 +185,9 @@ plot(x1,t)
 plot(x2,t)
 plot(x3,t)
 ```
-komutlarıyla *Şekil 10*'da çizdirilen durum değişkenlerinin zamanla değişimini gösteren grafikleri elde ettik. Dikkat edin, *Şekil 8*'de zaman yokken *Şekil 10*'da zaman söz konusu. *Şekil 8*'ye faz portresi (phase portrait) deniyor.
+komutlarıyla *Şekil 10*'da çizdirilen durum değişkenlerinin zamanla değişimini gösteren grafikleri elde ettik. Dikkat edin, *Şekil 8*'de zaman yokken *Şekil 11*'da zaman söz konusu. *Şekil 8*'ye faz portresi (phase portrait) deniyor.
 <img src="şekil/durum değişkenlerinin zamanla değişimi.png" alt="state trajectories with time" height="240"/></br>
-*Şekil 11:* Zorlanmamış sistemin durum değişkenlerinin zamanla değişimleri.
+*Şekil 12:* Zorlanmamış sistemin durum değişkenlerinin zamanla değişimleri.
 
 ### Nümerik Türev
 Aşağıdaki kodu<sup>7</sup> oluştururken örnekleme frekansının (dolayısıyla da örnekleme periyodunun) sinyalin üzerindeki etkisine şahit olduk. Örnekleme periyodu 10ms olduğunda görüntülediğimiz sinyalin sinüse benzer bir yanı yoktu. Örnekleme frekansının artırdığımız (yani örnekleme periyodunu düşürdüğümüzde) işte o zaman yavaş yavaş sinüse benzer şeyler elde ettik ve bir değerden sonra tamamen sinüs gibi gözükmeye başladı. Her ne kadar yüksek örnekleme frekansı ile çalışınca hiçbir bilgi kaybı yaşamasak da, işlemci gücümüz sınırlı olduğundan dolayı mümkün mertebe örnekleme frekansını düşük (yani örnekleme periyodunu büyük) tutmak isteriz ki mikroişlemci/mikrodenetleyici üzerindeki işlem yükümüz az olsun. 
@@ -199,8 +206,8 @@ for i=2:length(t)
 end
 ```
 <img src="şekil/nümerik türev sonucu.png" alt="discrete derivative" height="200"/></br>
-*Şekil 12:* Priz sinyali Asin(2πft) formunda olup genlik 220V, frekansı ise 50Hz'dir. Kırmızı renkle gösterilen grafikte priz sinyalinin türevini matematiksel olarak 2πfAcos(2πft) formunda elde ettik ve çizdirdik. Mavi grafikte ise yukarıda kodda görüldüğü gibi sinyalin o andaki örneğinden bir önceki örnekteki değerinin farkını alıp geçen zaman olan örnekleme periyoduna böldük ve türev operatörünün nümerik halini gerçekledik. Başlangıç koşulunu uygun değere ayarladığımızda mavi ile kırmızı grafiklerinin bütün örnekler (for all samples) için aynı olduğunu görülebiliyor.
-## Hareket Sensöründen Açının Hesaplanması
+*Şekil 13:* Priz sinyali Asin(2πft) formunda olup genlik 220V, frekansı ise 50Hz'dir. Kırmızı renkle gösterilen grafikte priz sinyalinin türevini matematiksel olarak 2πfAcos(2πft) formunda elde ettik ve çizdirdik. Mavi grafikte ise yukarıda kodda görüldüğü gibi sinyalin o andaki örneğinden bir önceki örnekteki değerinin farkını alıp geçen zaman olan örnekleme periyoduna böldük ve türev operatörünün nümerik halini gerçekledik. Başlangıç koşulunu uygun değere ayarladığımızda mavi ile kırmızı grafiklerinin bütün örnekler (for all samples) için aynı olduğunu görülebiliyor.
+## Hareket Sensörü Verisinden Açının Hesaplanması
 Bu hafta genel olarak geri-beslemeli kontrol sistemlerinde, özel olarak da Kendi-Kendini Dengeleyen Robot üzerinde sensörleri (algılayıcıları) konuşacağız. Hareket sensörü olan **MPU6050** ile ham ciroskop ve ivmemetre verisinden ilk önce tamamlayıcı süzgeç (**complementary filter**) algoritması ile ardında da özel bir Bayesian süzgeç olan **Kalman Filtresi** ile açının tahmin edilmesi (estimation) konularına bakacağız.
 ## Dipnotlar
 <sup>1</sup> Bu tanım [5] tarafından [6]'dan alınmıştır.</br>
