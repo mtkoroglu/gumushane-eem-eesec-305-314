@@ -120,8 +120,14 @@ olarak buluruz. Görüldüğü gibi bu transfer fonksiyonunun kutupları (i.e., 
 *Şekil 6:* Kök yer eğrisi (root locus).
 
 ### Kararlılık (Stability)
+Aşağıda *Şekil 7*'de verilen Simulink modelini K=0'dan K=8'e kadar artan kazanç değerleri için koşturduğumuzda, sistemin basamak cevabını *Şekil 8*'de görüldüğü gibi elde ediyoruz.
+<img src="şekil/root locus simulink model.jpg" alt="root locus blok diyagramı" height="300"/>
+*Şekil 7:* Kök yer eğrisi için incelediğimiz sistemin Simulink modeli.
 
 <img src="şekil/root locus simulink model.jpg" alt="root locus blok diyagramı" height="300"/>
+*Şekil 8:* Geri-beslemeli kontrol sisteminin basamak girişine verdiği cevabın değişen kutup değerleriyle görülmesi.
+
+Yukarıda görüldüğü gibi yaklaşık olarak K>6 için sistem cevabında oluşan osilasyonların genlikleri artık sönümlenmiyor ve sistem kararsız hale geliyor. Bunun sebebi kök yer eğrisi grafiğinde iki kutubun reel kısımlarının artık s-alanının sağ tarafında geçmesi yani başka bir deyişle pozitif değerler alması.
 
 ## Kendi-Kendini Dengeleyen Robot ve PID Kontrolör
 Geribeslemeli bir kontrol sisteminin<sup>4</sup> blok diyagramına<sup>5</sup> *Şekil 7*'de görülen kendi-kendini dengeleyen robot üzerinden bir bakış.
