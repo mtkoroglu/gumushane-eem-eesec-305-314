@@ -29,7 +29,7 @@ Burada analiz ettiğimiz pendulum probleminde sistemimizin bir girişi yok. Ger�
 ### Hız (Cruise) Kontrol
 Bir arabaya Newton'un F=ma kanununu uygulayarak elde edeceğimiz dinamik modeli inceleyelim. **Durum uzayı gösterimi** (state space representation). Ayrıca oransal-integral-türevsel (proportional-integral-derivative) denetleyici (PID controller) tasarlayarak (deneme-yanılma yolu ile) arabamızın hız kontrolünü yapmaya çalışalım.
 
-<img src="şekil/cruise_control.png" alt="Pendulum dinamikleri" height="200"/></br>
+<img src="şekil/cruise_control.png" alt="Pendulum dinamikleri" height="160"/></br>
 *Şekil 4:* Araba hız kontrolü (cruise control) dinamikleri ([3]'ün izni ile). Burada sönümleme katsayısı b arabayı durdurucu etki yapıyor.
 
 A matrisi sistem matrisimiz, B matrisi giriş matrisi, C matrisi çıkış matrisi olarak isimlendiriliyor. Eğer bir sistemin dinamikleri doğrusal (linear) ise o zaman sistemin zaman alanındaki (time-domain) modelini yukarıda geçen matrisler ve giriş, durum ve çıkış değişkenleri cinsinden **durum uzayı gösterimi** (state space representation) ile tasvir edebiliriz. Bu hafta zaman alanından (time domain) frekans alanına (s domain) geçiş yaptık. Sistemimizin çıkışı (y(t)) olan arabamızın hızı (v(t)) ile girişi (u(t)) olan arabayı çeken kuvvet arasındaki orana s alanında (s-domain) bakarsak transfer fonksiyonu T(s)'yi elde ediyoruz.
@@ -119,8 +119,8 @@ olarak buluruz. Görüldüğü gibi bu transfer fonksiyonunun kutupları (i.e., 
 
 *Şekil 6:* Kök yer eğrisi (root locus).
 
-### Kararlılık (Stability)
-Aşağıda *Şekil 7*'de verilen Simulink modelini K=0'dan K=8'e kadar artan kazanç değerleri için koşturduğumuzda, sistemin basamak cevabını *Şekil 8*'de görüldüğü gibi elde ediyoruz.
+### Kök Yer Eğrisi Animasyonu
+Aşağıda *Şekil 7*'de verilen Simulink modelini K=0'dan K=8'e kadar artan kazanç değerleri için koşturduğumuzda, geri-beslemeli sistemin birim basamak cevabını *Şekil 8*'de görüldüğü gibi elde ediyoruz.
 
 <img src="şekil/root locus simulink model.jpg" alt="root locus blok diyagramı" height="200"/>
 
@@ -130,7 +130,10 @@ Aşağıda *Şekil 7*'de verilen Simulink modelini K=0'dan K=8'e kadar artan kaz
 
 *Şekil 8:* Geri-beslemeli kontrol sisteminin basamak girişine verdiği cevabın değişen kutup değerleriyle görülmesi.
 
-Yukarıda görüldüğü gibi yaklaşık olarak K>6 için sistem cevabında oluşan osilasyonlar artık sönümlenemiyor ve sistem kararsız hale geliyor. Bunun sebebi kök yer eğrisi grafiğinde iki kutubun reel kısımlarının artık s-alanının sağ tarafında geçmesi (yani başka bir deyişle pozitif değerler alması).
+Yukarıda görüldüğü gibi yaklaşık olarak K>6 için sistem cevabında gözlemlenen osilasyonlar artık sönümlenemiyor ve sistem kararsız hale geliyor. Bunun sebebi kök yer eğrisi grafiğinde üç kutuptan ikisinin reel kısımlarının artık s-alanının sağ tarafında geçmesi (yani başka bir deyişle pozitif değerler alması). Sadece bir kutubun bile reel kısmı sanal eksenin sağına geçse sistem dinamiklerinde kararsızlık ortaya çıkar. Kutuplarının reel kısımlarının işaretinin (i.e., pozitif veya negatif olması) neden sistem kararlılığını etkilediğini Laplace (s) alanında çarpım işlemleri ve zaman alanında konvolüsyon (evrişim integrali) kullanarak anlamaya çalışalım.
+
+### Doğrusal Sistemlerde Kararlılığa Bir Bakış
+
 
 ## Kendi-Kendini Dengeleyen Robot ve PID Kontrolör
 Geribeslemeli bir kontrol sisteminin<sup>4</sup> blok diyagramına<sup>5</sup> *Şekil 9*'de görülen kendi-kendini dengeleyen robot üzerinden bir bakış.
