@@ -134,7 +134,8 @@ Yukarıda görüldüğü gibi yaklaşık olarak K>6 için sistem cevabında göz
 
 ### Doğrusal Sistemlerde Kararlılığa Bir Bakış
 
-<img src="ders/EESEC-314-2022-Bahar/hafta 5.jpg" alt="EESEC 314 beşinci hafta tahta notu" height="300"/>
+<img src="ders/EESEC-314-2022-Bahar/hafta 5.jpg" alt="EESEC 314 beşinci hafta tahta notu" height="400"/>
+
 ## Kendi-Kendini Dengeleyen Robot ve PID Kontrolör
 Geribeslemeli bir kontrol sisteminin<sup>4</sup> blok diyagramına<sup>5</sup> *Şekil 9*'de görülen kendi-kendini dengeleyen robot üzerinden bir bakış.
 
