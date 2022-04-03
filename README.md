@@ -132,6 +132,14 @@ Aşağıda *Şekil 7*'de verilen Simulink modelini K=0'dan K=8'e kadar artan kaz
 
 Yukarıda görüldüğü gibi yaklaşık olarak K>6 için sistem cevabında gözlemlenen osilasyonlar artık sönümlenemiyor ve sistem kararsız hale geliyor. Bunun sebebi kök yer eğrisi grafiğinde üç kutuptan ikisinin reel kısımlarının artık s-alanının sağ tarafında geçmesi (yani başka bir deyişle pozitif değerler alması). Sadece bir kutubun bile reel kısmı sanal eksenin sağına geçse sistem dinamiklerinde kararsızlık ortaya çıkar. Kutuplarının reel kısımlarının işaretinin (i.e., pozitif veya negatif olması) neden sistem kararlılığını etkilediğini Laplace (s) alanında çarpım işlemleri ve zaman alanında konvolüsyon (evrişim integrali) kullanarak anlamaya çalışalım.
 
+#### Kök Yer Eğrisi - başka bir örnek
+Aşağıda sonuçları verilen kök yer eğrisi örneğine baktık.
+
+
+<img src="gif/rlocus example 2.gif" alt="root locus örnek 2" height="600"/>
+
+*Şekil 9:* Başka bir kök yer eğrisi örneği.
+
 ### Doğrusal Sistemlerde Kararlılığa Bir Bakış
 
 <img src="ders/EESEC-314-2022-Bahar/hafta 5.jpg" alt="EESEC 314 beşinci hafta tahta notu" height="400"/>
@@ -141,11 +149,13 @@ Geribeslemeli bir kontrol sisteminin<sup>4</sup> blok diyagramına<sup>5</sup> *
 
 <img src="şekil/kendi-kendini dengeleyen robot.jpg" alt="kendi-kendini dengeleyen robot" height="500"/> <img src="ders/hafta10/geribeslemeli kontrol sistemi.jpg" alt="geribeslemeli kontrol sistemi" height="500"/>
 
-*Şekil 9:* Kendi-kendini dengeleyen robot ve üzerinde koşmakta olan geri-beslemeli kontrol sistemi blok diyagramı.
+*Şekil 10:* Kendi-kendini dengeleyen robot ve üzerinde koşmakta olan geri-beslemeli kontrol sistemi blok diyagramı.
 
 Derste PID kontrolörün girişi olan hata sinyali e(t) ile çıkışı olan kontrol sinyali u(t) arasındaki ifadeyi sürekli zaman için aşağıdaki gibi elde ettik.
 
 <img src="eşitlik/pid kontrolör.JPG" alt="pid kontrolör" height="55"/>
+
+## PID Kontrolör Kullanarak Birim Basamak Cevabının İyileştirilmesi
 
 ## Ayrık Zamanda PID Kontrolör
 PID kontrolörün (*Şekil 9*'de görüldüğü gibi kendi-kendini dengeleyen robot için) Arduino üzerinde ayrık zamanda (discrete time) nasıl gerçeklendiğini anlamaya nümerik integrale bakarak başlıyoruz.
