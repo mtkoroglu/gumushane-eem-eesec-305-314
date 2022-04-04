@@ -29,7 +29,7 @@ Burada analiz ettiğimiz pendulum probleminde sistemimizin bir girişi yok. Ger�
 ### Hız (Cruise) Kontrol
 Bir arabaya Newton'un F=ma kanununu uygulayarak elde edeceğimiz dinamik modeli inceleyelim. **Durum uzayı gösterimi** (state space representation). Ayrıca oransal-integral-türevsel (proportional-integral-derivative) denetleyici (PID controller) tasarlayarak (deneme-yanılma yolu ile) arabamızın hız kontrolünü yapmaya çalışalım.
 
-<p align="left"><img src="şekil/cruise_control.png" alt="araba dinamiği" height="160"></p>
+<p align="right"><img src="şekil/cruise_control.png" alt="araba dinamiği" height="160"></p>
 
 *Şekil 4:* Araba hız kontrolü (cruise control) dinamikleri ([3]'ün izni ile). Burada sönümleme katsayısı b arabayı durdurucu etki yapıyor.
 
