@@ -146,7 +146,7 @@ Aşağıda sonuçları verilen kök yer eğrisi örneğine baktık.
 
 #### Kök Yer Eğrisi - Kalıcı Hal Hatasının Giderilmesi
 
-<p align="center"><img src="gif/rlocus example 6.gif" alt="root locus örnek 6" width=%100 height=auto></p>
+https://user-images.githubusercontent.com/14244557/161855168-121addcd-5904-4134-abe1-99b337c2f03d.mp4
 
 ## Kendi-Kendini Dengeleyen Robot ve PID Kontrolör
 Geribeslemeli bir kontrol sisteminin<sup>4</sup> blok diyagramına<sup>5</sup> *Şekil 9*'de görülen kendi-kendini dengeleyen robot üzerinden bir bakış.
