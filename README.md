@@ -133,17 +133,20 @@ Aşağıda *Şekil 7*'de verilen Simulink modelini K=0'dan K=8'e kadar artan kaz
 
 Yukarıda görüldüğü gibi yaklaşık olarak K>6 için sistem cevabında gözlemlenen osilasyonlar artık sönümlenemiyor ve sistem kararsız hale geliyor. Bunun sebebi kök yer eğrisi grafiğinde üç kutuptan ikisinin reel kısımlarının artık s-alanının sağ tarafında geçmesi (yani başka bir deyişle pozitif değerler alması). Sadece bir kutubun bile reel kısmı sanal eksenin sağına geçse sistem dinamiklerinde kararsızlık ortaya çıkar. Kutuplarının reel kısımlarının işaretinin (i.e., pozitif veya negatif olması) neden sistem kararlılığını etkilediğini Laplace (s) alanında çarpım işlemleri ve zaman alanında konvolüsyon (evrişim integrali) kullanarak anlamaya çalışalım.
 
-#### Kök Yer Eğrisi - başka bir örnek
+#### Kök Yer Eğrisi - örnek
 Aşağıda sonuçları verilen kök yer eğrisi örneğine baktık.
-
 
 <img src="gif/rlocus example 2.gif" alt="root locus örnek 2" height="600"/>
 
 *Şekil 9:* Başka bir kök yer eğrisi örneği.
 
-### Doğrusal Sistemlerde Kararlılığa Bir Bakış
+#### Kök Yer Eğrisi - Kalıcı Hal Hatası Örneği
 
-<img src="ders/EESEC-314-2022-Bahar/hafta 5.jpg" alt="EESEC 314 beşinci hafta tahta notu" height="400"/>
+<p align="center"><img src="gif/rlocus example 5.gif" alt="root locus örnek 5" width=%100 height=auto></p>
+
+#### Kök Yer Eğrisi - Kalıcı Hal Hatasının Giderilmesi
+
+<p align="center"><img src="gif/rlocus example 6.gif" alt="root locus örnek 6" width=%100 height=auto></p>
 
 ## Kendi-Kendini Dengeleyen Robot ve PID Kontrolör
 Geribeslemeli bir kontrol sisteminin<sup>4</sup> blok diyagramına<sup>5</sup> *Şekil 9*'de görülen kendi-kendini dengeleyen robot üzerinden bir bakış.
