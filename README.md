@@ -116,25 +116,25 @@ elde ederiz. Buradan da *Şekil 5*'de görülen geri beslemeli kontrol sistemini
 
 olarak buluruz. Görüldüğü gibi bu transfer fonksiyonunun kutupları (yani paydanın kökleri) K değiştikçe farklı değerler almaktadır. Kazanç K değiştikçe kutupların aldığı konumların çizimini (i.e., kök yer eğrisi - root locus) *Şekil 6*'da görebilirsiniz. Her bir kutubun aldığı değerler farklı renkle çizdirilmiştir. Unutmayın; belirli bir K değeri için mavi, yeşil ve kırmızı grafikler üzerinde belirli kutup değerleri vardır. Kazanç değiştikçe kökler beraber hareket ederler.
 
-<p align="center"><img src="şekil/rlocus graph.png" alt="root locus grafiği" width=%100 height=auto></p>
+<p align="left"><img src="şekil/rlocus graph.png" alt="root locus grafiği" width=%100 height=auto></p>
 
-<p align="center"> *Şekil 6:* Yukarıda verilen sistemin kök yer eğrisi.</p>
+*Şekil 6:* Yukarıda verilen sistemin kök yer eğrisi.
 
 ### Kök Yer Eğrisi Animasyonu
 Aşağıda *Şekil 7*'de verilen Simulink modelini K=0'dan K=8'e kadar belli adımlarla artan kazanç değerleri için koşturduğumuzda, geri-beslemeli sistemin birim basamak cevabını *Şekil 8*'de görüldüğü gibi elde ediyoruz.
 
-<p align="center"><img src="şekil/root locus simulink model.jpg" alt="root locus blok diyagramı" width=%100 height=auto></p>
+<p align="left"><img src="şekil/root locus simulink model.jpg" alt="root locus blok diyagramı" width=%100 height=auto></p>
 
-<p align="center"> *Şekil 7:* Kök yer eğrisi için incelediğimiz sistemin Simulink modeli.</p>
+*Şekil 7:* Kök yer eğrisi için incelediğimiz sistemin Simulink modeli.
 
-<p align="center"><img src="gif/rlocus basamak cevabı animasyonu.gif" alt="root locus blok diyagramı" width=%100 height=auto></p>
+<p align="left"><img src="gif/rlocus basamak cevabı animasyonu.gif" alt="root locus blok diyagramı" width=%100 height=auto></p>
 
-<p align="center"> *Şekil 8:* Geri-beslemeli kontrol sisteminin basamak girişine verdiği cevabın değişen kutup değerleriyle görülmesi.</p>
+*Şekil 8:* Geri-beslemeli kontrol sisteminin basamak girişine verdiği cevabın değişen kutup değerleriyle görülmesi.
 
 Yukarıda görüldüğü gibi yaklaşık olarak K>6 için sistem cevabında gözlemlenen osilasyonlar artık sönümlenemiyor ve sistem **kararsız** hale geliyor. Bunun sebebi kök yer eğrisi grafiğinde üç kutuptan ikisinin reel kısımlarının artık s-alanının sağ tarafında geçmesi (yani başka bir deyişle pozitif değerler alması). **Sadece bir kutubun bile reel kısmı sanal eksenin sağına geçse** sistem dinamiklerinde **kararsızlık** ortaya çıkar. Kutuplarının reel kısımlarının işaretinin (i.e., pozitif veya negatif olması) neden sistem kararlılığını etkilediğini Laplace (s) alanında çarpım işlemleri ve zaman alanında konvolüsyon (evrişim integrali) kullanarak anlamaya çalışalım.
 
 #### Kök Yer Eğrisi - örnek
-Aşağıda sonuçları verilen kök yer eğrisi örneğine baktık.
+Aşağıda verilen kök yer eğrisi örneğini analiz ettik.
 
 <img src="gif/rlocus example 2.gif" alt="root locus örnek 2" height="600"/>
 
