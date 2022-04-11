@@ -62,9 +62,9 @@ Aç-kapa denetleyiciyi tasarlamadan önce araba hız kontrolü örneğine geri d
 
 <p align="center"><img src="https://drive.google.com/uc?id=1xs9K98mUPmY1uflo0o4nUcfAVcmKzFv8" alt="doğrusal bir dinamik sistem için geri beslemeli kontrol" width=%100 height=auto/></p>
 
-*Şekil 5:* Doğrusal bir dinamik sistem için geri-beslemeli kontrol.
+<p align="center">*Şekil 5:* Doğrusal bir dinamik sistem için geri-beslemeli kontrol.</p>
 
-Burada durum uzayı modelimizin matrisleri 
+Burada durum uzayı modeli matrisleri 
 
 <img src="eşitlik/matrisler.png" alt="durum uzayı matrisleri" height="200"/>
 
@@ -76,9 +76,9 @@ formülü kullanılarak
 
 <img src="eşitlik/transfer fonksiyonu.png" alt="transfer fonksiyonu" height="50"/>
 
-olarak hesaplanabilir. Burada 3x3'lük matrisin tersini alma işlemi ve diğer matris çarpma işlemlerini derste **MATLAB**'da hem hazır hem de kendi yazdığımız komutlarla gerçekledik ve sonuç olarak tekabül eden transfer fonksiyonunu elde ettik. 
+olarak bulunur. Burada 3x3'lük matrisin tersini alma işlemi ve diğer matris çarpma işlemlerini derste **MATLAB**'da hem hazır (İng. built-in) hem de kendi yazdığımız (İng. user-defined) fonksiyonlarla gerçekleştirdik ve sonuç olarak **MATLAB**'da da aynı transfer fonksiyonunu elde ettik. **Önemli  Not:** Sınavda 2x2'lik A matrisinin tersini alma işlemi yine karşımıza çıkacaktır.
 
-Burada **Kök Yer Eğrisi** konusunda kontrol etmek istediğimiz dinamik sistemin değil de geri-beslemeli kontrol sisteminin tamamının transfer fonksiyonu ile ilgileniyoruz. Başka bir deyişle, çıkış sinyalimiz Y(s)'nin referans sinyalimiz R(s)'ye oranını bulup K kazancındaki değişimin transfer fonksiyonuna etkilerini (yani sistemin cevabındaki değişimi) gözlemlemek istiyoruz. Sistemin çıkışının girişe oranı olan Y(s)/U(s) ifadesini bulduk. Kontrol sinyali U(s) ile hata sinyali E(s) arasında  
+Burada **Kök Yer Eğrisi** konusunda kontrol etmek istediğimiz dinamik sistemin değil de geri-beslemeli kontrol sisteminin **tamamının** transfer fonksiyonu ile ilgileniyoruz. Başka bir deyişle, çıkış sinyalimiz Y(s)'nin referans sinyalimiz R(s)'ye oranını bulup K kazancındaki değişimin transfer fonksiyonuna etkilerini (yani sistemin cevabındaki değişimi) gözlemlemek istiyoruz. Sistemin çıkışının girişe oranı olan Y(s)/U(s) ifadesini bulduk. Kontrol sinyali U(s) ile hata sinyali E(s) arasında  
 
 U(s) = KE(s) 
 
@@ -94,13 +94,13 @@ olduğunu da görebiliriz. Sonuç olarak R(s) ile Y(s) arasında matematiksel bi
 
 <img src="eşitlik/denetleyici transfer fonksiyonu.png" alt="denetleyici transfer fonksiyonu" height="50"/>
 
-ifadesinde E(s) yerine R(s) - Y(s) ifadesini koyalım ve 
+ifadesinde E(s) yerine R(s)-Y(s) ifadesini koyalım ve 
 
 <img src="eşitlik/ara transfer fonksiyonu 1.png" alt="ara transfer fonksiyonu 1" height="50"/>
 
 elde edelim. Başka bir ifadeyle 
 
-U(s) = K(R(s) - Y(s))
+U(s)=K(R(s)-Y(s))
 
 olur. Bu ifadeyi de Y(s)/U(s) ifadesinde yerine koyarsak 
 
@@ -108,30 +108,30 @@ olur. Bu ifadeyi de Y(s)/U(s) ifadesinde yerine koyarsak
 
 olur. İçler dışlar çarpımıyla devam edersek 
 
-Y(s)s(s+1)(s+2) = KR(s) - KY(s) 
+Y(s)s(s+1)(s+2) = KR(s)-KY(s) 
 
 elde ederiz. Buradan da *Şekil 5*'de görülen geri beslemeli kontrol sisteminin tamamının transfer fonksiyonu olan R(s)/Y(s) ifadesini 
 
 <img src="eşitlik/geri beslemeli sistem transfer fonksiyonu.png" alt="geri beslemeli sistem transfer fonksiyonu" height="55"/>
 
-olarak buluruz. Görüldüğü gibi bu transfer fonksiyonunun kutupları (i.e., paydanın kökleri) K değiştikçe farklı değerler almaktadır. Kazanç K değiştikçe kutupların aldığı konumların çizimini (i.e., kök yer eğrisi - root locus) *Şekil 6*'da görebilirsiniz. Her bir kutubun aldığı değerler farklı renkle çizdirilmiştir. Unutmayın; belirli bir K değeri için mavi, yeşil ve kırmızı grafikler üzerinde belirli bir kutup değeri vardır. Kazanç değiştikçe kökler beraber hareket ederler.
+olarak buluruz. Görüldüğü gibi bu transfer fonksiyonunun kutupları (yani paydanın kökleri) K değiştikçe farklı değerler almaktadır. Kazanç K değiştikçe kutupların aldığı konumların çizimini (i.e., kök yer eğrisi - root locus) *Şekil 6*'da görebilirsiniz. Her bir kutubun aldığı değerler farklı renkle çizdirilmiştir. Unutmayın; belirli bir K değeri için mavi, yeşil ve kırmızı grafikler üzerinde belirli kutup değerleri vardır. Kazanç değiştikçe kökler beraber hareket ederler.
 
-<img src="şekil/rlocus graph.png" alt="root locus grafiği" height="400"/>
+<p align=""center><img src="şekil/rlocus graph.png" alt="root locus grafiği" width=%100 height=auto></p>
 
-*Şekil 6:* Kök yer eğrisi (root locus).
+<p align="center">*Şekil 6:* Yukarıda verilen sistemin kök yer eğrisi.</p>
 
 ### Kök Yer Eğrisi Animasyonu
-Aşağıda *Şekil 7*'de verilen Simulink modelini K=0'dan K=8'e kadar artan kazanç değerleri için koşturduğumuzda, geri-beslemeli sistemin birim basamak cevabını *Şekil 8*'de görüldüğü gibi elde ediyoruz.
+Aşağıda *Şekil 7*'de verilen Simulink modelini K=0'dan K=8'e kadar belli adımlarla artan kazanç değerleri için koşturduğumuzda, geri-beslemeli sistemin birim basamak cevabını *Şekil 8*'de görüldüğü gibi elde ediyoruz.
 
-<img src="şekil/root locus simulink model.jpg" alt="root locus blok diyagramı" height="200"/>
+<p align="center"><img src="şekil/root locus simulink model.jpg" alt="root locus blok diyagramı" width=%100 height=auto></p>
 
-*Şekil 7:* Kök yer eğrisi için incelediğimiz sistemin Simulink modeli.
+<p align="center">*Şekil 7:* Kök yer eğrisi için incelediğimiz sistemin Simulink modeli.</p>
 
-<img src="gif/rlocus basamak cevabı animasyonu.gif" alt="root locus blok diyagramı" height="600"/>
+<p align="center"><img src="gif/rlocus basamak cevabı animasyonu.gif" alt="root locus blok diyagramı" width=%100 height=auto></p>
 
-*Şekil 8:* Geri-beslemeli kontrol sisteminin basamak girişine verdiği cevabın değişen kutup değerleriyle görülmesi.
+<p align="center">*Şekil 8:* Geri-beslemeli kontrol sisteminin basamak girişine verdiği cevabın değişen kutup değerleriyle görülmesi.</p>
 
-Yukarıda görüldüğü gibi yaklaşık olarak K>6 için sistem cevabında gözlemlenen osilasyonlar artık sönümlenemiyor ve sistem kararsız hale geliyor. Bunun sebebi kök yer eğrisi grafiğinde üç kutuptan ikisinin reel kısımlarının artık s-alanının sağ tarafında geçmesi (yani başka bir deyişle pozitif değerler alması). Sadece bir kutubun bile reel kısmı sanal eksenin sağına geçse sistem dinamiklerinde kararsızlık ortaya çıkar. Kutuplarının reel kısımlarının işaretinin (i.e., pozitif veya negatif olması) neden sistem kararlılığını etkilediğini Laplace (s) alanında çarpım işlemleri ve zaman alanında konvolüsyon (evrişim integrali) kullanarak anlamaya çalışalım.
+Yukarıda görüldüğü gibi yaklaşık olarak K>6 için sistem cevabında gözlemlenen osilasyonlar artık sönümlenemiyor ve sistem **kararsız** hale geliyor. Bunun sebebi kök yer eğrisi grafiğinde üç kutuptan ikisinin reel kısımlarının artık s-alanının sağ tarafında geçmesi (yani başka bir deyişle pozitif değerler alması). **Sadece bir kutubun bile reel kısmı sanal eksenin sağına geçse** sistem dinamiklerinde **kararsızlık** ortaya çıkar. Kutuplarının reel kısımlarının işaretinin (i.e., pozitif veya negatif olması) neden sistem kararlılığını etkilediğini Laplace (s) alanında çarpım işlemleri ve zaman alanında konvolüsyon (evrişim integrali) kullanarak anlamaya çalışalım.
 
 #### Kök Yer Eğrisi - örnek
 Aşağıda sonuçları verilen kök yer eğrisi örneğine baktık.
