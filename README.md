@@ -60,9 +60,9 @@ Aç-kapa denetleyiciyi tasarlamadan önce araba hız kontrolü örneğine geri d
 ## Root Locus (Kök Yer Eğrisi)
 Önceki derslerimizde geri-beslemeli bir kontrol sisteminin genel blok diyagramına göz atmıştık. Burada hatırlamak gerekirse, kontrol edilmek istenen dinamik sistem doğrusal ise o zaman *Şekil 5*'deki gibi bir blok diyagrama sahip oluruz. 
 
-<img src="https://drive.google.com/uc?id=1xs9K98mUPmY1uflo0o4nUcfAVcmKzFv8" alt="geri beslemeli kontrol doğrusal sistem" height="120"/>
+<p align="center"><img src="https://drive.google.com/uc?id=1xs9K98mUPmY1uflo0o4nUcfAVcmKzFv8" alt="doğrusal bir dinamik sistem için geri beslemeli kontrol" width=%100 height=auto/></p>
 
-*Şekil 5:* Doğrusal bir sistem üzerinde geri-beslemeli kontrol.
+*Şekil 5:* Doğrusal bir dinamik sistem için geri-beslemeli kontrol.
 
 Burada durum uzayı modelimizin matrisleri 
 
