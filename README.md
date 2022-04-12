@@ -62,7 +62,7 @@ Aç-kapa denetleyiciyi tasarlamadan önce araba hız kontrolü örneğine geri d
 
 <p align="center"><img src="https://drive.google.com/uc?id=1xs9K98mUPmY1uflo0o4nUcfAVcmKzFv8" alt="doğrusal bir dinamik sistem için geri beslemeli kontrol" width=%100 height=auto/></p>
 
-<p align="center">*Şekil 5:* Doğrusal bir dinamik sistem için geri-beslemeli kontrol.</p>
+*Şekil 5:* Doğrusal bir dinamik sistem için geri-beslemeli kontrol.
 
 Burada durum uzayı modeli matrisleri 
 
