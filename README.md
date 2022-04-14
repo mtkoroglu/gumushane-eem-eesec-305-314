@@ -110,7 +110,7 @@ olur. İçler dışlar çarpımıyla devam edersek
 
 Y(s)s(s+1)(s+2) = KR(s)-KY(s) 
 
-elde ederiz. Buradan da *Şekil 5*'de görülen geri beslemeli kontrol sisteminin tamamının transfer fonksiyonu olan R(s)/Y(s) ifadesini 
+elde ederiz. Buradan da *Şekil 5*'de görülen geri beslemeli kontrol sisteminin tamamının transfer fonksiyonu olan Y(s)/R(s) ifadesini 
 
 <img src="eşitlik/geri beslemeli sistem transfer fonksiyonu.png" alt="geri beslemeli sistem transfer fonksiyonu" height="55"/>
 
