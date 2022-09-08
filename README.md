@@ -6,15 +6,17 @@
 
 <img src="eşitlik/kapasitör denklemi çözümü.JPG" alt="kapasitörün matematiksel modeli çözümü" height="55">
 
-Türev anlık olarak değer alan (geçmişe bir bağımlılığı yok) bir operatörken integral'de başlangıç koşulu söz konusudur ve bu başlangıç koşuluna göre sistemin girişi aynı olsa bile çıkış farklı olabilmektedir.
+<p align="justify">Türev anlık olarak değer alan (yani geçmişe bir bağımlılığı olmayan) bir operatörken integral'de başlangıç koşulu söz konusudur ve bu başlangıç koşuluna göre sistemin girişi aynı olsa bile çıkış farklı olabilmektedir.</p>
 
-**Durum değişkeni:** *Geçmişin geleceği etkileyen özü*<sup>1</sup>.
+**Durum değişkeni:** <em>Geçmişin geleceği etkileyen özü</em><sup>1</sup>.
 
-Bu hafta baktığımız RC devresinin durum uzayı modelinde bir tane **durum değişkeni** var, dolayısıyla bir boyutlu bir sistem. Ayrıca *Vcc* olarak isimlendirdiğimiz güç kaynağının gerilimi (devreyi bir sistem olarak görürsek) sisteme bir **giriş değişkeni** (input) olarak etki ediyor. RC devresinde resistör değeri *R* ve kapasitor değeri *C* sistem parametreleri olarak vazife yapıyor. Bu parametreler zamanla değişmediği zaman Sinyaller-Sistemler dersinden bildiğimiz gibi doğrusal zamanla değişmeyen (linear time-invariant - LTI) bir sistemimiz olmuş oluyor ve sistemi analiz etmek kolay bir hal alıyor. Sistem parametrelerimiz zamanla değişen bir yapıya sahipse daha kompleks matematiksel yaklaşımlarla analiz yapmak zorunda kalırız (bu derste bu yaklaşımları öğrenmeyeceğiz).
+<p align="justify">Bu hafta baktığımız RC devresinin durum uzayı modelinde bir tane **durum değişkeni** var, dolayısıyla bir boyutlu bir sistem. Ayrıca *Vcc* olarak isimlendirdiğimiz güç kaynağının gerilimi (devreyi bir sistem olarak görürsek) sisteme bir **giriş değişkeni** (input) olarak etki ediyor. RC devresinde resistör değeri *R* ve kapasitor değeri *C* sistem parametreleri olarak vazife yapıyor. Bu parametreler zamanla değişmediği zaman Sinyaller-Sistemler dersinden bildiğimiz gibi doğrusal zamanla değişmeyen (linear time-invariant - LTI) bir sistemimiz olmuş oluyor ve sistemi analiz etmek kolay bir hal alıyor. Sistem parametrelerimiz zamanla değişen bir yapıya sahipse daha kompleks matematiksel yaklaşımlarla analiz yapmak zorunda kalırız (bu derste bu yaklaşımları öğrenmeyeceğiz).</p>
 
-<img src="şekil/RC devresi basamak cevabı augmented.jpg" alt="RC devresinin analizi" height="560"/></br>
-*Şekil 1:* RC devresinin analizi. Burada incelenen cevaba RC devresinin *zorlanmış* cevap denmektedir [1]. 
-## Sarkaç (Pendulum) Sistemi
+<figure>
+<img src="şekil/RC devresi basamak cevabı augmented.jpg" alt="RC devresi basamak cevabı" height="560"/></br>
+<figcaption>RC devresinin analizi. Burada incelenen cevaba RC devresinin <em>zorlanmış cevap</em> denmektedir [1]</figcaption>
+</figure> 
+<h2>Sarkaç (Pendulum) Sistemi</h2>
 **Pendulum** (sarkaç) dinamiklerine durum uzayında (state space) bakış [1]. *Şekil 2*'de görüldüğü üzere, kütlesi ihmal edilen *l* uzunluğundaki çubuğun ucundaki cismin kütlesi *m*, sürtünme katsayısı *b*, yer çekimi ivmesi *g*; sistem parametreleri denilen bu katsayılar sabit (i.e., zamanla değişmiyor). Sistemin durum değişkenleri açı ve açısal hız. Çıkış değişkeni olarak açıyı gözlemliyoruz.
 
 <img src="şekil/pendulum dynamics.png" alt="Pendulum dinamikleri." height="240"/></br>
