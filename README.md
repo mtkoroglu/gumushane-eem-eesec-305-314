@@ -11,11 +11,12 @@
 **Durum değişkeni:** <em>Geçmişin geleceği etkileyen özü</em><sup>1</sup>.
 
 <p align="justify">Bu hafta baktığımız RC devresinin durum uzayı modelinde bir tane **durum değişkeni** var, dolayısıyla bir boyutlu bir sistem. Ayrıca *Vcc* olarak isimlendirdiğimiz güç kaynağının gerilimi (devreyi bir sistem olarak görürsek) sisteme bir **giriş değişkeni** (input) olarak etki ediyor. RC devresinde resistör değeri *R* ve kapasitor değeri *C* sistem parametreleri olarak vazife yapıyor. Bu parametreler zamanla değişmediği zaman Sinyaller-Sistemler dersinden bildiğimiz gibi doğrusal zamanla değişmeyen (linear time-invariant - LTI) bir sistemimiz olmuş oluyor ve sistemi analiz etmek kolay bir hal alıyor. Sistem parametrelerimiz zamanla değişen bir yapıya sahipse daha kompleks matematiksel yaklaşımlarla analiz yapmak zorunda kalırız (bu derste bu yaklaşımları öğrenmeyeceğiz).</p>
-
+<p align="center">
 <figure>
 <img src="şekil/RC devresi basamak cevabı augmented.jpg" alt="RC devresi basamak cevabı" height="560"/></br>
 <figcaption>RC devresinin analizi. Burada incelenen cevaba RC devresinin <em>zorlanmış cevap</em> denmektedir [1]</figcaption>
-</figure> 
+</figure>
+</p>
 <h2>Sarkaç (Pendulum) Sistemi</h2>
 **Pendulum** (sarkaç) dinamiklerine durum uzayında (state space) bakış [1]. *Şekil 2*'de görüldüğü üzere, kütlesi ihmal edilen *l* uzunluğundaki çubuğun ucundaki cismin kütlesi *m*, sürtünme katsayısı *b*, yer çekimi ivmesi *g*; sistem parametreleri denilen bu katsayılar sabit (i.e., zamanla değişmiyor). Sistemin durum değişkenleri açı ve açısal hız. Çıkış değişkeni olarak açıyı gözlemliyoruz.
 
