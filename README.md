@@ -1,10 +1,10 @@
-# EESEC 305
-## DİNAMİK SİSTEM
-Gerilim kaynağı bağlanmış bir resistör-kapasitör devresini (RC devresi - **Şekil 1**) analiz ettik. Bu örnekte kapasitörün üzerinden geçen akım i<sub>C</sub>(t) değil de kapasitörün üzerine düşen voltaj V<sub>C</sub>(t) **durum değişkeni** (İng. **state variable**) vazifesi görüyor. Analitik çözümü [1]'de türetilen **RC devresinin zorlanmış cevabına** bakıp düşünürsek niçin akımın değil de voltajın durum değişkeni seçildiğini anlayabiliriz. Aşağıda verilen kapasitörün matematiksel modelini anlamaya çalışalım.
+<h1>EESEC 305</h1>
+<h2>DİNAMİK SİSTEM</h2>
+<p align="justify">Gerilim kaynağı bağlanmış bir resistör-kapasitör devresini (RC devresi - Şekil 1) analiz ettik. Bu örnekte kapasitörün üzerinden geçen akım i<sub>C</sub>(t) değil de kapasitörün üzerine düşen voltaj V<sub>C</sub>(t) durum değişkeni (İng. state variable) vazifesi görüyor. Analitik çözümü [1]'de türetilen RC devresinin zorlanmış cevabına bakıp düşünürsek niçin akımın değil de voltajın durum değişkeni seçildiğini anlayabiliriz. Aşağıda verilen kapasitörün matematiksel modelini anlamaya çalışalım.</p>
 
-<img src="eşitlik/kapasitör denklemi.JPG" alt="Kapasitörün matematiksel modeli" height="50"/>
+<img src="eşitlik/kapasitör denklemi.JPG" alt="Kapasitörün matematiksel modeli" height="50">
 
-<img src="eşitlik/kapasitör denklemi çözümü.JPG" alt="kapasitörün matematiksel modeli çözümü" height="55"/>
+<img src="eşitlik/kapasitör denklemi çözümü.JPG" alt="kapasitörün matematiksel modeli çözümü" height="55">
 
 Türev anlık olarak değer alan (geçmişe bir bağımlılığı yok) bir operatörken integral'de başlangıç koşulu söz konusudur ve bu başlangıç koşuluna göre sistemin girişi aynı olsa bile çıkış farklı olabilmektedir.
 
